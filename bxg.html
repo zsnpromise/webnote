@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博学谷</title>
+</head>
+
+<body>
+    <div>
+        <h2>git (7.2)</h2>
+        <h5>window - dos(命令黑框cmd); linux- shell（git）</h5>
+        <h4>git常用命令:git就是一个版本控制工具</h4>
+        <ul>
+            <li> pwd (Print Working Directory) 查看当前目录</li>
+            <li>cd (Change Directory) 切换目录，如 cd /etc ; cd .. 返回上层目录</li>
+            <li>ls (List) 查看当前目录下内容，如 ls -al</li>
+            <li>mkdir (Make Directory) 创建目录，如 mkdir blog</li>
+            <li> touch 创建文件，如 touch index.html</li>
+            <li>cat (小文件)查看文件全部内容，如 cat index.html</li>
+            <li>less （大文件）查看文件，如more /etc/passwd、less /etc/passwd 按q返回主界面 回车换一行 空格换一页 b（back） 回退</li>
+            <li> rm (remove) 删除文件，如 rm index.html;rm -rf blog 文件名 删除带子文件的文件夹 </li>
+            <li>rmdir (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</li>
+            <li>mv (move) 移动文件或重命名，如 mv index.html ./demo/index.html</li>
+            <li>cp (copy) 复制文件，cp index.html ./demo/index.html</li>
+            <li>tab 自动补全，连按两次会将所有匹配内容显示出来</li>
+            <li>\> 和 >>重定向，如echo hello world! > README.md，>覆盖 >>追加</li>
+            <li> | 管道符可以将多个命令连接使用，上一次（命令）的执行结果当成下一次（命令）的参数。ls | grep hi 把上一个输出信息做输入进行筛选输出</li>
+            <li>grep 匹配内容，一般结合管道符使用</li>
+            <li> $ tail -n 5 index.html 显示行数;$ tail -f index.html 循环读取，使用tail命令的-f选项可以方便的查阅正在改变的日志文件</li>
+
+        </ul>
+        <h4>vi编辑器 linux操作系统标配，相当于windows下的记事本。</h4>
+        <ul>
+            <li>vi编辑器的三种模式:vi编辑器提供了3种模式，分别是命令模式、插入模式、底行模式，每种模式下用户所能进行的操作是不一样的。</li>
+            <li> a) 打开/创建文件， vi 文件路径</li>
+            <li>b) 底行模式 :w保存，:w filenme另存为</li>
+            <li> c) 底行模式 :q退出</li>
+            <li>d) 底行模式 :wq保存并退出</li>
+            <li>e) 底行模式 :e! 撤销更改，返回到上一次保存的状态</li>
+            <li>f) 底行模式 :q! 不保存强制退出</li>
+            <li>g) 底行模式 :set nu 设置行号</li>
+            <li> h) 命令模式 ZZ（大写）保存并退出</li>
+            <li>i) 命令模式 u辙销操作，可多次使用</li>
+            <li>j) 命令模式 dd删除当前行</li>
+            <li> k) 命令模式 yy复制当前行</li>
+            <li>l) 命令模式 p 粘贴内容</li>
+            <li>m) 命令模式 ctrl+f向前翻页</li>
+            <li> n) 命令模式 ctrl+b向后翻页</li>
+            <li>o) 命令模式 i进入编辑模式，当前光标处插入</li>
+            <li>p) 命令模式 a进入编辑模式，当前光标后插入 shift+a</li>
+            <li> q) 命令模式 A进入编辑模式，光标移动到行尾</li>
+            <li> r) 命令模式 o进入编辑模式，当前行下面插入新行</li>
+            <li> s) 命令模式 O进入编辑模式，当前行上面插入新行</li>
+
+        </ul>
+        <h4>版本控制概述 </h4>
+        <ul>
+            <li>本地版本控制;集中版本控制;分布式版本控制</li>
+            <li>git环境安装 <a href="http://git-scm.com/download/win">下载地址</a>下载后和普通软件安装方式一样</li>
+            <li>linux安装:CentOS发行版：sudo yum install git;Ubuntu发行版：sudo apt-get install git </li>
+            <li> Mac安装:打开Terminal直接输入git命令，会自动提示，按提示引导安装即可
+            </li>
+            <li>git工作原理-git的三个工作区域:工作目录; 暂存区域;本地仓库</li>
+            <li>git管理文件的4中状态
+                <ul>
+                    <li>未追踪untraced（新创建的文件，这些文件没有被git管理）</li>
+                    <li>已暂存staged（已暂存的文件位于暂存区，并且纳入了git的管理）</li>
+                    <li>已提交commited（已提交的文件位于本地仓库、已提交的文件会形成快照）</li>
+                    <li>已修改modified（已经暂存的文件修改之后的状态，位于工作目录）</li>
+                </ul>
+            </li>
+            <li>
+                git工作流程-本地创建仓库
+                <ul>
+                    <li>配置用户信息</li>
+                    <li>初始化仓库</li>
+                    <li>添加文件到暂存区</li>
+                    <li>提交文件</li>
+                    <li>查看文件状态</li>
+                    <li>查看提交历史</li>
+                    <li>撤销文件修改</li>
+                    <li>回复版本</li>
+                </ul>
+            </li>
+            <li>分支操作:创建分支;切换分支;合并分支;删除分支</li>
+
+
+        </ul>
+        <h4>Git命令</h4>
+        <ul>
+
+            <li>git config --list //查看所有配置</li>
+            <li>
+                配置用户信息
+                <ul>
+                    <li>全局配置，软件安装目录C:\Program Files\Git\mingw64\etc\gitconfig</li>
+                    <li>用户配置，用户名目录C:\Users\www\.gitconfig</li>
+                    <li>项目配置，项目目录</li>
+                    <li>git config --global user.name zhangsan</li>
+                    <li> git config --global user.email "zhangsan@163.com"</li>
+                </ul>
+            </li>
+            <li>git init 初始化本地仓库 </li>
+            <li>查看文件状态 git status</li>
+            <li>查看提交记录(按q键退出) git log</li>
+            <li>工作区添加到暂存区 git add *;1、把未跟踪的文件添加到暂存区2、把已修改的文件添加到暂存区;一般暂存半成品</li>
+            <li>add的逆操作:git rm --cached index.html 把暂存区文件退回到工作区</li>
+            <li> 暂存区覆盖工作区内容,回滚已经修改的内容 git checkout -- 文件列表;git checkout . // 回滚当前所有的修改操作（慎重使用）/li>
+
+                <li>暂存区提交到本地仓库 git commit -m '备注'
+                    <ul>
+                        <li> git commit -a -m 备注信息 （-a只能提交已修改的文件，不能提交未跟踪文件）</li>
+                        <li>一般提交阶段性工作（一次commit就是一次快照）</li>
+                        <li>git commit --amend //修改备注</li>
+
+                    </ul>
+                </li>
+                <li>节点回滚
+                    <ul>
+                        <li>回滚commit节点,回滚特定版本 git reset --hard 版本号//回滚特定节点，之后的节点会被干掉</li>
+                        <li> git reset --hard HEAD //回滚到仓库的最新节点</li>
+                        <li> git reset --hard HEAD^ //当前仓库节点的上一次节点</li>
+                        <li>取消最后一次提交(HEAD表示最后一次提交，HEAD^表示倒数第二次提交)</li>
+                        <li> 关于git reset 1.本地仓库回滚快照；2.用本地仓库中指定的快照覆盖暂存区内容。3.用本地仓库中指定快照覆盖工作区。
+                            <ul>
+                                <li> 1、git reset --hard 三个步骤都发生</li>
+                                <li> 2、git reset --soft 只发生第1步</li>
+                                <li> 3、git reset --mixed 只发生第1步和第2步</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                <li> 命令 [选项-a --list] [参数] 当--后面是选项时，不要空格，当为参数时-- 后面加空格</li>
+                <li>回滚之后重新恢复:先找到回滚的节点 git reflog;再恢复 $ git reset --hard 62e3c6f
+                </li>
+
+
+                <li> 分支操作
+                    <ul>
+
+                        <li>1、创建分支: git branch 分支名称</li>
+                        <li>2、查看本地所有分支: git branch</li>
+                        <li>3、切换分支 git checkout 分支名称</li>
+                        <li>4、创建并切换分支 git checkout -b 分支名称</li>
+                        <li>5、合并分支 git merge 分支名称（来源分支）</li>
+                        <li>6、删除本地分支:git branch -D 分支名称（强制删除）;git branch -d 分支名称（如果分支没有合并，不允许删除） </li>
+                    </ul>
+                </li>
+                <li>和分支效果类似：保存当前工作状态 git stash 恢复之前保存的状态 git stash pop</li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div>
+        <h2>git远程仓库和github项目上传(7.5)</h2>
+        <h4>git指令进阶</h4>
+        <ul>
+            <li>ssh-keygen -t rsa 产生公钥,要一直回车才产生密钥;ssh root@127.0.0.1</li>
+            <li>初始化远程仓库 : git init --bare</li>
+            <li>克隆远程仓库的项目:git clone 远程仓库地址 项目名称;克隆的项目，第一次用别名访问后，git pull git push </li>
+            <li>从远程仓库拉取代码
+                <ul>
+                    <li>git pull 远程仓库的地址 远程分支名称:本地分支名称</li>
+                    <li>git pull https://abc.com/ master:abc</li>
+                    <li>git pull 远程仓库的地址 远程分支名称</li>
+                    <li> git pull https://abc.com/ master</li>
+                </ul>
+            </li>
+            <li>向远程仓库推送代码
+                <ul>
+                    <li>git push 远程仓库的地址 本地分支名称:远程分支名称</li>
+                    <li>git push https://abc.com/ master:abc</li>
+                    <li>git push 远程仓库的地址 本地分支名称</li>
+                    <li>git push https://abc.com/ master</li>
+                </ul>
+            </li>
+            <li>远程仓库别名操作
+                <ul>
+                    <li>添加远程仓库别名: git remote add 别名 远程仓库地址</li>
+                    <li>删除远程仓库别名:git remote remove 别名</li>
+                    <li>查看远程仓库别名的详细信息:git remote show 别名/li>
+                        <li>查看所有别名:git remote</li>
+                </ul>
+                </li>
+
+                <li>分支操作
+                    <ul>
+                        <li>查看远程分支:git branch -r</li>
+                        <li>查看所有分支:git branch -a</li>
+                        <li>删除远程分支:git push 远程仓库地址 :远程分支名称;git push 远程仓库地址 --delete 远程分支名称</li>
+
+                    </ul>
+                </li>
+        </ul>
+        <h4>概念</h4>
+        <ul>
+            <li> shell 是一种脚本语言，也是一种环境，套在计算机操作系统外的壳子;</li>
+            <li>ssh 一种协议，用来实现两台计算机之间的通信（具体就是实现远程登录）
+                <ul>
+                    <li>使用密码登录
+                        <ul>
+                            <li>首先客户端向服务器发送一个请求</li>
+                            <li>服务器接收到请求之后向客户度发送自己的公钥</li>
+                            <li>客户端接收到公钥之后存储到指定目录（C:\Users\www\.ssh）</li>
+                            <li>客户端输入密码然后用公钥加密，再次发送请求</li>
+                            <li>服务器接收到密文之后，使用自己的私钥揭秘然后验证通过，从而允许客户端登录</li>
+
+                        </ul>
+                    </li>
+                    <li>使用公钥和私钥登录
+                        <ul>
+                            <li>客户端先生成自己的公钥和私钥（keygen -t rsa）</li>
+                            <li>把客户端的公钥传递给服务器，服务器使用该公钥给客户端授权</li>
+                            <li>客户端直接就可以免密登录了</li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+
+        </ul>
+        <h4>远程仓库操作流程--远程（共享）仓库:借助一个远程仓库，大家可以共享代码、历史版本等数据，实现团队成员之间代码同步。</h4>
+
+        <ul>
+            <li>创建远程仓库
+                <ul>
+                    <li>创建以.git结尾的目录mkdir repo.git</li>
+                    <li>进入该目录cd repo.git</li>
+                    <li>初始化共享仓库git init --bare</li>
+                    <li>这样我们就建好了一个共享的仓库，但这时这个仓库是一个空的仓库，并且不允在这个仓库中进行任何修改。</li>
+                </ul>
+            </li>
+            <li>向共享仓库推送内容
+                <ul>
+                    <li>将自已开发的项目同步到这个目录中，其它开发者就可以共享你开发的项目了。</li>
+                    <li>1.进入自己的项目跟目录 cd demo;2.git push ../repo.git master</li>
+                    <li>这样demo项目就进入到了共享仓库中</li>
+                </ul>
+            </li>
+            <li>从共享仓库取出内容
+                <ul>
+                    <li>新创建一个目录example（模拟另一个开发者）</li>
+                    <li>进入该目录cd ./example</li>
+                    <li> git clone repo.git</li>
+                </ul>
+            </li>
+            <li>基于克隆下来的项目进行修改
+                <ul>
+                    <li>修改内容</li>
+                    <li>提交内容</li>
+                    <li>推送内容</li>
+                    <li>这样便实现了代码的共享，但是，这个共享的仓库只是放到了本地的，其它人是没有办法从我们这个共享仓库共享内容的！！！，那么要想实现共享，我们可以把这个共享的仓库放到一台远程服务器上</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4> 远程仓库服务GitHub</h4>
+
+        <ul>
+            <li>如果我们熟悉服务器的话，我们完全可以将上述的步骤在我们的远程服务器上进行操作，然后再做一些登录权限的设置，就可非常完美的搭建一个共享服务器了。其实为了更好的管理我们的仓库，一些第三方机构开发出了Web版仓库管理程序，通过Web界面形式管理仓库。</li>
+            <li>GitHub基本使用
+                <ul>
+                    <li>1. 注册账号</li>
+                    <li>2. 创建共享仓库</li>
+                    <li>3. 把电脑生成的公钥绑定在gitbut中</li>
+                    <li>4. 把github账号在本地项目进用户信息配置</li>
+                </ul>
+            </li>
+            <li>GitHub地址格式
+                <ul>
+                    <li>https:// 获取代码不需要密码;提交代码需要密码</li>
+                    <li>git@ 需要将自己的公钥添加到GitHub上;获取与提交代码都不需要密码</li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <h4>差异比较(vim,vi的升级版)</h4>
+        <ul>
+            <li>git difftool 比较的是工作区和暂存的差异</li>
+            <li>git difftool "SHA" 比较于特定提交的差异 </li>
+            <li>git difftool "SHA" "SHA" 比较两次提交的差异</li>
+            <li>git difftool 分支名称 比较与某个分支的差异</li>
+        </ul>
+
+        <h5>gitignore作用:直接在编辑器里创建.gitignore文件，里面写不被上传的文件夹名称（如测试文件和日志文件）</h5>
+
+    </div>
+
+    <div>
+        <h2>博学谷环境配置 (7.6)</h2>
+        <h4>配置反向代理（解决跨域问题）</h4>
+        <ul>
+            <li>步骤一：配置httpd.conf文件（去注释符）
+
+                <ul>
+                    <li>LoadModule proxy_module modules/mod_proxy.so</li>
+                    <li>LoadModule proxy_http_module modules/mod_proxy_http.so</li>
+                </ul>
+            </li>
+            <li>步骤二：配置conf/extra/httpd-vhosts.conf文件
+                <ul>
+                    <li>反向代理就是在当前网站使用/api替换外网域名，使资源能跨域访问</li>
+                    <li>ProxyRequests Off</li>
+                    <li>给需要外网数据的配置项加一个节点：ProxyPass /api http://api.studyit.com</li>
+                    <li>配置默认首页：DirectoryIndex abc.html</li>
+                </ul>
+            </li>
+            <li>地址栏隐藏index.php配置
+                <ul>
+                    <li>步骤一：拷贝.htaccess文件到项目根目录</li>
+                    <li>步骤二：配置httpd.conf文件（149行）,去注释符：LoadModule rewrite_module modules/mod_rewrite.so</li>
+                </ul>
+            </li>
+            <li>步骤三：配置httpd.conf文件(260行):AllowOverride All</li>
+
+
+        </ul>
+    </div>
+
+    <div>
+        <h2>cookie和require及php session(7.8)</h2>
+        <h4>cookie</h4>
+        <ul>
+            <li>cookie的分类：
+                <ul>
+                    <li>http协议是无状态的:但是实际情况我们需要维护客户端和服务器之间的状态;可以通过cookie和session解决这个问题</li>
+                    <li>1、会话cookie（session cookie）（浏览器窗口关闭之后cookie就消失了）</li>
+                    <li>2、持久cookie（persistant cookie）（持久cookie会把cookie内容存储到浏览器指定的文件中，直到过期之后才会消失）</li>
+                </ul>
+            </li>
+            <li>path属性:path用来设置cookie保存的路径（父路径下面保存的cookie，在子路径下可以获取，反过来不可以） </li>
+            <li>expires属性：用来设置过期时间，但必须是格林威治时间：var date = new Date();date.setDate(date.getDate() + 7);date.toGMTString();</li>
+            <li>每个参数之间必须以分号加空格进行连接： document.cookie = 'hi=world; expires=' + date.toGMTString() + '; path=/';</li>
+            <li>大小不超过4K，每个域名cookie限制为20个（不准确，最小的为20）</li>
+        </ul>
+        <h4>php session</h4>
+        <ul>
+            <li>session是服务器端技术</li>
+            <li>session在开启的时候会生成一个唯一编号PHPSESSID</li>
+            <li>session里面可以存储数据（这些数据与PHPSESSID相关联）</li>
+            <li>cookie与session的关系:session可以借助cookie;但是cookie可以被浏览器禁用;可以通过别的办法解决：URL重写或token</li>
+            <li>开启session：session_start(); 把数据保存到服务器中：$_SESSION['loginInfo'] = $uname;</li>
+            <li>删除session：session_start();session_destroy();使每个用户与session关联唯一的cookie过期：setcookie('PHPSESSID','',1,'/');</li>
+
+        </ul>
+        <h4>require:非模块化的缺点：命名冲突；文件依赖问题</h4>
+        <ul>
+            <li>浏览器端模块化:AMD --- Require.js;CMD --- Sea.js;服务器端的模块化:CommonJS --- Node.js</li>
+            <li>requirejs设置默认配置：requirejs.config({})
+                <ul>
+                    <li>配置模块文件参考路径：baseUrl : './common/js'</li>
+                    <li>配置模块全路径的别名：paths : {htjs : 'hello-tom-jerryandspike',jquery : '../../jquery'}</li>
+                    <li>兼容非标准模块: shim : {htjs : {exports(导出非标准模块中的指定成员) : 'obj',desp:['如果非标准模块不需要导出，但是依赖于别的模块，就通过deps指定依赖']} }
+                    </li>
+                    
+                </ul>
+            </li>
+            <li>设置入口函数的两种方式：
+                <ul>
+                    <li>&lt; script data-main="" src="require.js"&gt;&lt;/script &gt;</li>
+                    <li>requirejs(['../../main'],function(){console.log('success');});</li>
+                    <li>require requirejs 两个方法等效</li>
+                </ul>
+            </li>
+            <li>定义模块 define(依赖列表,回调函数)</li>
+            <li>导出模块成员 return</li>
+            <li>requirejs格式模块，return返回当前模块要暴露的对象或方法,[]是当前模块依赖的模块：define([j1,jqery],function(j1,$){})</li>
+            <li>requirejs支持seajs的define注册模块的方法</li>
+
+        </ul>
+
+    </div>
+    <div>
+        <h2>搭建博学谷模块化和完成教师列表页(7.9)</h2>
+        <h4>知识点</h4>
+        <ul>
+            <li>session 一种后端技术（用来解决客户端和服务器状态维护问题）</li>
+            <li>requirejs 前端模块化框架;模块化开发：就是一种编程方式; 面向对象：也是一种编程方式</li>
+            <li>mime 客户端返回文件格式对应的类型</li>
+            
+        </ul>
+    </div>
+
+    <div>
+        <h2>日期插件，表单验证插件，表单提交插件(7.11)</h2>
+         <h4>bootstrap日期插件</h4>
+         <ul>
+             <li>bootstrap-datepicker.min.js</li>
+             <li>标签上属性配置：data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd'</li>
+             <li>依赖：bootstrap-datepicker.zh-CN.min,jquery,bootstrap-datepicker.css,bootstrap.min.css</li>
+
+         </ul>
+         <h4>jquery表单验证插件</h4>
+         <ul>
+             <li>jquery-validate.min.js</li>
+             <li>标签配置属性
+
+                 <ul>
+                     <li>data-required 必须输入</li>
+                     <li>data-patern 模式匹配</li>
+                     <li>data-conditional 自定义验证条件</li>
+                     <li>data-description 指定提示信息内容</li>
+                     <li>data-describedby 指定提示信息的位置</li>
+                     <li>data-pattern='^\d{6}$' 输入框正则匹配</li>
+                 </ul>
+             </li>
+             <li>$("form").validate({ sendForm: false(取消提交),valid:function(){（验证成功调用）},（配置提示信息）description:{tc_name: {required: "请输入姓名",
+                }}})</li>
+             <li>validate方法触发条件时需要submit按钮点击提交</li>
+             
+         </ul>
+          <h5>jquery表单提交插件:jquery.form.js;$("form").ajaxSubmit({})</h5>
+         
+    </div>
+
+    <div><h2>上传插件，富文本，省市联动插件(7.12) </h2>
+    <h4>异步上传插件（无兼容问题）</h4>
+    <ul>
+        <li>说明
+           <ul>
+                <li>文件上传就是把本地的文件上传到服务器</li>
+                <li>传统的基于表单的文件上传只能是同步的方式</li>
+                <li>可以借助xhr2.0实现文件的异步上传</li>
+                <li>早期的时候也可以是flash进行文件上传</li>
+                <li>也可以借助iframe的方式变通的实现异步的效果</li>
+                <li>所以说基于插件可以根据相应的场景自动选择合适的技术</li>
+            </ul>
+        </li>
+        <li>jquery.uploadify.js</li>
+        <li>依赖jquery,uploadify.swf</li>
+        <li>$("#upfile").uploadify({fileObjName: 'tc_avatar',height: '120px',width: '120px',buttonText: '',swf: '/public/assets/uploadify/uploadify.swf',    //指定上传控件的主体文件
+                    uploader: '/api/uploader/avatar',  //指定服务器端上传处理文件
+                    onUploadSuccess: function (a, b, c) {$(".settings img").attr("src", b.result.path);} });</li>
+        <li>出现curl报错：在wampservers管理器中php下的php.ini文件中curl那一行的;去掉。</li>
+    </ul>
+    <h4>富文本：ckeditor.js</h4>
+     <ul>
+         <li>CKEDITOR.replace('editor', { toolbarGroups: ['配置富文本需要的按钮']});
+             <ul>
+                 <li>{ name: 'clipboard', groups: ['clipboard', 'undo'] }</li>
+                 <li> { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] }</li>
+                 <li>{ name: 'others', groups: ['others'] }</li>
+                 <li> { name: 'about', groups: ['about'] }</li>
+            
+             </ul>
+         </li>
+         <li> 处理富文本内容更新(富文本内容在一个iframe中，要把它拿到文本域中): for (var instance in CKEDITOR.instances) {CKEDITOR.instances[instance].updateElement(); }</li>
+        
+     </ul>
+    <h5>省市联动插件:jquery.region.js,依赖jquery和数据源，主要提供一个数据绑定的功能</h5>
+    </div>
+</body>
+
+</html>

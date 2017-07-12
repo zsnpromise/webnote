@@ -1,0 +1,1156 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>itcastmark:H:\备课资料\《http服务&amp;ajax》\markdown\readme</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="http-ajax-">http服务&amp;ajax编程</h1>
+<h2 id="1-">1、服务器</h2>
+<blockquote>
+<p>前言：通俗的讲，能够提供某种服务的机器（计算机）称为服务器</p>
+</blockquote>
+<h4 id="1-1-">1.1、服务器类型</h4>
+<p>按照不同的划分标准，服务可划分为以下类型：</p>
+<ol>
+<li>按<strong>服务类型</strong>可分为：文件服务器、数据库服务器、邮件服务器、Web服务器等；</li>
+<li>按<strong>操作系统</strong>可分为：Linux服务器、Windows服务器等；</li>
+<li>按<strong>应用软件</strong>可分为 Apache服务器、Nginx 服务器、IIS服务器、Tomcat服务器、
+weblogic服务器、WebSphere服务器、boss服务器、 Node服务器等；</li>
+</ol>
+<h4 id="1-2-">1.2、服务器软件</h4>
+<p>使计算机具备提供某种服务能力的应用软件，称为服务器软件，
+通过安装相应的服务软件，然后进行配置后就可以使计算具备了提供某种服务的能力。</p>
+<p>常见的服务器软件有：</p>
+<ol>
+<li>文件服务器：Server-U、FileZilla、VsFTP等（FTP是File Transfer Protocol文件传输协议）；</li>
+<li>数据库服务器：oracle、mysql、SQL server、DB2、ACCESS等；</li>
+<li>邮件服务器：Postfix、Sendmail等；</li>
+<li><strong>HTTP服务器</strong>：Apache、Nginx、IIS、Tomcat、NodeJS等；</li>
+</ol>
+<h4 id="1-3-http-">1.3、HTTP服务器</h4>
+<p>即网站服务器，主要提供文档(文本、图片、视频、音频)浏览服务，一般安装Apache、Nginx服务器软件。</p>
+<p>HTTP服务器可以结合某一编程语言处理业务逻辑，由此进行的开发，通常称之为<strong>服务端开发</strong>。 </p>
+<p>常见的运行在服务端的编程语言包括 php、java、.net、Python、Ruby、Perl等。  </p>
+<h2 id="2-">2、客户端</h2>
+<p>具有向服务器<strong>索取服务</strong>能力的终端，如比如 手机、电脑等，通过安装不同的客户端软件，
+可以获取不同的服务，比如通过QQ获得即时通讯服务、通过迅雷获得下载服务等。</p>
+<p>常见的客户端软件：浏览器、QQ、迅雷、Foxmail等。</p>
+<p>以浏览器为宿主环境，结合 HTML、CSS、Javascript等技术，而进行的一系列开发，通常称之为<strong>前端开发</strong>。</p>
+<h2 id="3-">3、网络基础</h2>
+<h4 id="3-1-ip-">3.1 IP地址</h4>
+<p>所谓IP地址就是给每个连接在互联网上的主机分配的一个32位地址。(就像每部手机能正常通话需要一个号码一样)</p>
+<p>查看本机IP地址 ping、ipconfig、ifconfig（linux）</p>
+<h4 id="3-2-">3.2、域名</h4>
+<p>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“面具”  </p>
+<p>查看域名对应的IP地址 ping</p>
+<h4 id="3-3-dns-">3.3、DNS服务</h4>
+<p>DNS（Domain Name System）因特网上作为域名和IP地址相互映射的一个分布式数据库，
+能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。</p>
+<p>简单的说就是记录IP地址和域名之间对应关系的服务。</p>
+<p>查找优先级 本机hosts文件、DNS服务器</p>
+<p>ipconfig /flushdns 刷新DNS</p>
+<h4 id="3-4-">3.4、端口</h4>
+<p>端口号是计算机与外界通讯交流的出口，每个端口对应不同的服务。</p>
+<p><em>现实生活中，银行不同的窗口办理不同的业务。</em></p>
+<p>查看端口占用情况 netstat -an</p>
+<p>常见端口号 80、8080、3306、21、22</p>
+<h2 id="4-">4、软件架构</h2>
+<h4 id="4-1-c-s-">4.1、C/S结构</h4>
+<p>即<strong>C</strong>lient、<strong>S</strong>erver</p>
+<p>C/S工作流程图</p>
+<p><img src="m_01.png" alt="alt_text"></p>
+<p>在C/S结构的情况下，不同的服务需要安装不同的客户端软件，</p>
+<p>比如QQ、迅雷、Foxmail这种情况下安装的软件会越来越多，同时也有许多弊端，</p>
+<p>比如A出差，需要在B电脑上查收邮件，但是B电脑并未安装Foxmail等类似的客户端软件，</p>
+<p>这样不得不先去下载Foxmail，非常不方便。</p>
+<h4 id="4-2-b-s-">4.2、B/S结构</h4>
+<p>B/S（即<strong>B</strong>roswer、<strong>S</strong>erver）解决了C/S所带来的不便，</p>
+<p>将所有的服务都可以通过浏览器来完成（因为基本所有浏览器都安装了浏览器），</p>
+<p>但B/S也有一些不利，比如操作稳定性、流畅度等方面相对较弱。</p>
+<h2 id="5-http-">5、搭建HTTP服务</h2>
+<blockquote>
+<p>Windows + Apache + Mysql + PHP，首字母组合。</p>
+</blockquote>
+<h4 id="5-1-wampserver">5.1 安装WampServer</h4>
+<p>安装wampserver，和普通软件安装无差别，除指定安装路径外，其它默认安装。</p>
+<h4 id="5-2-http-">5.2 管理HTTP服务</h4>
+<p>任务图标<strong>绿色为正常启动</strong>状态<br>通过图形控制台可以启动、重启、停止所有服务<br><img src="m_07.png" alt=""></p>
+<p>或者单独启动、重启、停止特定服务<br><img src="m_08.png" alt=""></p>
+<p><strong>注意事项：</strong><br>1、检查网络是不是通的 ping 对方IP<br>2、检查防火墙是否开启，如果开启将不能正常被访问<br>3、检查访问权限 <strong>Allow from all</strong><br>4、理解默认索引<br>5、确保端口没有被<strong>其它程序</strong>占用<br>6、“#”表示注释<br>7、修改配置要格外小心，禁止<strong>无意修改</strong>其它内容  </p>
+<h4 id="5-3-">5.3 配置根目录</h4>
+<p>网站根目录是Web服务器上存放网站程序的空间，可通过修改配置文件自定义，如E:/www</p>
+<p><strong>具体步骤如下：</strong><br>1、打开配置文件，控制台选择<br><img src="m_02.png" alt=""><br>或者 wampserver安装目录下bin\apache\Apache2.2.21\conf\httpd.conf</p>
+<p>2、设定根目录，查找并修改<br><img src="m_03.png" alt=""><br>例如：<br><img src="m_04.png" alt=""><br>这样就指定了 &quot;E:/www/&quot;为存放网站的根目录。</p>
+<p>3、配置根目录，查找<br><img src="m_05.png" alt=""><br>修改成<br><img src="m_06.png" alt=""> </p>
+<p>4、修改完后，并不能立即生效，需要  <strong>重启Apache</strong><br>   <strong>注：可以指定任意目录为根目录</strong></p>
+<h4 id="5-4-">5.4 网站部署</h4>
+<p>将我们制作好的网页<strong>拷贝</strong>到配置好的根目录下，浏览器访问127.0.0.1即可。</p>
+<h4 id="5-5-">5.5配置虚拟主机</h4>
+<p>在一台Web服务器上，我们可以通过配置虚拟主机，然后分别设定根目录，实现对多个网站的管理。</p>
+<p>具体步骤如下：  </p>
+<p>1、开启虚拟主机辅配置，在httpd.conf 中找到  </p>
+<p><img src="m_09.png" alt="">  </p>
+<p>去掉前面的#号注释，开启虚拟主机配置</p>
+<p>2、配置虚拟主机，打开conf/extra/httpd-vhosts.conf   </p>
+<p> <img src="m_10.png" alt=""> </p>
+<p>分别修改以下三项  </p>
+<p>DocumentRoot &quot;E:/www/example&quot;
+    <br>ServerName &quot;example.com &quot;
+    <br>ServerAlias &quot;www.example.com&quot;  
+    <br>修改默认页面：DirectoryIndex abc.html
+    </p>
+<p>其它项无需指定。</p>
+<p>3、修改DNS（hosts）文件
+打开C:\Windows\System32\drivers\etc\hosts
+目录是固定的
+<img src="m_11.png" alt=""><br>注：修改hosts文件权限</p>
+<p>4、重启Apache</p>
+<p>5、浏览器访问www.example.com</p>
+<h2 id="6-php-">6、PHP基础</h2>
+<blockquote>
+<p>文件以.php后缀结尾，所有程序包含在&lt;?php <strong> 这里是代码 </strong> ?&gt;<br>避免使用中文目录和中文文件名
+php页面无法直接打开需要运行在服务器环境当中</p>
+</blockquote>
+<h4 id="6-1-php-">6.1、最简单的php程序</h4>
+<pre><code class="lang-php">&lt;?php
+    // 用来指定编码集
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+    /*这是一个最简单的php程序*/
+    echo &#39;hello world!&#39;;
+?&gt;
+</code></pre>
+<h4 id="6-3-">6.3、变量</h4>
+<p>1、变量以$开头 字母/数字/下划线 不能以数字开头<br>2、大小写敏感（区分大小写）</p>
+<pre><code class="lang-php">    // 声明一个变量$a并赋值为10
+    $a = 10;
+     // 输出一个变量$a
+    echo $a;
+    // 声明一个变量$b并赋值为10
+    $b = 10;
+    // 输出一个变量$b
+    echo $b;
+     
+    // 输出顺序是自上向下的
+    // 相当于 js dcoument.write()
+</code></pre>
+<h4 id="6-3-">6.3、数据类型</h4>
+<p><strong>sleep(2);//消耗2s时间</strong>  </p>
+<p><strong>字符型</strong>  </p>
+<pre><code class="lang-php">    $str = &#39;hello world!&#39;;
+</code></pre>
+<p><strong>整型</strong>  </p>
+<pre><code class="lang-php">    $num = 10;
+</code></pre>
+<p><strong>浮点型</strong>  </p>
+<pre><code class="lang-php">    $float = 10.5;
+</code></pre>
+<p><strong>布尔型</strong>  </p>
+<pre><code class="lang-php">    $bool = true;
+</code></pre>
+<p><strong>数组</strong></p>
+<pre><code class="lang-php">    // Javascript 数组定义方式 var arr = [1, 2, 3]
+    // arr[0]、arr[1]、arr[1]
+
+    // PHP 是这样定义数组的
+    // 这种方式叫做**索引数组**
+    $arr = array(1, 2, 3);    
+
+    // echo $arr[0];
+    // echo $arr[2];
+
+    // 定义方式和Javascript有区别，但是访问方式是一样的
+</code></pre>
+<pre><code class="lang-php">    // var obj = {name: itcast, age: 10}
+
+    // PHP另一种定定数组的方式，所表达的意义和Javascript一样，
+    // 只是语法格式不一样
+    // 这种方式叫做**关联数组**
+    $arr1 = array(&#39;name&#39;=&gt;&#39;itcast&#39;, &#39;age&#39;=&gt;10);
+
+    // echo $arr1[&#39;name&#39;];
+    // echo $arr1[&#39;age&#39;];
+</code></pre>
+<p><strong>对象</strong>  </p>
+<pre><code class="lang-php">    // Javascript var obj = {name: itcast, age: 10}
+    // PHP需要先创建一个类，下面就是创建过程
+    class Person {
+        public $name = &#39;itcast&#39;;
+
+        public $age = 10;
+    }
+
+    $person = new Person;
+
+    // PHP访问一个对象属性的语法是不一样的
+    echo $person-&gt;name;
+
+    // obj[&#39;name&#39;]; obj.name 不行
+</code></pre>
+<p><strong>NULL</strong>  </p>
+<pre><code class="lang-php">    //PHP中一种特殊的数据类型，表示空值，即表示没有为该变量设置任何值null(空值)不区分大小写，null和NULL是一样的。
+</code></pre>
+<p><strong>单引号&amp;双引号区别： </strong> 单引号内部的变量不会执行双引号会执行</p>
+<pre><code class="lang-php">    $name = &#39;小明&#39;;
+
+    echo &#39;name is $name&#39;;//输出 name is $name
+    echo &#39;&lt;br&gt;&#39;;
+    echo &quot;name is $name&quot;;//输出 name is 小明
+</code></pre>
+<p>索引数组、关联数组（了解即可）</p>
+<h4 id="6-4-">6.4、运算符&amp;内容输出</h4>
+<pre><code>基本与Javascript语法一致  
+. 号表示字符串拼接符，Javascript中为+号
+</code></pre><p>echo：输出简单数据类型，如字符串、数值</p>
+<pre><code class="lang-php">    /**
+    * 连接符
+    * Javascript中用+号表示连接符
+    * PHP中使用.点号
+    */
+
+    $hello = &#39;hello&#39;;
+
+    $world = &#39;world!&#39;;
+
+    // PHP连接符用.号
+    echo $hello . &#39; &#39; .$world;
+</code></pre>
+<p>print_r()：输出复杂数据类型，如数组</p>
+<pre><code class="lang-php">    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // 只能输出简单类型
+    echo $arr;
+
+    // 可以打印数组，但是输出的是一个数组的结构
+    print_r($arr);
+</code></pre>
+<p>var_dump()：输出详细信息，如对象、数组（了解）</p>
+<pre><code class="lang-php">    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // 只能输出简单类型
+    echo $arr;
+
+    // 输出详细信息
+    var_dump($arr);
+
+    $hello = &#39;hello&#39;;
+    // 输出详细信息
+    var_dump($hello);
+</code></pre>
+<h4 id="6-5-">6.5、函数</h4>
+<p>基本与Javascript基本一致  </p>
+<p>函数名对大小写不敏感<br>默认参数（了解即可）  </p>
+<pre><code class="lang-php">    // 1、PHP中函数不可以省略参数
+    // 2、PHP可以设置默认参数
+
+    function sayHello($name=&#39;web developer&#39;) {
+        echo $name . &#39;你好!&#39;;
+    }
+
+    sayHello();
+</code></pre>
+<h4 id="6-6-">6.6、分支，循环语句</h4>
+<pre><code class="lang-php">    /**
+     * 分支控制语句、循环语句
+     * 与Javascript一样
+     * foreach 数组遍历函数，类似Javascript中的 for in
+     */
+     $name = &#39;itcast1&#39;;
+
+     if($name == &#39;itcast&#39;) {
+        echo &#39;我已经在&#39; . $name . &#39;学习&#39;;
+     } else {
+        echo &#39;我还没有学习过编程&#39;;
+     }
+</code></pre>
+<pre><code class="lang-php">    /**
+     * 分支控制语句、循环语句
+     * 与Javascript一样
+     * foreach 数组遍历函数，类似Javascript中的 for in
+     */
+    // 索引数组
+    $arr = array(&#39;itcast&#39;, &#39;今年&#39;, &#39;10岁了&#39;);
+
+    // PHP函数，计算数组的长度
+    $length = count($arr);
+
+    // echo $length;
+
+    // 和Javascript是一样的
+    // for($i=0; $i&lt;$length; $i++) {
+    //     echo $arr[$i];
+    // }
+
+    foreach($arr as $k=&gt;$v) {
+        echo $k . &#39;~~~&#39; . $v;
+    };
+
+    // 关联数组
+    $arr1 = array(&#39;name&#39;=&gt;&#39;itcast&#39;, &#39;age&#39;=&gt;&#39;10&#39;);
+
+    // 验证关联数组不可以按索引下标来访问
+    // echo $arr1[0];
+
+     //PHP遍历一个关联数组
+     foreach($arr1 as $key=&gt;$val) {
+        echo $key . &#39;~~~&#39; . $val;
+     }
+
+     // 实际开发都是用foreach来遍历数组的
+</code></pre>
+<h4 id="6-7-">6.7、表单处理</h4>
+<p>表单name属性的是用来提供给服务端接收所传递数据而设置的 </p>
+<p>表单action属性设置接收数据的处理程序</p>
+<p>表单method属性设置发送数据的方式</p>
+<p>当上传文件是需要设置 enctype=&quot;multipart/form-data&quot;，且只能post方式</p>
+<p>$_GET接收 get 传值</p>
+<p>$_POST接收 post 传值</p>
+<p>$_FILES接收文件上传  </p>
+<pre><code>move_uploaded_file($_FILES[&#39;image&#39;][&#39;tmp_name&#39;], &#39;test.jpg&#39;);
+</code></pre><pre><code class="lang-html">&lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;用户：&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;密码：&lt;/label&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;form action=&quot;login.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;label&gt;图片：&lt;/label&gt;&lt;input type=&quot;file&quot; name=&quot;image&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;上传&quot;/&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<h4 id="6-8-php-">6.8、文件导入&amp;&amp;常用php函数</h4>
+<pre><code class="lang-PHP">    include &#39;07.form.html&#39;;
+
+    require &#39;07.form.php&#39;
+</code></pre>
+<pre><code class="lang-php">    $array = array(
+        &#39;username&#39;=&gt;&#39;itcast&#39;,
+        &#39;password&#39;=&gt;&#39;123456&#39;
+    );
+
+    echo &#39;获取数组的长度：&#39;.count($array);
+    echo &#39;&lt;br&gt;&#39;;
+    echo &#39;判断是否在数组中：&#39;.in_array(&#39;itcast&#39;,$array);
+    echo &#39;&lt;br&gt;&#39;;
+    echo &#39;检测数组中是否存在key：&#39;.array_key_exists(&#39;username&#39;,$array);
+    echo &#39;&lt;br&gt;&#39;;
+</code></pre>
+<h4 id="6-9-">6.9、应用实例</h4>
+<p>1、用户登录  </p>
+<pre><code class="lang-html">    &lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;用户：&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;密码：&lt;/label&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+</code></pre>
+<pre><code class="lang-php">&lt;?php
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+    /*数据库当中的数据*/
+    $userInfo = array(
+        &#39;username&#39;=&gt;&#39;itcast&#39;,
+        &#39;password&#39;=&gt;&#39;123456&#39;
+    );
+
+    /*拿到提交过来的数据*/
+    $username = $_POST[&#39;username&#39;];
+    $password = $_POST[&#39;password&#39;];
+
+    /*去匹配数据库当中的数据*/
+    if($userInfo[&#39;username&#39;] == $username &amp;&amp; $userInfo[&#39;password&#39;] == $password){
+        header(&#39;refresh:0;url=jdMsite/&#39;);
+    }else{
+        header(&#39;refresh:0;url=login.html&#39;);
+    }
+?&gt;
+</code></pre>
+<p>2、动态网站   </p>
+<p><strong>京东首页</strong></p>
+<pre><code class="lang-php">    &lt;?php
+        header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+        $product_list = array(
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail01.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;15.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;19.00&#39;
+            ),
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail02.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;133.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;234.00&#39;
+            ),
+            array(
+            &#39;imgUrl&#39;=&gt;&#39;images/detail01.jpg&#39;,
+            &#39;newPrice&#39;=&gt;&#39;340.00&#39;,
+            &#39;oldPrice&#39;=&gt;&#39;1432.00&#39;
+            )
+        );
+
+        include &#39;index.html&#39;;
+    ?&gt;
+</code></pre>
+<pre><code class="lang-php">    &lt;!--掌上秒杀的内容是会更新的而且是后台更新--&gt;
+    &lt;ul class=&quot;sk_product&quot;&gt;
+        &lt;?php foreach($product_list as $key =&gt; $val){ ?&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;&lt;?php echo $val[&#39;imgUrl&#39;] ?&gt;&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;
+                &lt;p class=&quot;new_price&quot;&gt;&amp;yen;&lt;?php echo $val[&#39;newPrice&#39;] ?&gt;&lt;/p&gt;
+                &lt;p class=&quot;old_price&quot;&gt;&amp;yen;&lt;?php echo $val[&#39;oldPrice&#39;] ?&gt;&lt;/p&gt;
+            &lt;/li&gt;
+        &lt;?php } ?&gt;
+    &lt;/ul&gt;
+</code></pre>
+<p><strong>京东分类</strong></p>
+<pre><code class="lang-php">&lt;?php
+    header(&#39;Content-Type:text/html; charset=utf-8&#39;);
+
+    $category = array(
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+        &#39;品牌男装&#39;,
+        &#39;内衣配饰&#39;,
+        &#39;家用电器&#39;,
+        &#39;电脑办公&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;图书&#39;,
+        &#39;家居家纺&#39;,
+        &#39;居家生活&#39;,
+        &#39;家具建材&#39;,
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+        &#39;品牌男装&#39;,
+        &#39;内衣配饰&#39;,
+        &#39;家用电器&#39;,
+        &#39;电脑办公&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;居家生活&#39;,
+        &#39;手机数码&#39;,
+        &#39;母婴频道&#39;,
+        &#39;图书&#39;,
+        &#39;家居家纺&#39;,
+        &#39;居家生活&#39;,
+        &#39;潮流女装&#39;,
+        &#39;家具建材&#39;,
+        &#39;热门推荐&#39;,
+        &#39;潮流女装&#39;,
+    );
+
+    //echo count($category);
+
+    include &#39;category.html&#39;;
+?&gt;
+</code></pre>
+<pre><code class="lang-php">    &lt;!--左侧分类--&gt;
+    &lt;div class=&quot;jd_cate_left&quot;&gt;
+        &lt;ul&gt;
+            &lt;?php foreach($category as $key=&gt;$val){ ?&gt;
+                &lt;li class=&quot;&lt;?php echo $key==1?&#39;now&#39;:&#39;&#39; ?&gt;&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;?php echo $val ?&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;?php } ?&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+<h2 id="7-">7、网络传输协议</h2>
+<h4 id="7-1-">7.1、常见协议</h4>
+<p>1、HTTP、HTTPS 超文本传输协议 </p>
+<p>2、FTP 文件传输协议</p>
+<p>3、SMTP 简单邮件传输协议</p>
+<h4 id="7-2-http-">7.2、http协议</h4>
+<p>超文本传输协议（HTTP，HyperText Transfer Protocol) 网站是基于HTTP协议的，
+例如网站的图片、CSS、JS等都是基于HTTP协议进行传输的。</p>
+<p>HTML  Hypertext Markup Language</p>
+<p>HTTP协议是由从客户机到服务器的请求(Request)和从服务器到客户机的响应(Response)进行了约束和规范。</p>
+<p>即HTTP协议主要由请求和响应构成。</p>
+<p><img src="m_13.png" alt=""></p>
+<p>常用请求方法 <strong>POST</strong>、<strong>GET</strong>、PUT、DELETE</p>
+<p>我们通过浏览器插件 FireFox httpFox  调试。ctrl shift f2 调用</p>
+<h5 id="7-2-1-">7.2.1、请求和请求报文</h5>
+<p>请求由客户端发起，其规范格式为：请求行、请求头、请求主体。</p>
+<ul>
+<li><strong>1、请求行</strong></li>
+</ul>
+<p>由请求方式、请求URL和协议版本构成</p>
+<pre><code>GET /day01/code/login.php?username=123&amp;password=123 HTTP/1.1
+
+POST /day01/code/login.php HTTP/1.1
+</code></pre><ul>
+<li><strong>2、请求头</strong></li>
+</ul>
+<p>Host：localhost请求的主机</p>
+<p>Cache-Control：max-age=0控制缓存</p>
+<p>Accept：<em>/</em> 接受的文档MIME类型</p>
+<p>User-Agent：很重要</p>
+<p>Referer：从哪个URL跳转过来的</p>
+<p>Accept-Encoding：可接受的压缩格式</p>
+<p>If-None-Match：记录服务器响应的ETag值，用于控制缓存</p>
+<p>此值是由服务器自动生成的</p>
+<p>If-Modified-Since：记录服务器响应的Last-Modified值</p>
+<p>此值是由服务器自动生成的</p>
+<ul>
+<li><strong>3、请求主体</strong></li>
+</ul>
+<p>即传递给服务端的数据</p>
+<p>注：当以post形式提交表单的时候，请求头里会设置</p>
+<p>Content-Type: application/x-www-form-urlencoded，以get形式当不需要</p>
+<h5 id="7-2-2-">7.2.2、 响应和响应报文</h5>
+<p>响应由服务器发出，其规范格式为：状态行、响应头、响应主体。</p>
+<ul>
+<li><strong>1、状态行</strong></li>
+</ul>
+<p>由协议版本号、状态码和状态信息构成
+    HTTP/1.1 200 OK</p>
+<ul>
+<li><strong>2、响应头</strong></li>
+</ul>
+<p>Date：响应时间</p>
+<p>Server：服务器信息</p>
+<p>Last-Modified：资源最后修改时间 由服务器自动生成</p>
+<p>ETag：资源修改后生成的唯一标识</p>
+<p>由服务器自动生成</p>
+<p>Content-Length：响应主体长度</p>
+<p>Content-Type：响应资源的类型</p>
+<ul>
+<li><strong>3、响应主体</strong></li>
+</ul>
+<p>即服务端返回给客户端的内容；</p>
+<ul>
+<li>状态码</li>
+</ul>
+<p>常见的有200代表成功、304文档未修改、403没有权限、404未找到、500服务器错误</p>
+<p><img src="get请求.png" alt="">
+<img src="post请求.png" alt=""></p>
+<h2 id="8-ajax-">8、AJAX编程</h2>
+<blockquote>
+<p>即 Asynchronous [e&#39;sɪŋkrənəs] Javascript And XML，
+AJAX 不是一门的新的语言，而是对现有技术的综合利用。
+本质是在HTTP协议的基础上以异步的方式与服务器进行通信。</p>
+</blockquote>
+<h4 id="8-1-">8.1、 异步</h4>
+<p>指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。</p>
+<p><strong>其优势在于不阻塞程序的执行，从而提升整体执行效率。</strong></p>
+<p>XMLHttpRequest可以以异步方式的处理程序。</p>
+<h4 id="8-2-xmlhttprequest">8.2、 XMLHttpRequest</h4>
+<p>浏览器内建对象，用于在后台与服务器通信(交换数据) ，
+由此我们便可实现对网页的部分更新，而不是刷新整个页面。</p>
+<pre><code class="lang-javascript">    /*js 内置的 http 请求对象  XMLHttpRequest*/
+
+    /*1.怎么使用 这个内置对象*/
+    var xhr = new XMLHttpRequest;
+
+    /*2.怎么样去组请求*/
+    /*请求的行*/
+    xhr.open(&#39;post&#39;,&#39;01.php&#39;);
+
+    /*请求头*/
+    //get  没有必要设置
+    //post 必须设置 Content-Type: application/x-www-form-urlencoded
+    xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
+
+    /*请内容*/
+    /*3.发送请求*/
+    xhr.send(&quot;name=xjj&amp;age=10&quot;);
+</code></pre>
+<h5 id="8-2-1-">8.2.1、请求</h5>
+<p>HTTP请求3个组成部分与XMLHttpRequest方法的对应关系</p>
+<p>1、请求行</p>
+<pre><code>xhr.open(&#39;post&#39;,&#39;01.php&#39;);
+</code></pre><p>2、请求头</p>
+<pre><code>xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
+get请求可以不设置
+</code></pre><p>3、请求主体</p>
+<pre><code>xhr.send(&quot;name=xjj&amp;age=10&quot;);
+get可以传空
+</code></pre><p><strong>注意书写顺序</strong></p>
+<h5 id="8-2-2-">8.2.2、响应</h5>
+<p>HTTP响应是由服务端发出的，作为客户端更应关心的是响应的结果。</p>
+<p>HTTP响应3个组成部分与XMLHttpRequest方法或属性的对应关系。</p>
+<p>由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理。</p>
+<pre><code class="lang-javascript">    if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
+        console.log(&#39;ok&#39;);
+        console.log(xhr.responseText);
+        /*把内容渲染在页面当中*/
+        document.querySelector(&#39;#result&#39;).innerHTML = xhr.responseText;
+    }
+</code></pre>
+<pre><code>**readyState**
+0：请求未初始化（还没有调用 open()）。  
+1：请求已经建立，但是还没有发送（还没有调用 send()）。  
+2：请求已发送，正在处理中（通常现在可以从响应中获取内容头）。  
+3：请求在处理中；通常响应中已有部分数据可用了，但是服务器还没有完成响应的生成。  
+4：响应已完成；您可以获取并使用服务器的响应了。
+</code></pre><p>onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态</p>
+<p>1、获取状态行（包括状态码&amp;状态信息）</p>
+<pre><code>xhr.status 状态码
+
+xhr.statusText 状态码信息
+</code></pre><p>2、获取响应头</p>
+<pre><code>xhr.getResponseHeader(&#39;Content-Type&#39;);
+xhr.getAllResponseHeaders();
+</code></pre><p>3、响应主体  </p>
+<pre><code>xhr.responseText
+xhr.responseXML
+</code></pre><p>我们需要检测并判断响应头的MIME类型后确定使用request.responseText或者request.responseXML</p>
+<h5 id="8-3-3-api-">8.3.3、API详解</h5>
+<pre><code>xhr.open() 发起请求，可以是get、post方式
+xhr.setRequestHeader() 设置请求头
+xhr.send() 发送请求主体get方式使用xhr.send(null)
+xhr.onreadystatechange = function () {} 监听响应状态
+xhr.status表示响应码，如200
+xhr.statusText表示响应信息，如OK
+xhr.getAllResponseHeaders() 获取全部响应头信息
+xhr.getResponseHeader(&#39;key&#39;) 获取指定头信息
+xhr.responseText、xhr.responseXML都表示响应主体
+</code></pre><p> 注：GET和POST请求方式的差异（面试题）</p>
+<p> 1、GET没有请求主体，使用xhr.send(null)</p>
+<p> 2、GET可以通过在请求URL上添加请求参数</p>
+<p> 3、POST可以通过xhr.send(&#39;name=itcast&amp;age=10&#39;)</p>
+<p> 4、POST需要设置</p>
+<p> 5、GET效率更好（应用多）</p>
+<p> 6、GET大小限制约4K，POST则没有限制</p>
+<p> 问题？如何获取复杂数据呢？</p>
+<h5 id="8-3-3-api-">8.4.4、响应状态(304,200,404等)</h5>
+<a href="status.txt">状态码对应解释</a>
+<h4 id="8-3-xml">8.3、 XML</h4>
+<p>1、必须有一个根元素<br>2、不可有空格、不可以数字或.开头、大小写敏感<br>3、不可交叉嵌套<br>4、属性双引号（浏览器自动修正成双引号了）<br>5、特殊符号要使用实体<br>6、注释和HTML一样<br>虽然可以描述和传输复杂数据，但是其解析过于复杂并且体积较大，所以实现开发已经很少使用了。</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;root&gt;
+    &lt;arrayList&gt;
+        &lt;array&gt;
+            &lt;src&gt;images/banner.jpg&lt;/src&gt;
+            &lt;newPirce&gt;12.00&lt;/newPirce&gt;
+            &lt;oldPrice&gt;30.00&lt;/oldPrice&gt;
+        &lt;/array&gt;
+        &lt;array&gt;
+            &lt;src&gt;images/banner.jpg&lt;/src&gt;
+            &lt;newPirce&gt;12.00&lt;/newPirce&gt;
+            &lt;oldPrice&gt;30.00&lt;/oldPrice&gt;
+        &lt;/array&gt;
+    &lt;/arrayList&gt;
+&lt;/root&gt;
+</code></pre>
+<pre><code class="lang-php">&lt;?php 
+    header(&#39;Content-Type:text/xml;charset=utf-8&#39;);
+    /*以xml格式传输数据的时候要求响应内容格式是   text/xml*/
+
+    /*file_get_contents 获取文件内容*/
+    $xml = file_get_contents(&#39;01.xml&#39;);
+
+    /*输出xml内容*/
+    echo $xml;
+?&gt;
+</code></pre>
+<pre><code class="lang-javascript">var xhr = new XMLHttpRequest;
+xhr.open(&#39;get&#39;,&#39;01.php&#39;);
+xhr.send(null);
+xhr.onreadystatechange = function(){
+    if(xhr.status == 200 &amp;&amp; xhr.readyState == 4){
+        /*获取到XML格式内容  放回的是DOM对象  document*/
+        var xml = xhr.responseXML;
+        /*通过选着器可以获取到xml的数据*/
+        console.log(xml.querySelectorAll(&#39;array&#39;)[0].querySelector(&#39;src&#39;).innerHTML);
+    }
+}
+</code></pre>
+<h4 id="8-4-json">8.4、 JSON</h4>
+<p>即 JavaScript Object Notation，另一种轻量级的文本数据交换格式，独立于语言。</p>
+<p>1、数据在名称/值对中<br>2、数据由逗号分隔(最后一个健/值对不能带逗号)<br>3、花括号保存对象方括号保存数组<br>4、使用双引号  </p>
+<pre><code class="lang-JSON">[
+  {&quot;src&quot;:&quot;images/detail01.jpg&quot;,&quot;oldPrice&quot;:&quot;10.12&quot;,&quot;newPrice&quot;:&quot;130.00&quot;},
+  {&quot;src&quot;:&quot;images/detail02.jpg&quot;,&quot;oldPrice&quot;:&quot;1.00&quot;,&quot;newPrice&quot;:&quot;11.00&quot;},
+  {&quot;src&quot;:&quot;images/detail03.jpg&quot;,&quot;oldPrice&quot;:&quot;100.00&quot;,&quot;newPrice&quot;:&quot;1000.00&quot;}
+]
+</code></pre>
+<p>JSON数据在不同语言进行传输时，类型为字符串，不同的语言各自也都对应有解析方法，需要解析完成后才能读取</p>
+<p><strong>1、PHP解析方法</strong><br>json_encode()、json_decode()  </p>
+<pre><code class="lang-PHP">&lt;?php 
+    header(&#39;Content-Type:text/html;charset=utf-8&#39;);
+    /*以json格式传输数据的时候要求响应内容格式是   application/json*/
+    /*注意也可以不设置  但是这遵循的一个规范*/
+
+    /*file_get_contents 获取文件内容*/
+    $json = file_get_contents(&#39;01.json&#39;);
+
+    /*输出json内容*/
+    echo $json;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+
+    $array = array(
+        array(&#39;src&#39;=&gt;&#39;images/detail01.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;12.00&#39;,&#39;oldPrice&#39;=&gt;&#39;455.00&#39;),
+        array(&#39;src&#39;=&gt;&#39;images/detail02.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;65.00&#39;,&#39;oldPrice&#39;=&gt;&#39;878.00&#39;),
+        array( &#39;src&#39;=&gt;&#39;images/detail01.jpg&#39;,&#39;newPrice&#39;=&gt;&#39;100.00&#39;,&#39;oldPrice&#39;=&gt;&#39;1000.00&#39;)
+    );
+
+    /*将php数组转化成json字符*/
+    $json_array = json_encode($array);
+    echo $json_array;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+
+    /*将json字符转化成php数组*/
+    $array_json = json_decode($json_array);
+    echo $array_json;
+    echo &#39;&lt;br&gt;&lt;br&gt;&#39;;
+?&gt;
+</code></pre>
+<p><strong>1、Javascript 解析方法</strong><br>JSON对象  JSON.parse()、JSON.stringify()；<br>JSON兼容处理json2.js<br>总结：JSON体积小、解析方便且高效，在实际开发成为首选。</p>
+<pre><code class="lang-javascript">    var xhr = new XMLHttpRequest;
+    xhr.open(&#39;get&#39;,&#39;01.php&#39;);
+    xhr.send(null);
+    xhr.onreadystatechange = function(){
+        if(xhr.status == 200 &amp;&amp; xhr.readyState == 4){
+            /*获取仅仅是字符串*/
+            var text = xhr.responseText;
+
+            /*需要把字符串转化成JSON对象*/
+            var json_obj = JSON.parse(text);
+            console.log(json_obj);
+
+            /*我们也可以把JSON对象转化成字符串*/
+            var json_str = JSON.stringify(json_obj);
+            console.log(json_str);
+        }
+    }
+</code></pre>
+<h4 id="8-5-">8.5、 兼容性</h4>
+<p><strong>关于IE的兼容方面，了解即可。</strong></p>
+<pre><code class="lang-javascript">    function XHR() {
+        var xhr;
+        try {
+            xhr = new XMLHttpRequest();
+        }
+        /*如果 try内的程序运行错误  抛出异常  捕捉异常  上面程序当中运行的错误*/
+        catch(e) {
+            /*在不同的IE版本下初始  ActiveXObject  需要传入的标识*/
+            var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];
+
+            for (var i=0;i&lt;IEXHRVers.length;i++) {
+                try {
+                    xhr = new ActiveXObject(IEXHRVers[i]);
+                }
+                catch(e) {
+                    /*如果出现错误的时候  停止当次的循环*/
+                    continue;
+                }
+            }
+        }
+        return xhr;
+    }
+</code></pre>
+<h4 id="8-6-ajax-">8.6、 封装ajax工具函数</h4>
+<pre><code class="lang-javascript">/**
+ * ITCAST WEB
+ * Created by zhousg on 2016/5/24.
+ */
+/*
+ * 1. 请求的类型                type    get post
+ * 2. 请求地址                  url
+ * 3. 是异步的还是同步的         async   false true
+ * 4. 请求内容的格式            contentType
+ * 5. 传输的数据                data    json对象
+ *
+ * 6.响应成功处理函数           success   function
+ * 7.响应失败的处理函数         error     function
+ *
+ * 这些都是动态参数  参数对象  options
+ * */
+
+/*封装一个函数*/
+window.$ = {};
+/*申明一个ajax的方法*/
+$.ajax = function(options){
+
+    if(!options || typeof options != &#39;object&#39;){
+        return false;
+    }
+
+    /*请求的类型*/
+    var type = options.type || &#39;get&#39;;/*默认get*/
+    /*请求地址 */
+    var url = options.url || location.pathname;/*当前的地址*/
+    /*是异步的还是同步的 */
+    var async = (options.async === false)?false:true;/*默认异步*/
+    /*请求内容的格式 */
+    var contentType = options.contentType || &quot;text/html&quot;;
+
+    /*传输的数据 */
+    var data = options.data || {};/*｛name:&#39;&#39;,age:&#39;&#39;｝*/
+    /*在提交的时候需要转成 name=xjj 这种格式*/
+
+    var dataStr = &#39;&#39;/*数据字符串*/
+
+    for(var key in data){
+        dataStr += key+&#39;=&#39;+data[key]+&#39;&amp;&#39;;
+    }
+
+    dataStr = dataStr &amp;&amp; dataStr.slice(0,-1);
+
+    /*ajax 编程*/
+    var xhr = new XMLHttpRequest();
+
+    /*请求行*/
+    /*(type==&#39;get&#39;?url+&#39;?&#39;+dataStr:url)判断当前的请求类型*/
+    xhr.open(type,(type==&#39;get&#39;?url+&#39;?&#39;+dataStr:url),async);
+
+    /*请求头*/
+    if(type == &#39;post&#39;){
+        xhr.setRequestHeader(&#39;Content-Type&#39;,&#39;application/x-www-form-urlencoded&#39;);
+    }
+
+    /*请求主体*/
+    /*需要判断请求类型*/
+    xhr.send(type==&#39;get&#39;?null:dataStr);
+
+    /*监听响应状态的改变  响应状态*/
+    xhr.onreadystatechange = function(){
+        /*请求响应完成并且成功*/
+        if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
+            /*success*/
+            var data = &#39;&#39;;
+            var contentType = xhr.getResponseHeader(&#39;Content-Type&#39;);
+            /*如果我们服务器返回的是xml*/
+            if(contentType.indexOf(&#39;xml&#39;) &gt; -1){
+                data = xhr.responseXML;
+            }
+            /*如果我们的服务器返回的是json字符串*/
+            else if(contentType.indexOf(&#39;json&#39;) &gt; -1){
+                /*转化json对象*/
+                data = JSON.parse(xhr.responseText);
+            }
+            /*否则的话他就是字符串*/
+            else{
+                data = xhr.responseText;
+            }
+
+            /*回调 成功处理函数*/
+
+            options.success &amp;&amp; options.success(data);
+        }
+        /*计时请求xhr.status不成功  他也需要的响应完成才认作是一个错误的请求*/
+        else if(xhr.readyState == 4){
+            /*error*/
+            options.error &amp;&amp; options.error(&#39;you request fail !&#39;);
+
+        }
+
+    }
+}
+$.post = function(options){
+    options.type = &#39;post&#39;;
+    $.ajax(options);
+}
+$.get = function(options){
+    options.type = &#39;get&#39;;
+    $.ajax(options);
+}
+</code></pre>
+<h4 id="8-7-jquery-ajax">8.7、 jquery的ajax</h4>
+<ul>
+<li>jQuery为我们提供了更强大的Ajax封装</li>
+<li>$.ajax({}) 可配置方式发起Ajax请求</li>
+<li>$.get() 以GET方式发起Ajax请求</li>
+<li>$.post() 以POST方式发起Ajax请求</li>
+<li>$(&#39;form&#39;).serialize() 序列化表单（即格式化key=val&amp;key=val）</li>
+<li>url 接口地址</li>
+<li>type 请求方式</li>
+<li>timeout 请求超时</li>
+<li>dataType 服务器返回格式</li>
+<li>data 发送请求数据</li>
+<li>beforeSend: function () {} 请求发起前调用</li>
+<li>success 成功响应后调用</li>
+<li>error 错误响应时调用</li>
+<li>complete 响应完成时调用（包括成功和失败）</li>
+<li>jQuery Ajax介绍</li>
+<li><a href="http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp">http://www.w3school.com.cn/jquery/jquery_ref_ajax.asp</a></li>
+</ul>
+<h4 id="8-8-">8.8、 案例练习</h4>
+<p>1、Loading状态<br>2、禁止重复提交<br>3、表单处理<br>4、数据验证<br>接口化开发<br>请求地址即所谓的接口，通常我们所说的接口化开发，其实是指一个接口对应一个功能，
+并且严格约束了请求参数和响应结果的格式，这样前后端在开发过程中，可以减少不必要的讨论，
+从而并行开发，可以极大的提升开发效率，另外一个好处，当网站进行改版后，服务端接口只需要进行微调。</p>
+<p><strong>具体参考代码</strong></p>
+<h2 id="9-">9、模版引擎</h2>
+<h4 id="9-2-arttemplate-">9.2、 artTemplate 简介语法模板</h4>
+<pre><code class="lang-HTML">&lt;script src=&quot;dist/template.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>下载(<a href="https://raw.github.com/aui/artTemplate/master/dist/template.js">https://raw.github.com/aui/artTemplate/master/dist/template.js</a>)</p>
+<p>编写模版</p>
+<pre><code>&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;
+&lt;h1&gt;{{title}}&lt;/h1&gt;
+&lt;ul&gt;
+    {{each list as value i}}
+        &lt;li&gt;索引 {{i + 1}} ：{{value}}&lt;/li&gt;
+    {{/each}}
+&lt;/ul&gt;
+&lt;/script&gt;
+</code></pre><p>渲染数据</p>
+<pre><code>var data = {
+    title: &#39;标签&#39;,
+    list: [&#39;文艺&#39;, &#39;博客&#39;, &#39;摄影&#39;, &#39;电影&#39;, &#39;民谣&#39;, &#39;旅行&#39;, &#39;吉他&#39;]
+};
+var html = template(&#39;test&#39;, data);
+document.getElementById(&#39;content&#39;).innerHTML = html;
+</code></pre><p>简介语法    </p>
+<pre><code>1.{{ 书写简介语法 }}
+2.{{each list}} {{/each}} $index默认的索引  $value 默认的索引对应的对象
+3.{{each list as item i }} item 默认的索引对应的对象 i默认的索引
+5.导入模版  {{ include 'other'}}  最后的}}之前不能有空格
+{{if admin}}
+    {{include &#39;admin_content&#39;}}
+
+    {{each list}}
+        &lt;div&gt;{{$index}}. {{$value.user}}&lt;/div&gt;
+    {{/each}}
+{{/if}}
+</code></pre><h4 id="9-1-arttemplate-js-">9.1、 artTemplate 原生 js 模板语法版</h4>
+<p><strong>使用</strong></p>
+<p>在页面中引用模板引擎：</p>
+<pre>
+<code class="lang-HTML">&lt;script src=&quot;dist/template-native.js&quot;&gt;&lt;/script&gt;
+</code>1.下载模版引擎
+2. template-native.js     template.js
+3. 有两种语法   原生语法   简洁语法
+4. 学习原生的语法
+5. js/template-native.js
+6. 准备数据
+7. 准备模版
+7.1 是script标签但是type是  text/html text/template  认为这个标签是一个模版标签
+7.2 不会执行 仅仅只是字符串  不会显示在页面当中
+7.3 当js调用template('模版ID','必须对象'); 使用对象当中的属性当中变量 ｛arr:data｝ 
+var arr = data; var console = console;
+7.4 这变量可以在模版当中使用 模版当中可以使用js语法
+7.5 语法必须写在 <% 书写js语法 %>
+7.6 <%= %> 输出数据
+8. 需要注意：
+8.1 模版内无法使用全局变量
+8.2 解决方案1:当作数据传入进去  template('template',{arr:data,console:console,$:jQuery});
+8.3 解决方案2:template.helper('getJquery',function () {return jQuery;});
+9.需要注意：
+9.1 模版内存在xss(跨域脚本攻击)攻击
+9.2 网页当存在一些不安全的脚本能执行影响用户体验
+9.3 <%= %> 输出数据   就是纯文本  不会执行
+9.3 <%=# %> 输出数据   就是html  会执行
+10.需要注意：
+10.1 可以使用分支语句
+11.需要注意：
+11.可以导入其他模版 <% include('other',{len:arr.length}) %>
+
+把数据转化成html格式的字符串
+使用模版引擎完成
+1.准备模版
+2.调用模版引擎方法
+参数1 模版的ID   参数2 需要转换的数据 (必须传入对象) 
+var html = template('template',{arr:data,console:console,$:jQuery});
+</pre>
+<p>下载(<a href="https://raw.github.com/aui/artTemplate/master/dist/template-native.js">https://raw.github.com/aui/artTemplate/master/dist/template-native.js</a>)</p>
+<p><strong>表达式</strong></p>
+<pre><code>&lt;% 与 %&gt; 符号包裹起来的语句则为模板的逻辑表达式。
+</code></pre><p><strong>输出表达式</strong></p>
+<p>对内容编码输出：</p>
+<pre><code>&lt;%=content%&gt;
+</code></pre><p>不编码输出：</p>
+<pre><code>&lt;%=#content%&gt;
+</code></pre><p>编码可以防止数据中含有 HTML 字符串，避免引起 XSS 攻击。</p>
+<p><strong>逻辑</strong></p>
+<p>支持使用 js 原生语法</p>
+<pre><code>&lt;h1&gt;&lt;%=title%&gt;&lt;/h1&gt;
+&lt;ul&gt;
+    &lt;%for(i = 0; i &lt; list.length; i ++) {%&gt;
+        &lt;li&gt;条目内容 &lt;%=i + 1%&gt; ：&lt;%=list[i]%&gt;&lt;/li&gt;
+    &lt;%}%&gt;
+&lt;/ul&gt;
+</code></pre><p>模板不能访问全局对象，公用的方法请参见文档 辅助方法 章节
+模板包含表达式</p>
+<p>用于嵌入子模板。</p>
+<pre><code>&lt;% include(&#39;template_name&#39;) %&gt;
+</code></pre><p>子模板默认共享当前数据，亦可以指定数据：</p>
+<pre><code>&lt;% include(&#39;template_name&#39;, news_list) %&gt;
+</code></pre><p>辅助方法</p>
+<p>使用template.helper(name, callback)注册公用辅助方法，例如一个基本的 UBB 替换方法：</p>
+<pre><code>template.helper(&#39;$ubb2html&#39;, function (content) {
+    // 处理字符串...
+    return content;
+});
+</code></pre><p>模板中使用的方式：</p>
+<pre><code>&lt;% $ubb2html(content) %&gt;
+</code></pre><h2 id="10-">10、同源&amp;跨域</h2>
+<p>####10.1    同源</p>
+<p>同源策略是浏览器的一种安全策略，所谓同源是指，域名，协议，端口完全相同。</p>
+<p>####10.2    跨域</p>
+<p>不同源则跨域
+例如<a href="http://www.example.com/">http://www.example.com/</a></p>
+<pre><code>http://api.example.com/detail.html  不同源 域名不同  
+https//www.example.com/detail.html   不同源 协议不同  
+http://www.example.com:8080/detail.html    不同源    端口不同  
+http://api.example.com:8080/detail.html    不同源    域名、端口不同  
+https://api.example.com/detail.html    不同源    协议、域名不同  
+https://www.example.com:8080/detail.html    不同源    端口、协议不同  
+http://www.example.com/detail/index.html    同源    只是目录不同  
+</code></pre><p>####10.3    跨域方案（课外拓展）</p>
+<p>1、顶级域名相同的可以通过domain.name来解决，即同时设置 domain.name = 顶级域名（如example.com）<br>
+2、document.domain + iframe <br>
+3、window.name + iframe 父窗体获取子窗体的值（跨域，顶级域名不限）
+<ul><li>给子窗体的 window.name赋值</li>
+<li>修改主窗体src指向：document.querySelector("iframe").onload = function () {
+        this.src = 'proxy.html';
+        this.onload = null;
+    };原理应该是把src修改到和父窗体同域名下的页面，可以访问window.name，但窗体已经按原来的路径加载完成了</li>
+<li>在点击事件的代码里取值iframe.contentWindow.name，不能在window.onload是因为无法判断子窗体的onload事件是否加载完</li></ul><br>
+4、location.hash + iframe 子窗体获取主窗体的值 &lt;iframe id="iframe" src="http://api.study.com/hash.html#name|laow" frameborder="0" &gt;&lt;/iframe&gt; <br>
+哈希方法本质上就是在子窗体中获取url后面的瞄点（id）<br>
+5、window.postMessage() 父窗体给子窗体传值<ul><li>向哪个域下传值 iframe.onload = function () {document.querySelector('iframe').contentWindow.postMessage('red', 'http://api.study.com');}</li>
+<li>子窗体取值window.addEventListener('message', function(ev) {
+            document.getElementById('txt').style.color = ev.data;
+        });</li></ul><br>
+        6.代理服务，b页面不可控情况下使用，本质是a页面发请求到代理服务器，代理服务器在拿到b页面返回给a <br>
+    7.iframe 父窗口访问子窗口iframe.contentWindow.document；子窗体访问父窗体top.document </p>
+
+<p>参考资料
+<a href="http://rickgray.me/2015/09/03/solutions-to-cross-domain-in-browser.html">http://rickgray.me/2015/09/03/solutions-to-cross-domain-in-browser.html</a></p>
+<h4 id="10-4-jsonp">10.4、 jsonp</h4>
+<blockquote>
+<p>JSON with Padding</p>
+</blockquote>
+<p><strong>1、原理剖析</strong></p>
+<p>其本质是利用了<script src=""></script>标签具有可跨域的特性，
+由服务端返回一个预先定义好的Javascript函数的调用，并且将服务器数据以该函数参数的形式传递过来，
+此方法需要前后端配合完成。</p>
+<pre><code>&lt;!--
+当我们用script标签去加载的时候  会把内容解析成js去执行
+--&gt;
+&lt;script&gt;
+    function fuc(data){
+        console.log(data.name);
+    }
+&lt;/script&gt;
+&lt;script src=&quot;http://www.guangzhou.com/api.php?callback=fuc&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h4 id="10-4-jsonp">10.5、 cors</h4>
+<pre><code>
+    /*允许跨域请求访问*/
+    /*cors在移动终端支持的不错，可以考虑在移动端全面尝试*/
+    /*PC上有不兼容和没有完美支持，所以小心踩坑*/
+    /*jsonp是get形式，承载的信息量有限，所以信息量较大时CORS是不二选择*/
+
+
+    /*post 跨域 */
+
+    /*header('Access-Control-Allow-Origin:*');*/
+
+    /*header('Access-Control-Allow-Origin:http://www.study.com');*/
+    /*可以支持指定多个，实现思路是获取到访问的url进行判断，返回对应的请求头*/
+</code></pre>
+<h2 id="11-">11、综合案例</h2>
+<h4 id="11-1-">11.1、瀑布流案例（必须掌握）</h4>
+<h4 id="11-2-">11.2、天气接口（必须掌握）</h4>
+<p>接口地址
+<a href="http://developer.baidu.com/map/carapi-7.htm">http://developer.baidu.com/map/carapi-7.htm</a></p>
+<pre><code>url: &#39;http://api.map.baidu.com/telematics/v3/weather?output=json&amp;ak=0A5bc3c4fb543c8f9bc54b77bc155724&#39;,
+</code></pre><p><img src="jk.png" alt=""></p>
+<h4 id="11-3-">11.3、省级联动（课外拓展）</h4>
+<p>接口地址
+<a href="http://api.jisuapi.com">http://api.jisuapi.com/area/query</a></p>
+<p><img src="../m_15.png" alt=""></p>
+<h4 id="11-5-">11.4、bootstrap框架和基于该框架的分页插件（课外拓展）</h4>
+<p>增删改查后台列表页练习和mysql数据库管理软件的安装</p>
+<p>分页插件bootstrap-paginator.js</p>
+<h4 id="11-5-">11.5、异步文件上传插件（课外拓展）</h4>
+
+<p><img src="../m_16.png" alt=""></p>
+<p><img src="../m_17.png" alt=""></p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>点击</div>
+    <div>点击</div>
+    <div>点击</div>
+    <div>点击</div>
+
+    <script>
+        //   var hanoi=function(disc,src,aux,dst){
+        //       if(disc>0){
+        //           hanoi(disc-1,src,dst,aux);
+        //           document.writeln("Move disc "+disc+"from "
+        //           +src+' to ' +dst+"-----------------------");
+        //           hanoi(disc-1,aux,src,dst);
+        //       }
+        //   }
+        //   hanoi(3,"大","中","小");
+
+        // var walk_the_DOM=function walk(node,func){
+        //     func(node);
+        //     node=node.firstChild;
+        //     while(node){
+        //         walk(node,func);
+        //         node=node.nextSibling;
+        //     }
+        // }
+
+        // var getElementsByAttribute=function(att,value){
+        //     var result=[];
+        //     walk_the_DOM(document.body,function(node){
+        //         var actual=node.nodeType===1&&node.getAttribute(att);
+        //         if(typeof actual==="string"&&(actual===value||typeof value
+        //         !=='string')){
+        //             result.push(node);
+        //         }
+        //     })
+        //     return result;
+        // }
+
+
+        // var btn = document.querySelectorAll("div");
+
+
+        Function.prototype.method = function (name, func) {
+            if (!this.prototype[name]) {
+                this.prototype[name] = func;
+                return this;
+            }
+
+        }
+
+        // String.method('deentityify', function () {
+        //     var entity = {
+        //         quot: '"',
+        //         lt: "<",
+        //         gt: ">"
+        //     }
+        //     return function () {
+        //         return this.replace(/&([^&;]+);/g, function (a, b) {
+        //             var r = entity[b];
+        //             return typeof r === "string" ? r : a;
+        //         })
+        //     }
+        // }());
+
+        // console.log("&lt;&quot;&gt;".deentityify());
+
+    // Function.method('curry',function(){
+    //     var slice=Array.prototype.slice,
+    //     args=slice.apply(arguments),
+    //     that=this;
+    //     return function(){
+    //         return that.apply(null,args.concat(slice.apply(arguments)));
+    //     }
+    // })
+
+
+    // var memoizer=function(memo,formula){
+    //     var recur=function(n){
+    //         var result=memo[n];
+    //         if(typeof result!=='number'){
+    //             result=formula(recur,n);
+    //             memo[n]=result;
+    //         }
+    //         return result;
+    //     };
+    //     return recur;
+    // }
+    // var factorial=memoizer([1,1],function(recur,n){
+    //       return n*recur(n-1);
+    // })
+    // factorial(5)
+
+//     var mammal=function(spac){
+//         var that={};
+//         that.get_name=function(){
+//             return spac.name;
+//         }
+//         that.says=function(){
+//             return spac.saying||'';
+//         }
+//         return that;
+//     }
+//     var myMammal=mammal({name:'herb'});
+//     var cat=function(spec){
+//         spec.saying=spec.saying||'meow';
+//         var that=mammal(spec);
+//         that.purr=function(n){
+//             var i,s='';
+//             for(var i=0;i<n;i+=1){
+//                 if(s){
+//                     s+='-';
+//                 }
+//                 s+='r';
+//             }
+//             return s;
+//         }
+//         that.get_name=function(){
+//             return that.says()+' '+spec.name+' '+that.says();
+//         }
+//         return that;
+//     }
+//    var myCat=cat({name:'Henrietta'});
+
+//    Object.method('superior',function(name){
+//        var that=this,
+//        //获取父类的同名方法
+//        method=that[name];
+//        return function(){
+//            //返回一个同功能的新方法
+//            return method.apply(that,arguments);
+//        }
+//    })
+//   var coolCat=function(spac){
+//       var that=cat(spac),
+//       //返回一个和父类方法功能一样的新方法。
+//       super_get_name=that.superior('get_name');
+//       that.get_name=function(n){
+//           //在子类的基础上扩展父类的方法。
+//           return 'like '+super_get_name()+' baby';
+//       }
+//       return that;
+//   }
+//  var myCoolCat=coolCat({name:'Bix'});
+//  var name=myCoolCat.get_name();
+//  console.log(name);
+// var eventuality=function(that){
+//     var registry={};
+//     that.fire=function(event){
+//         //在一个对象上触发一个事件，该事件可以是一个包含事件名称的字符串，
+//         //或者是一个拥有包含事件名称的type属性的对象
+//         //通过对on方法注册的事件处理对象中匹配事件名称相同的函数进行调用
+//         var array,func,handler,i,type=typeof event==="sting"?event:event.type;
+//         //如果事件对象中有这个事件，则把事件对应的函数进行循环调用。
+//         if(registry.hasOwnProparty(type)){
+//             array=registry[type];
+//             for(var i=0;i<array.length;i+=1){
+//                 handler=array[i];
+//                 func=handler.method;
+//                 //如果该方法是一个字符串形式的名字，那么寻找到该函数。
+//                 //如果注册事件对应的函数是自身的方法，method参数可以是一个字符串
+//                 if(typeof func==='string'){
+//                     func=this[func];
+//                 }
+//                 func.apply(this,handler.parameters||[event]);
+//             }
+//         }
+//         return this;
+//     }
+//     //type:事件类型 method：方法：parameters方法参数
+//      that.on=function(type,method,parameters){
+//          var handler={
+//              method:method,
+//              parameters:parameters
+//          };
+//          //判断当前对象是否已注册该事件
+//          if(registry.hasOwnProparty(type)){
+//              registry[type].push(handler);
+//          }else{
+//              //没有则添加一个新数组，数组有一个值，为当前事件调用的函数。
+//              registry[type]=[handler];
+//          }
+//          return this;
+//      }
+//      return that;
+
+// }
+//  eventuality(that);
+ function reg(){return /a/;}
+ var x=reg();
+ var y=reg();
+ x.lastIndex=10;
+ console.log(y.lastIndex);
+
+
+
+
+
+
+ var render=template.compile(str);
+ var html=render(dt);
+
+//  或者
+var html= template.render(str,data)
+desp
+    </script>
+</body>
+
+</html>

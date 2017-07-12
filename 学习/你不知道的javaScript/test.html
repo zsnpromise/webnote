@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--<script>
+        function anyncifn(fn){
+            var orig_fn=fn,
+            intv=setTimeout(function(){
+                intv=null;
+                fn&&fn();
+            });
+            fn=null;
+            return function(){
+                //如果调用了定时器则为fase
+                if(intv){
+                    fn=orig_fn.bind.apply(
+                        orig_fn,
+                        [this].concat([].slice.call(arguments))
+                    )
+                }else{
+                    orig_fn.apply(this,arguments);
+                }
+            }
+        }
+        function fn(){
+            console.log("clj");
+        }
+        anyncifn(fn)();
+    </script>-->
+    <script>
+        //     var a;
+        //    function add(xPromise,yPromise){
+        //        return Promise.all([xPromise,yPromise]).then(function(values){
+        //            return values[0]()+values[1]();
+        //        })
+        //    }
+        //    add(function(){return 2;},function(){return a; }).then(function(sum){
+        //         console.log(sum);
+        //    },function(err){console.log(err)});
+        //  setTimeout(function(){
+        //      a=8;
+
+        //  },0);
+        // var p3=new Promise(function(resolve,reject){
+        //     resolve("B");
+        // })
+        // var p1=new Promise(function(resolve,reject){
+        //     resolve(p3);
+        // });
+        // var p2=new Promise(function(resolve,reject){
+        //     resolve("A");
+        // })
+
+        // p1.then(function(V){
+        //     console.log(V);
+        // })
+        // p2.then(function(v){
+        //     console.log(v);
+        // })
+        // function foo() {
+        //     setTimeout(function () {
+        //         console.log("dfsd")
+        //     }, 30000);
+        // }
+        // function timeoutPromise(delay) {
+        //     return new Promise(function (resolve, reject) {
+        //         setTimeout(function () {
+        //             reject("Timeout!")
+        //         }, delay)
+        //     })
+        // }
+        // Promise.race([foo(), timeoutPromise(2000)]).then
+        //     (
+        //     function () {
+        //     foo()
+        //     },
+        //     function (err) {
+        //         console.log(err);
+        //     }
+        //     )
+
+    //   var p =Promise.resolve(12);
+    //   p.then(function(v){
+    //       console.log(v);
+    //       return new Promise(function(resolve,reject){
+    //           setTimeout(function(){
+    //                  resolve(v*2)
+    //           },1000)
+    //       })
+    //     //   return v*3;
+    //   }).then(function(v){
+    //       console.log(v);
+    //   })  
+
+
+    // function delay(time){
+    //     return new Promise(function(resolve,reject){
+    //         setTimeout(function(){
+    //            console.log(time);
+    //            resolve();
+    //         },time)
+    //     })
+    // }
+
+    // delay(200).then(function(){
+    //     console.log("11111");
+    //     return delay(500);
+    // }).then(function(){
+    //     console.log("222222");
+    // }).then(function(){
+    //     console.log("3333333");
+    //     return delay(1000);   
+    // }).then(function(){
+    //     console.log("444444");
+    // })
+    
+    // function ajax(obj){
+    //     var xhr=new XMLHttpRequest();
+    //     xhr.open("get",obj.url);
+    //     xhr.send();
+    //     xhr.onload=function(){
+    //         obj.callBack(xhr.responseText);
+    //     }
+    // }
+    // function proms(obj){
+    //     return new Promise(function(resolve,reject){
+    //          ajax({url:obj.url,callBack:resolve});
+    //     })
+    // }
+    // proms({url:"http://182.254.146.100:3000/api/getcategorytitle"}).then(
+    //     function(dt){
+    //       console.log(dt);
+    //       return proms({url:"http://182.254.146.100:3000/api/getcategory?titleid=0"});
+    //     }
+    // ).then(function(dt){
+    //      console.log(dt);
+    //     tt();
+    //     console.log("dt");
+    // }).then(function(){ console.log("cw") },function(err){console.log(err)});
+    // var p1=proms({url:"http://182.254.146.100:3000/api/getcategory?titleid=0"});
+    // var p2=proms({url:"http://182.254.146.100:3000/api/getcategory?titleid=1"});
+    // Promise.all([p1,p2]).then(function(mesg){
+    //        console.log(mesg);
+    // })
+
+//    function fn(n){if(n==1||n==2){return 1;}else{return fn(n-1)+fn(n-2) } }
+//    less查看文件部分内容 空格查看一页 回车查看一行 b（back）回撤
+//    $ tail -n 5 index.html 
+//    $ tail -f  index.html
+//    cd .. 返回上层目录
+//    ls | grep hi  把上一个输出信息做输入进行筛选输出
+
+    </script>
+    <!--shell 是一种脚本语言，也是一种环境，套在计算机操作系统外的壳子
+    git commit -a -m '备注' //直接从工作区推送到本地仓库，不能提交未跟踪的文件
+    向远程仓库推送代码
+    git init --bare
+    git push 远程仓库地址  本地分支名称:远程分支名称
+    git push https://abc.com  master:abc
+
+    从远程仓库拉取代码
+    git pull 远程仓库地址 远程分支名称:本地分支名称
+    git clone 远程仓库地址  root@180.76.188.62:/root/demo.git   克隆的项目，只要:git pull git push 
+    $ ssh-keygen -t rsa 产生公钥,要一直回车才产生密钥
+    ssh root@127.0.0.1
+
+    git remote
+    git remote show origin
+    git push -u origin 
+
+
+    git branch -a  //所有分支
+    git branch -r //远程分支
+ 
+    git push origin --delete
+    git -->
+
+
+
+<script>
+    function factorial(n){
+        function fact(n,res){
+            if(n<2)return res;
+            return fact(n-1,n*res);
+        };
+        return (n,1);
+    }
+</script>
+
+
+</body>
+
+</html>
