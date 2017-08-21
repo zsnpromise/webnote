@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    markdown-body {
+      padding:20px;
+    }
+    @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  padding: 4%;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-smi,
+.markdown-body .pl-s .pl-s1 {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-s,
+.markdown-body .pl-pds,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-sr .pl-sra {
+  color: #032f62;
+}
+
+.markdown-body .pl-v,
+.markdown-body .pl-smw {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+.markdown-body .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+.markdown-body .pl-c2::before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #22863a;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  font-weight: bold;
+  color: #005cc5;
+}
+
+.markdown-body .pl-mi {
+  font-style: italic;
+  color: #24292e;
+}
+
+.markdown-body .pl-mb {
+  font-weight: bold;
+  color: #24292e;
+}
+
+.markdown-body .pl-md {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+.markdown-body .pl-mi1 {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.markdown-body .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+.markdown-body .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
+}
+
+.markdown-body .pl-mdr {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.markdown-body a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+}
+
+.markdown-body strong {
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body svg:not(:root) {
+  overflow: hidden;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .octicon {
+  vertical-align: text-bottom;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0 !important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px !important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px !important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px !important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px !important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px !important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px !important;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: 0.875em;
+}
+
+.markdown-body h6 {
+  font-size: 0.85em;
+  color: #6a737d;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: 0.25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.markdown-body code::before,
+.markdown-body code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code::before,
+.markdown-body pre code::after {
+  content: normal;
+}
+
+.markdown-body .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.markdown-body :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #0366d6;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+</style>
+</head>
+<body>
+<section class='markdown-body'>
+ <title>node笔记</title>
+
+<h2 id="-node-es6-7-24-">环境配置 基本概念 node基本语法及ES6(7.24)</h2>
+<h4 id="-">环境配置</h4>
+<ol>
+<li>下载：<a href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.6/nvm-noinstall.zip">nvm-windows</a></li>
+<li>解压到一个全英文路径</li>
+<li>在全英文路径下新建 <code>settings.txt</code> 文件，把下面配置考入<pre><code>root: &lt;nvm.exe 所在的目录，例如：C:\Develop\nvm&gt;
+arch: 64
+proxy: none
+originalpath: .
+originalversion:
+node_mirror: https://npm.taobao.org/mirrors/node/
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+</code></pre></li>
+<li>配置环境变量 可以通过 <code>window+r</code> 运行 <code>sysdm.cpl</code><ul>
+<li>环境变量：就是操作系统中定义变量的地方。通过配置允许程序在电脑上可以快捷访问的范围。</li>
+<li><code>NVM_HOME = &lt;当前 nvm.exe 所在目录&gt;</code></li>
+<li><code>NVM_SYMLINK = &lt;node 快捷方式所在的目录&gt;</code></li>
+<li><code>PATH += %NVM_HOME%;%NVM_SYMLINK%;</code></li>
+<li>打开CMD通过 <code>set [name]</code> 命令查看环境变量的值或set Path查看全部环境变量</li>
+<li>PowerShell中是通过 <code>dir env:[name]</code> 命令</li>
+</ul>
+</li>
+<li>NVM使用说明(Node Version Manager（Node 版本管理工具）)：<ul>
+<li><a href="https://github.com/coreybutler/nvm-windows">https://github.com/coreybutler/nvm-windows</a></li>
+</ul>
+</li>
+<li>NVM基本操作<ul>
+<li>nvm use <version>切换node版本</li>
+<li>nvm install <version>插入node版本</li>
+<li>nvm version 输出所有版本</li>
+<li>node -v 输出当前版本</li>
+<li>nvm list available 输出镜像库里所有的版本</li>
+</ul>
+</li>
+</ol>
+<h4 id="-">知识点</h4>
+<ul>
+<li>&lt;&gt;：必填参数  </li>
+<li>[]：选填参数</li>
+<li>函数提升是历史原因，以前的浏览器内存小，提升到顶部一次开辟空间。要是不够内存直接就会出问题，而不用运行到一定位置后在报错。</li>
+<li>shift ?可以显式git站点中所有快捷键</li>
+<li>angular1中使用的是定时器轮询实现数据双向绑定。vue和angular2使用Object.defineProperty()方法实现数据的双向绑定。<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web">https://developer.mozilla.org/zh-CN/docs/Web</a></p>
+</blockquote>
+</li>
+<li>DEBUG vscode中自带的js运行环境 </li>
+<li>配置md文件转html文件步骤<ul>
+<li>先找一个解析md的模块 <blockquote>
+<p><a href="https://github.com/chjj/marked">https://github.com/chjj/marked</a></p>
+</blockquote>
+</li>
+<li>再加上githab.css</li>
+</ul>
+</li>
+</ul>
+<h4 id="node-">node基本语法</h4>
+<ol>
+<li>node知识点<ul>
+<li>全局根对象 global</li>
+<li>Node.js 是一个 JavaScript 的运行平台，不是一门语言，更不是 JavaScript 的框架。</li>
+<li>在node环境中运行js文件，它会把js文件当成一个模块，伪全局变量指的是node在运行当前js文件时给这个文件传入的对象，并不是真的全局对象。</li>
+<li>REPL 是一个类似于 Console 的东西，用于测试小量代码<blockquote>
+<ul>
+<li>官方文档：<a href="https://nodejs.org/dist/latest-v8.x/docs/api/">https://nodejs.org/dist/latest-v8.x/docs/api/</a></li>
+<li>国内文档镜像：<a href="https://npm.taobao.org/mirrors/node/latest/docs/api/index.html">https://npm.taobao.org/mirrors/node/latest/docs/api/index.html</a></li>
+<li>全局对象（顶层对象）
+<a href="https://npm.taobao.org/mirrors/node/latest/docs/api/globals.html">https://npm.taobao.org/mirrors/node/latest/docs/api/globals.html</a></li>
+</ul>
+</blockquote>
+</li>
+<li>REPL环境-Mancy，类比于console.log，输出输入，进入下一次</li>
+<li>process进程对象，类比于浏览器中this。</li>
+<li>第三方模块 loadsh 封装一些数组对象操作函数</li>
+</ul>
+</li>
+<li>node在cmd中操作<ul>
+<li>.exit 退出node</li>
+</ul>
+</li>
+</ol>
+<h4 id="-">辅助成员</h4>
+<ul>
+<li><code>console</code></li>
+<li><code>setInterval</code></li>
+<li><code>setTimeout</code></li>
+</ul>
+<h4 id="-">进程相关</h4>
+<ul>
+<li><code>process</code><ul>
+<li><code>process.stdin</code> 获取用户输入，回车结束</li>
+<li><code>process.stdout</code><ul>
+<li>一个指向标准输出流(stdout)的 可写的流(Writable Stream)：</li>
+<li>process.stdout.write(&#39;这是一行数据\n这是第二行数据&#39;);</li>
+</ul>
+</li>
+<li><code>process.argv</code>  获取执行模块用户传入参数</li>
+<li><code>process.env</code><ul>
+<li>process.env.NODE_ENV === &#39;production&#39;</li>
+<li>判断是否是生产环境</li>
+</ul>
+</li>
+<li><code>process.cwd()</code> 当前目录</li>
+<li><code>process.title</code>  修改命令框title</li>
+<li><code>process.versions</code>   <ul>
+<li>一个暴露存储 node 以及其依赖包 版本信息的属性</li>
+</ul>
+</li>
+<li><code>uncaughtException event</code>   全局异常捕获</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">路径相关（伪全局）</h4>
+<ul>
+<li><code>__dirname</code>  当前路径</li>
+<li><code>__filename</code> 当前文件路径（多一个文件名称）</li>
+</ul>
+<h4 id="-">模块相关（伪全局）</h4>
+<ul>
+<li><code>module</code></li>
+<li><code>exports</code></li>
+<li><code>require()</code> 引入模块</li>
+</ul>
+<h4 id="es6">ES6</h4>
+<ul>
+<li>let定义的是一个可变的量</li>
+<li>const 定义一个常量</li>
+<li>模板字符串  <code>${}</code></li>
+<li>箭头函数没有this的说法，箭头函数不会改变this的指向</li>
+</ul>
+<h2 id="common-js-7-26-">Common JS 模块 文件操作练习(7.26)</h2>
+<ul>
+<li>Node REPL 环境<ul>
+<li><a href="https://github.com/princejwesley/Mancy">https://github.com/princejwesley/Mancy</a></li>
+</ul>
+</li>
+<li><p>inspect 调试 下一步n</p>
+<h3 id="-">模块化开发</h3>
+</li>
+<li><p>Node 采用的模块化结构是按照 Common JS 规范</p>
+</li>
+<li>模块与文件是一一对应关系，即加载一个模块，实际上就是加载对应的一个模块文件。</li>
+<li>关于 Common JS 规范（了解）<blockquote>
+<p><a href="http://wiki.commonjs.org/wiki/CommonJS">http://wiki.commonjs.org/wiki/CommonJS</a></p>
+</blockquote>
+</li>
+<li>Common JS 模块特点 <ul>
+<li>所有代码都运行在模块作用域（本质上是自执行函数），不会污染全局作用域。</li>
+<li>模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。如果想让模块再次运行，必须清除缓存。</li>
+<li>delete require.cache[&#39;C:\Users\zce\Desktop\day-02\code\lib\calc.js&#39;]</li>
+<li>模块加载的顺序，按照其在代码中出现的顺序。</li>
+<li>定义一个模块<ul>
+<li>一个新的 JS 文件就是一个模块，包括入口文件；</li>
+<li>一个合格的模块应该是有导出成员的，否则模块就失去了定义的价值；</li>
+<li>模块内部是一个独立（封闭）的作用域（模块与模块之间不会冲突）；</li>
+<li>模块之间必须通过导出或导入的方式协同；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果我们需要载入一个自己写的 JS 文件，路径必须采用点开头的路径</li>
+<li><p>模块内部定义的成员只能在模块内部使用,除非挂载到全局对象上(global)</p>
+<h4 id="-">导出方式：</h4>
+<ul>
+<li>导出单个成员:  exports.name = value;</li>
+<li>导出整体对象: module.exports = { name: value };<ul>
+<li>module.exports 和 exports</li>
+</ul>
+</li>
+<li>exports 是指向 module.exports 的别名，相当于在模块开始的时候执行<ul>
+<li>var exports = module.exports;</li>
+</ul>
+</li>
+<li>最终模块的导出成员以 module.exports 为准</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">载入模块</h4>
+<ul>
+<li>Node 使用 Common JS 模块规范，内置的 require 函数用于加载模块文件。<ul>
+<li>require 的基本功能是，读入并执行一个 JavaScript 文件，然后返回该模块的 exports 对象</li>
+<li>如果没有发现指定模块文件就会报错。</li>
+</ul>
+</li>
+<li><p>require 参数（模块路径）</p>
+<ul>
+<li><code>.</code>：相对路径方式加载模块文件<ul>
+<li>const module1=require(&#39;./calculator&#39;)</li>
+<li>start with .:./ ../<ul>
+<li>都是按照相对路径方式找到文件</li>
+<li>相对路径得考虑基准路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>/</code>：绝对路径方式加载文件</p>
+<ul>
+<li>没有可移植性,基本不会用</li>
+<li>const module2=require(&#39;C:/czbkqd/就业班/笔记/node/lib/require.js&#39;)</li>
+</ul>
+</li>
+<li><p>other：加载预定义模块</p>
+<ul>
+<li>const fs=require(&#39;fs&#39;);</li>
+</ul>
+</li>
+<li>可省略的情况：<ul>
+<li>扩展名是 <code>.js</code>、<code>.json</code></li>
+<li>require 可以用来载入 JSON 文件，返回对象</li>
+<li>文件名是 <code>index</code>index和扩展名可以默认不写<ul>
+<li>如果有和目录同名得文件，则找这个文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>require.main 可以用来获取入口模块</li>
+</ul>
+<h4 id="require-">require实现原理</h4>
+<pre><code class="lang-js">function $require(x){
+    //1.根据文件路径找到js文件
+    const fs=require(&#39;fs&#39;);
+    const path=x
+    //2.读取文件内容
+    const content=fs.readFileSync(path,&#39;utf8&#39;)
+    //3.执行代码
+    const $module={
+        $exports:{}
+    }
+    const $exports=$module.$exports
+    const code=`(function($exports,$module,$require){
+         ${content}
+    }($exports,$module,$require))
+
+    `
+   eval(code);
+    //4.想办法拿到module.exports
+    //4.return
+    return $module.$exports;
+}
+</code></pre>
+<h4 id="-">常用内置模块</h4>
+<ul>
+<li><a href="http://nodejs.org/api/path.html">path</a>：处理文件路径。</li>
+<li><a href="http://nodejs.org/api/fs.html">fs</a>：操作文件系统。</li>
+<li><a href="http://nodejs.org/api/url.html">url</a>：用于解析 URL。</li>
+<li><a href="http://nodejs.org/api/http.html">http</a>：提供 HTTP 服务器功能。</li>
+<li><a href="http://nodejs.org/api/querystring.html">querystring</a>：解析 URL 中的查询字符串。</li>
+<li><a href="http://nodejs.org/api/util.html">util</a>：提供一系列实用小工具。</li>
+<li><a href="https://nodejs.org/api/">其他</a></li>
+</ul>
+<hr>
+<h4 id="require-">require 的缓存</h4>
+<h3 id="-">文件操作</h3>
+<h4 id="path-">path 模块</h4>
+<ul>
+<li>path不会判断路径存在与否，只是单纯得字符串操作。</li>
+<li>path.join() <ul>
+<li>join只是单纯得拼接</li>
+</ul>
+</li>
+<li>path.resolve() <ul>
+<li>resolve会在前一个路径作为基准路径，然后cd操作 后面绝对路径会覆盖第一个</li>
+</ul>
+</li>
+<li>path.basename() -- 获取文件名（可以忽略扩展名）</li>
+<li>path.dirname() -- 获取路径中的目录部分</li>
+<li>path.extname() -- 获取扩展名部分</li>
+<li>path.isAbsolute() -- 判断是否为绝对路径</li>
+<li>path.normalize() -- 正常化路径（格式）</li>
+<li>path.relative() -- 获取第二个目录相对于第一个目录的相对路径</li>
+<li>path.parse() -- 类似于 JSON.parse</li>
+<li>path.format() -- 类似于 JSON.stringify</li>
+</ul>
+<pre><code class="lang-js">console.log(&#39;join用于拼接多个路径部分，并转化为正常格式&#39;);
+const temp = path.join(__dirname, &#39;..&#39;, &#39;lyrics&#39;, &#39;./友谊之光.lrc&#39;);
+console.log(temp);
+
+console.log(&#39;获取路径中的文件名&#39;);
+console.log(path.basename(temp));
+
+console.log(&#39;获取路径中的文件名并排除扩展名&#39;);
+console.log(path.basename(temp, &#39;.lrc&#39;));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取不同操作系统的路径分隔符&#39;);
+console.log(process.platform + &#39;的分隔符为 &#39; + path.delimiter);
+
+console.log(&#39;一般用于分割环境变量&#39;);
+console.log(process.env.PATH.split(path.delimiter));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取一个路径中的目录部分&#39;);
+console.log(path.dirname(temp));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取一个路径中最后的扩展名&#39;);
+console.log(path.extname(temp));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;将一个路径解析成一个对象的形式&#39;);
+const pathObject = path.parse(temp);
+console.log(pathObject);
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;将一个路径对象再转换为一个字符串的形式&#39;);
+// pathObject.name = &#39;我终于失去了你&#39;;
+pathObject.base = &#39;我终于失去了你.lrc&#39;;
+console.log(pathObject);
+
+console.log(path.format(pathObject));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取一个路径是不是绝对路径&#39;);
+console.log(path.isAbsolute(temp));
+console.log(path.isAbsolute(&#39;../lyrics/爱的代价.lrc&#39;));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;将一个路径转换为当前系统默认的标准格式，并解析其中的./和../&#39;);
+console.log(path.normalize(&#39;c:/develop/demo\\hello/../world/./a.txt&#39;));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取第二个路径相对第一个路径的相对路径&#39;);
+console.log(path.relative(__dirname, temp));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;以类似命令行cd命令的方式拼接路径&#39;);
+console.log(path.resolve(temp, &#39;c:/&#39;, &#39;./develop&#39;, &#39;../application&#39;));
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;获取不同平台中路径的分隔符（默认）&#39;);
+console.log(path.sep);
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;允许在任意平台下以WIN32的方法调用PATH对象&#39;);
+// console.log(path.win32);
+console.log(path === path.win32);
+
+console.log(&#39;====================================&#39;);
+
+console.log(&#39;允许在任意平台下以POSIX的方法调用PATH对象&#39;);
+console.log(path === path.posix);
+</code></pre>
+<h3 id="fs-">fs 模块</h3>
+<h4 id="-">同步方式读写</h4>
+<ul>
+<li><code>fs.readdirSync(path[, options])</code>  获取目录下的文件名称</li>
+<li><code>fs.readFileSync(path[, options])</code> 同步读取文件内容</li>
+<li><code>fs.writeFileSync(file, data[, options])</code> 同步写入</li>
+<li>fs.renameSync 修改文件名称</li>
+<li>fs.statSync 获取文件状态</li>
+</ul>
+<h4 id="-">异步方式读写</h4>
+<ul>
+<li><code>fs.readdir(path[, options], callback)</code></li>
+<li><code>fs.readFile(path[, options], callback)</code></li>
+<li><code>fs.writeFile(file, data[, options], callback)</code></li>
+</ul>
+<h4 id="-">对比两者差异</h4>
+<p>异步编程与同步编程各自优缺点</p>
+<p>错误处理使用 trycatch
+错误处理使用 回调函数的第一个参数</p>
+<ul>
+<li>性能<ul>
+<li>异步 win</li>
+</ul>
+</li>
+<li>代码可读性<ul>
+<li>同步 win</li>
+</ul>
+</li>
+<li>异常处理<ul>
+<li>同步 win  </li>
+</ul>
+</li>
+</ul>
+<h3 id="fs-">fs 案例</h3>
+<ul>
+<li>批量文件批量重命名</li>
+<li>歌词文件读取并解析<ul>
+<li>GBK 编码通过 iconv-lite模块 转换</li>
+<li>/[(\d{2})\:(\d{2}).(\d{2})]\s(.+)/</li>
+</ul>
+</li>
+<li>字符画动画<ul>
+<li>\u001b[2J\u001b[0;0H</li>
+<li>clear 模块</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">知识点</h4>
+<ul>
+<li>谷歌换浏览器图片插件 pejkokffkapolfffcgbmdmhdelanoaih </li>
+<li>传入图片尺寸返回图片<blockquote>
+<p><a href="https://unsplash.it/800/800?random">https://unsplash.it/800/800?random</a>    </p>
+</blockquote>
+</li>
+<li>node原生API不够满足需求时，可以c++ 写  </li>
+<li>normalize.css 对样式进行初始化。</li>
+<li>process.on(&#39;exit&#39;,)  程序最后执行事件 <h4 id="-">老师信息</h4>
+<ul>
+<li>13241087977</li>
+<li>w@zce.me<blockquote>
+<p><a href="https://github.com/zce">https://github.com/zce</a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="npm-nrm-nvm-node-7-27-">NPM NRM NVM node单线程原理(7.27)</h2>
+<ul>
+<li>npm registry(注册表)node包的管理工具</li>
+<li>nvm node版本管理器</li>
+<li>nrm 镜像管理工具，管理npm拉取包的地址<ul>
+<li>nrm ls</li>
+<li>可以用来切换npm镜像的源</li>
+<li>nrm use npm </li>
+</ul>
+</li>
+<li>node --<ul>
+<li>repl类似浏览器的输出调试框,可以直接在cmd中输入js执行</li>
+<li>启动一个js文件： <code>node path/to/text.js</code></li>
+<li>~~ <code>node inspect path/to/text.js</code> ~~  </li>
+</ul>
+</li>
+</ul>
+<h3 id="npm-node-js-package-management-">NPM （node.js package management）</h3>
+<ul>
+<li>全球最大的模块生态系统，里面所有的模块都是开源免费的；也是Node.js的包管理工具。<blockquote>
+<p><a href="https://www.npmjs.com">https://www.npmjs.com</a></p>
+</blockquote>
+</li>
+<li><p>npm概念</p>
+<ul>
+<li>npm不需要额外安装，nvm在安装特定版本的node时就附带安装了</li>
+<li>每一个使用npm去管理包的项目，都需要有一个package.json文件，
+这个文件的作用就是用来描述和记录项目相关信息。</li>
+<li>用来安装项目中依赖的 package</li>
+<li>自身就是一个包，这个包是用来管理其它包</li>
+<li>包可以是一个提供API的包，也可以是一个工具包</li>
+<li>如果一个包提供的是API，一般我们将其安装到项目文件夹中</li>
+<li>如果一个包提供的是一个工具，安装到全局目录下。这样可以在任意目录下使用</li>
+</ul>
+</li>
+<li><p>解决 npm 数据源不稳定</p>
+<ul>
+<li>registry 选项<ul>
+<li>作用：修改镜像源</li>
+<li>npm config set registry <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></li>
+<li>可以借助 <a href="https://github.com/Pana/nrm">nrm</a> 管理</li>
+<li>npm install nrm -g --registry=<a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>npm常用命令<ul>
+<li>npm init 初始化模块</li>
+<li>npm install 安装模块</li>
+<li>npm uninstall 卸载模块</li>
+<li>npm update 更新模块</li>
+<li>npm outdated 检查模块是否已经过时</li>
+<li>npm ls 查看安装的模块</li>
+<li>npm init 在项目中引导创建一个package.json文件</li>
+<li>npm help 查看某条命令的详细帮助</li>
+<li>npm root 查看包的安装路径</li>
+<li>npm config 管理npm的配置路径</li>
+<li>npm cache 管理模块的缓存</li>
+</ul>
+</li>
+<li>yarn 基本使用：类比 npm 基本使用</li>
+</ul>
+<h3 id="-">自定义包</h3>
+<ul>
+<li>一系列相关模块组合到一起形成一个完整功能模块</li>
+<li>多个模块可以形成包，不过要满足特定的规则才能形成规范的包  </li>
+</ul>
+<h5 id="-">包的规范（约定）</h5>
+<ul>
+<li>nodejs中用npm初始化来创建package.json</li>
+<li>package.json 必须在包的顶层目录下</li>
+<li>JavaScript 代码应该在lib目录下</li>
+<li>文档应该在 doc 目录下</li>
+<li>单元测试应该在 test 目录下</li>
+</ul>
+<h5 id="package-json-">package.json字段分析</h5>
+<ul>
+<li>name：包的名称，必须是唯一的，由小写英文字母、数字和下划线或中划线组成，不能包含空格</li>
+<li>description：包的简要说明</li>
+<li>main：指的是 包被载入时 默认加载的文件</li>
+<li>entry point 指的是包被载入时默认加载的文件</li>
+<li>version：符合语义化版本识别规范的版本字符串</li>
+<li>keywords：关键字数组，通常用于搜索</li>
+<li>dependencies：生产环境包的依赖，一个关联数组，由包的名称和版本号组成</li>
+<li>devDependencies：开发环境包的依赖，一个关联数组，由包的名称和版本号组成</li>
+</ul>
+<h4 id="npm-">npm包安装方式</h4>
+<ul>
+<li>本地安装<ul>
+<li>在项目代码中使用某个模块</li>
+<li>如果一个包提供的是 API，一般我们将其安装到项目文件夹中，通过 require 使用</li>
+<li><code>npm install &lt;package-name&gt;</code></li>
+</ul>
+</li>
+<li>全局安装<ul>
+<li>一般工具包会全局安装</li>
+<li>如果一个包提供的是一个工具，一般将其安装在全局目录，这样可以在任意目录下使用</li>
+<li><code>npm install &lt;package-name&gt; --global</code></li>
+<li>less          用来编译 less 文件的</li>
+<li>http-server   通过 node 启动一个 http 服务，默认将当前目录作为网站根目录</li>
+<li>browser-sync <ul>
+<li>使用： browser-sync start -s . -f &quot;<em>.html,</em>.css,*.js &quot; 
+--nonotify</li>
+<li>browser-sync start help打印start下的参数</li>
+<li>-s . 服务器管理的路径</li>
+<li>-f &quot;<em>.html,</em>.css,*.js &quot; 服务器管理的文件类型</li>
+<li>--nonotify 十分进行监控文件修改后浏览器页面更新</li>
+</ul>
+</li>
+<li>cli 工具 command line interface 工具</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-">Web 开发</h3>
+<ul>
+<li>服务器模型，对比 Node.js 模型与传统服务端模型<ul>
+<li>node<ul>
+<li>单线程，如果报错了，后续的用户就一直出于等待状态。</li>
+<li>node本身就提供HTTP服务，在node中开一个服务，对某个端口进行监听，发现请求调用对应页面发回给用户。</li>
+<li>node要做一些不耗时的操作，文件等操作都交给异步。</li>
+<li>node底层实现还是多线程，比如异步的多个文件操作。</li>
+<li>在多核cpu的情况下，node可以通过多进程的方式来达到其它后台语言多线程的优势。</li>
+</ul>
+</li>
+<li>php<ul>
+<li>多线程。</li>
+<li>apache提供监听端口服务，发现是.html后缀的文件，直接返回给用户，发现是.php后缀的文件，把任务交给php，php处理后把页面返回给apache，apache再返回给用户</li>
+<li>apache -- 提供 HTTP 服务（能接收符合 HTTP 标准的请求，并返回符合 HTTP 标准的响应）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>线程概念</p>
+<ul>
+<li>程序再window上的表现为一个.exe的文件</li>
+<li>启动程序就是启动一个进行。</li>
+<li>线程是cpu最小调用单元</li>
+<li>在单核cpu情况下，多线程都是假的。<ul>
+<li>线程是交给cpu执行，cpu执行是快速切换线程，本质上还是一个人做多个事。上下文切换消耗性能。</li>
+<li>就像一个人做多件事，node就是做完a任务再做b任务。</li>
+<li>而php是做a任务做到一部分，再去做b任务，做了一部分b任务，又回来做a任务。</li>
+<li>在a切换到b时，a的一部分准备被舍弃了，切换回来，又要把a的资源捡起来，这很消耗性能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>处理静态文件请求（实现静态网站服务器功能）</p>
+<ul>
+<li>由于 Node.js 没有内置静态文件请求处理功能，所以需要开发人员编码完成</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">知识点</h3>
+<ul>
+<li>命令的本质<ul>
+<li>找到一个可执行文件</li>
+<li>第一个空格以后全部都是提供给这个进程的参数</li>
+</ul>
+</li>
+<li>php&lt;?php 文件中后面不要写封闭的?&gt;，因为写了会把?&gt;后面的回车当成空格解析，返回的文档会多一个空格。 </li>
+</ul>
+<h2 id="nodo-7-29-">Nodo 中的快速开发框架,中间件(7.29)</h2>
+<ul>
+<li>在 Node 开发领域最著名的快速开发框架肯定是 Express</li>
+<li>tj  connect express  koa</li>
+<li>Express 简介<ul>
+<li>Express 是一个非常简单的 Web Framework。就像我们在页面开发时用的 jQuery 一样，只是让我们的开发过程更加高效。</li>
+</ul>
+</li>
+<li>它的核心特性：<strong>中间件机制</strong></li>
+</ul>
+<h3 id="-">中间件（管道）的概念</h3>
+<!-- ![](media/middleware.png) -->
+<ul>
+<li>每一个环节就是一个中间件，每个中间件中都可以控制下个环节的工作</li>
+<li>比如：接收到请求过后，先判断是不是静态文件请求，在处理动态文件请求<ul>
+<li>对于流程性特别强的程序开发过程，中间件是最适合也是最灵活的方式。<ul>
+<li>Node 开发领域中第一个实现中间件机制的框架就是 Connect，Connect 就是 Express 的前身。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="connect">Connect</h3>
+<blockquote>
+<p>Connect is a middleware layer for Node.js
+Connect is a simple framework to glue together various &quot;middleware&quot; to handle requests.</p>
+</blockquote>
+<pre><code class="lang-js">const url = require(&#39;url&#39;)
+const path = require(&#39;path&#39;)
+
+const connect = require(&#39;connect&#39;)
+
+const app = connect()
+
+// 第一个中间件处理静态文件请求
+app.use((req, res, next) =&gt; {
+  const urlObj = url.parse(req.url)
+  const extname = path.extname(urlObj.pathname)
+  const staticExt = [&#39;.html&#39;, &#39;.css&#39;, &#39;.js&#39;]
+  if (staticExt.includes(extname)) {
+    res.setHeader(&#39;Content-Type&#39;, &#39;text/plain; charset=utf-8&#39;)
+    res.end(&#39;静态请求&#39;)
+    return
+  }
+  next()
+})
+
+// 第二个中间件处理动态请求
+app.use((req, res, next) =&gt; {
+  res.setHeader(&#39;Content-Type&#39;, &#39;text/plain; charset=utf-8&#39;)
+  res.end(&#39;动态请求&#39;)
+})
+
+app.listen(3000)
+</code></pre>
+<h3 id="connect-">connect中间件框架</h3>
+<pre><code class="lang-js">const http = require(&#39;http&#39;)
+
+/**
+ * 中间件执行框架
+ */
+function Connect () {
+  // 如果不是通过 new 的方式执行，则我们帮他 new
+  if (!(this instanceof Connect)) return new Connect()
+  this.middlewares = []
+}
+
+/**
+ * 载入一个中间件
+ * @param  {Function} middleware 中间件函数
+ * @return {[type]}            [description]
+ */
+Connect.prototype.use = function (middleware) {
+  this.middlewares.push(middleware)
+}
+
+/**
+ * 启动一个 HTTP 服务并监听一个 指定的 端口
+ * @return {[type]} [description]
+ */
+Connect.prototype.listen = function (...args) {
+  /**
+   * 请求时触发的请求处理函数（事件处理函数）
+   * @param  {[type]} req [description]
+   * @param  {[type]} res [description]
+   * @return {[type]}     [description]
+   */
+  const handleRequest = (req, res) =&gt; {
+    // this 指向 重点看的是调用时 而不是定义时
+    // console.log(this) // 如果不去处理 就应该是 server
+    let index = -1
+
+    const next = () =&gt; {
+      index++ // 执行下一个
+      const current = this.middlewares[index]
+      current &amp;&amp; current(req, res, next)
+    }
+
+    // 起个头去调用第一个中间件函数
+    next()
+  }
+
+  const server = http.createServer(handleRequest)
+  // server.listen.apply(server, args)
+  server.listen(...args)
+}
+
+
+module.exports = Connect
+</code></pre>
+<h4 id="-">知识点</h4>
+<ul>
+<li>new它是函数调用的一个修饰词<ul>
+<li>this创建一个新的空对象，作为这次调用函数的对象</li>
+<li>return在执行完这个函数过后，把this作为返回值返回</li>
+</ul>
+</li>
+<li>nodemon包，自动更新node站点包   <ul>
+<li>nodemon nodejs文件更新页面更新，不用重启node</li>
+</ul>
+</li>
+<li>del package.json  </li>
+<li>npm init --yes 直接初始化</li>
+<li>Node中不去区分请求的pathname，所有的请求都在 请求
+处理函数中处理 </li>
+<li>Apache：创建一个http服务；php：开发动态网站</li>
+</ul>
+<pre><code class="lang-js">  //  HTTP 协议中约定 如果响应报文中有 location 就会让客户端跳转
+  // 301永久性跳转 302暂时性跳转
+      request.statusCode = 302
+      request.setHeader(&#39;Location&#39;, &#39;/list&#39;)
+
+   //接收数据事件
+    request.on(&#39;data&#39;, chunk =&gt; {
+      chunk.toString(&#39;utf8&#39;) //返回一个流，转化为字符串
+    })
+    .on(&#39;end&#39;, () =&gt; {})//数据接收完成事件
+
+   //服务对象，监控异常
+    server.on(&#39;error&#39;, err =&gt; {})
+</code></pre>
+<h2 id="express-7-30-">Express入门(7.30)</h2>
+<ul>
+<li><p>一个基于connect的中间件框架，express 3.x 内置很多中间件，express 4.x 变成按需加载</p>
+<blockquote>
+<p><a href="http://expressjs.com.cn/">http://expressjs.com.cn/</a></p>
+</blockquote>
+</li>
+<li><p>app.<a href="[PATH], [HANDLER]">METHOD</a></p>
+<ul>
+<li>app 是 express 的实例。</li>
+<li>METHOD 是 HTTP 请求方法。<ul>
+<li>get(指定请求类型) use(支持所有类型，HANDLER可以是一个路由对象)</li>
+</ul>
+</li>
+<li>PATH 是服务器上的路径。</li>
+<li>HANDLER 是在路由匹配时执行的函数。</li>
+</ul>
+</li>
+<li>处理静态文件请求  app.use(express.static(&#39;public&#39;))</li>
+<li>express 的基础 api 同 connect 相同;express 在 connect 基础上做的改变<ul>
+<li>增加了更为复杂的路由机制</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">异常处理</h4>
+<ul>
+<li><p>如何处理 404 响应？</p>
+<p>在 Express 中，404 响应不是错误的结果，所以错误处理程序中间件不会将其捕获。此行为是因为 404 响应只是表明缺少要执行的其他工作；换言之，Express 执行了所有中间件函数和路由，且发现它们都没有响应。您需要做的只是在堆栈的最底部（在其他所有函数之下）添加一个中间件函数来处理 404 响应：</p>
+<pre><code class="lang-js">app.use(function(req, res, next) {
+  res.status(404).send(&#39;Sorry cant find that!&#39;)
+})
+</code></pre>
+</li>
+<li><p>如何设置错误处理程序？</p>
+<p>错误处理中间件的定义方式与其他中间件基本相同，差别在于错误处理中间件有四个自变量而不是三个，专门具有特征符 (err, req, res, next)：</p>
+<pre><code class="lang-js">app.use(function(err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send(&#39;Something broke!&#39;)
+})
+</code></pre>
+<h4 id="-node-express-">使用 Node + Express 开发动态网站步骤</h4>
+</li>
+<li><p>创建一个项目目录</p>
+</li>
+<li>创建 package.json</li>
+<li>安装最基本的项目依赖：express</li>
+<li>设计最基本的编码结构<ol>
+<li>项目代码执行的入口文件 index.js</li>
+<li>载入 express 模块，创建一个 app 对象</li>
+<li>处理静态文件请求</li>
+<li>对请求的路由做一个设计，有哪几种请求的地址，每一个请求处理函数</li>
+</ol>
+</li>
+<li>业务逻辑编码过程</li>
+</ul>
+<h4 id="-">模版引擎</h4>
+<p>handlebars模版
+npm i hbs --save</p>
+<p>在定义app对象的地方设置模版引擎</p>
+<blockquote>
+<p><a href="http://expressjs.com/zh-cn/guide/error-handling.html">http://expressjs.com/zh-cn/guide/error-handling.html</a></p>
+</blockquote>
+<p>xtemplate模版
+npm i xtpl xtemplate</p>
+<h4 id="-">知识点</h4>
+<ul>
+<li>npm i 包@版本</li>
+<li>sketch比ps设置图更快</li>
+<li><a href="https://cva.cc/西游翻墙">https://cva.cc/西游翻墙</a></li>
+<li><a href="http://tongji.baidu.com/data/">http://tongji.baidu.com/data/</a> 统计</li>
+<li>body-parser中间件：获取post提交的数据</li>
+</ul>
+<h2 id="node-8-2-">node项目登陆（8.2）</h2>
+<h3 id="music-server">music-server</h3>
+<ol>
+<li>npm init 初始化 package.json 文件</li>
+<li>npm install 安装相关的项目依赖包（express xtpl xtemplate body-parser）</li>
+<li>搭建基本的 MVC 结构（指定项目约束）</li>
+<li>分别创建不同的 controller + model + view 去处理不同的业务（配置不同业务班子）</li>
+<li>具体的业务编码</li>
+<li>后续依赖包<ul>
+<li>mysql 数据库包</li>
+<li>cookie-session 对session进行管理，自动生成key（cookie）给客户端</li>
+<li>glob 获取某个文件夹下某个后缀的所有文件</li>
+<li>xtemplate中可以拿到这个对象的值res.locals：res.locals={}</li>
+</ul>
+</li>
+</ol>
+<h4 id="package-json-">package.json解析</h4>
+<ul>
+<li>scripts 是用来定义预制命令<ul>
+<li>可以通过 npm run <name> 执行这个命令 如果 name 为 test / start 可以省略 run</li>
+<li>还可以通过 pre<name> 和 post<name> 去定义这个命令之前和之后的命令</li>
+</ul>
+</li>
+<li>devDependencies 中记录的是开发依赖（工具）</li>
+<li>dependencies 中记录的是我们代码的依赖 require 函数会用到的  </li>
+<li>npm i nodemon --save-dev 把工具包添加到当前项目中，好处是在新的地方会自动下载 </li>
+<li>MIT 最自由的协议，可以让任何人随意使用<pre><code class="lang-js">&quot;scripts&quot;: {
+  &quot;test&quot;: &quot;nodemon index.js&quot;,
+  &quot;prefoo&quot;: &quot;echo prefoo&quot;,
+  &quot;foo&quot;: &quot;echo hellokjjshdfjksjdfskdjfhkkkh&quot;,
+  &quot;postfoo&quot;: &quot;echo postfoo&quot;
+},
+ &quot;dependencies&quot;: {
+  &quot;body-parser&quot;: &quot;^1.17.2&quot;,
+&quot;devDependencies&quot;: {
+  &quot;nodemon&quot;: &quot;^1.11.0&quot;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="-">知识点</h4>
+<ul>
+<li><p>配置静态资源文件（放在管道最前面）</p>
+<ul>
+<li>app.use(express.static(&#39;./public&#39;)) </li>
+<li>html中静态文件用绝对路径，网站根路径</li>
+</ul>
+</li>
+<li><p>Mockjs</p>
+<ul>
+<li>mock 对于开发人员来说，是一种泛指所有客户端模拟数据的一种手段</li>
+<li>mock 是一种客户端模拟数据的一种手段</li>
+</ul>
+</li>
+<li>客户端请求处理
+1.校验
+2.持久化
+3.响应</li>
+<li>awesome + 名词 git上查询某个项目的清单</li>
+<li>promise和委托（回掉函数）的区别：<ul>
+<li>promise是异步程序传递一个消息给同步然后同步去做这个事。</li>
+<li>委托就是把事情传递给异步，异步去执行。</li>
+<li>事件和promise很像，同步注册多个事件保存在一个第三方对象上，然后在异步时通知第三方对象，执行当前事件的所有处理程序。</li>
+</ul>
+</li>
+</ul>
+<h2 id="node-angular-demo-8-2-">node文件上传处理，angular的demo(8.2)</h2>
+<ul>
+<li>MVC<ul>
+<li>在MVC的结构中，请求最终都是要找到一个controller控制器下的action去处理(不再是一个页面，也不是一个单纯的文件)</li>
+<li>通过controller载入的中间件，只要这个控制器被执行，都会最先执行这个中间件</li>
+</ul>
+</li>
+<li><p>formidable（包）处理文件域参数</p>
+<ul>
+<li>当表单中有文件域的情况下，表单编码类型要修改为：enctype=&quot;multipart/form-data&quot;</li>
+</ul>
+</li>
+<li><p>gzip压缩静态文件服务器在传输过程中会进一步压缩，到浏览器在展开  </p>
+</li>
+<li><p>script只有在type属性为text/javascript的时候，内部的代码才会作为javascript执行。</p>
+</li>
+<li><p>如果是让一个元素内部滚动加webkit-overflow-scrolling:touch，让元素有惯性滚动</p>
+</li>
+<li>node跨域jsonp响应处理<ul>
+<li>res.jsonp 方法会自动获取请求 QueryString 中键 为 callback 的值，</li>
+<li>将这个值作为回调函数名称，拼接一段 JS 代码</li>
+</ul>
+</li>
+</ul>
+<h4 id="-">知识点</h4>
+<ul>
+<li>accept：html属性，可以限制上传文件类型</li>
+<li>angu版本1.6后才加跨域信任白名单</li>
+<li>axios 最流行的ajax库</li>
+<li>有明确时间 有明确目标这就是项目</li>
+<li>audio site:w3school.com.cn 优化搜索关键词</li>
+</ul>
+
+ </section>
+</body>
+</html>

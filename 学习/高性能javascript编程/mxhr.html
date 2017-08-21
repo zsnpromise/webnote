@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <section id="container">   </section>
+    <script>
+        var req=new XMLHttpRequest();
+        req.open('GET','mxhr.php');
+        req.onreadystatechange=function(){
+            if(req.readyState==4){
+                splitImages(req.responseText);
+            }
+        }
+        req.send(null);
+
+        function splitImages(imageString){
+            var imageData=imageString.split("\u0001");
+            var imageElement;
+            for(var i=0,len=imageData.length;i<len;i++)
+            {
+                 imageElement=document.createElement("img");
+                 imageElement.src='data:image/jpg;base64,'+imageData[i];
+                 document.getElementById('container').appendChild(imageElement);
+            }
+        }
+
+        function handleImageData(data,mimeType){
+            var img=document.createElement('img');
+            img.src='data:'+mimeType+';base64,'+data;
+            return img;
+        }
+        function handleCss(data){
+            var style=document.createElement('style');
+            style.type='text/css';
+            var node=document.createTextNode(data);
+            style.appendChild(node);
+            document.getElementsByTagName("head")[0].appendChild(style);
+        }
+    </script>
+</body>
+</html>

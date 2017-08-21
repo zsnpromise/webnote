@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-init="cx='23.993938'">
+    <svg><circle ng-attr-cx="{{cx}}"></circle></svg>
+    <section ng-include="'t11.html'" ng-controller="oneCon" ng-init="name='zsn'">
+             颠三倒四{{name}}
+    </section>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp",[]).controller("oneCon",["$scope",function($scope){
+
+    }])
+</script>
+</body>
+</html>

@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+    <style>
+    markdown-body {
+      padding:20px;
+    }
+    @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  padding: 4%;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-smi,
+.markdown-body .pl-s .pl-s1 {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-s,
+.markdown-body .pl-pds,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-sr .pl-sra {
+  color: #032f62;
+}
+
+.markdown-body .pl-v,
+.markdown-body .pl-smw {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+.markdown-body .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+.markdown-body .pl-c2::before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #22863a;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  font-weight: bold;
+  color: #005cc5;
+}
+
+.markdown-body .pl-mi {
+  font-style: italic;
+  color: #24292e;
+}
+
+.markdown-body .pl-mb {
+  font-weight: bold;
+  color: #24292e;
+}
+
+.markdown-body .pl-md {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+.markdown-body .pl-mi1 {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.markdown-body .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+.markdown-body .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
+}
+
+.markdown-body .pl-mdr {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.markdown-body a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+}
+
+.markdown-body strong {
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body svg:not(:root) {
+  overflow: hidden;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .octicon {
+  vertical-align: text-bottom;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0 !important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px !important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px !important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px !important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px !important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px !important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px !important;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: 0.875em;
+}
+
+.markdown-body h6 {
+  font-size: 0.85em;
+  color: #6a737d;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: 0.25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.markdown-body code::before,
+.markdown-body code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code::before,
+.markdown-body pre code::after {
+  content: normal;
+}
+
+.markdown-body .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.markdown-body :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #0366d6;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+</style>
+</head>
+<body>
+<section class='markdown-body'>
+ <h2 id="vue-webpack-8-4-">vue基本语法和webpack初级(8.4)</h2>
+<ol>
+<li>vue是一个渐进式框架，关注视图层</li>
+<li>组件 高度的封装</li>
+<li>虚拟DOM树，Virtual Dom就是在js中模拟DOM对象树来优化DOM操作的一种技术或思路</li>
+</ol>
+<h4 id="webstrom-">webstrom配置</h4>
+<ol>
+<li>推荐使用webstrom2016</li>
+<li>vue智能提示配置<ul>
+<li>File&gt;Settings&gt;Plugins=&gt;vue.js(Browse repositories...)</li>
+<li>File&gt;Settings&gt;Languages&amp;Frameworks&gt;ECMAScript 6</li>
+<li>Editor&gt;File and Code Templates（在File Types查看是否配置成功）&gt;+
+<img src="./img/snipaste_20170804_191058.png" alt=""></li>
+</ul>
+</li>
+</ol>
+<h3 id="vue-">vue基本语法</h3>
+<ol>
+<li><p>vue基本使用</p>
+<pre><code class="lang-js">
+  &lt;!--引入vue.js文件--&gt;
+ &lt;script src=vue.min.js&gt;&lt;/script&gt;
+ &lt;!--我们在html页面留了个坑--&gt;
+ &lt;div id=&quot;app&quot;&gt;
+     {{ msg }}
+ &lt;/div&gt;
+ &lt;script&gt;
+//        创建vue的一个实例化对象
+     var vm = new Vue({
+         el:&#39;#app&#39;,
+         data:{
+             msg:&#39;欢迎来到vue课程&#39;
+         }
+     })
+ &lt;/script&gt;
+</code></pre>
+</li>
+<li><p>v-model和v-text，v-html</p>
+<pre><code class="lang-js">     &lt;!--v-model是双向绑定的--&gt;
+     &lt;!--v-model是vue中唯一一个双向绑定的,其他的都不是--&gt;
+     &lt;input v-model=&quot;title&quot; type=&quot;text&quot;&gt;
+
+     &lt;!--v-text一般用于除了input以外的其他标签--&gt;
+     &lt;span v-text=&quot;msg&quot;&gt;&lt;/span&gt;
+
+     &lt;!--v-html一般用于解析html--&gt;
+     &lt;div id=&quot;app&quot;&gt;
+     &lt;span v-html=&quot;msg&quot;&gt;&lt;/span&gt;
+     &lt;/div&gt;
+     &lt;script&gt;
+         var vm = new Vue({
+             el: &#39;#app&#39;,
+             data: {
+             msg: &#39;&lt;h1&gt;天气不错&lt;/h1&gt;&#39;
+           }
+         })
+     &lt;/script&gt;
+</code></pre>
+</li>
+<li><p>v-bind对标签属性值进行绑定，两种写法</p>
+<pre><code class="lang-js">&lt;div id=&quot;app&quot;&gt;
+     &lt;a v-bind:title=&quot;tip&quot;  v-bind:sdjfoisodifwfe=&quot;tip&quot;&gt;这是个a标签&lt;/a&gt;
+
+     &lt;!--v-bind的简写形式--&gt;
+     &lt;a :title=&quot;tip&quot;&gt;这是个a标签&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+     var vm = new Vue({
+         el:&#39;#app&#39;,
+         data:{
+             title:&#39;可以出去玩&#39;,
+             tip:&#39;这是个title&#39;
+         }
+     })
+ &lt;/script&gt;
+</code></pre>
+</li>
+<li><p>v-on绑定事件，两种写法</p>
+<pre><code class="lang-js">  &lt;div id=&quot;app&quot;&gt;
+     &lt;!--v-on一般是进行事件处理的--&gt;
+     &lt;button v-on:click=&quot;btnClicked&quot;&gt;按钮&lt;/button&gt;
+
+     &lt;!--v-on有一个简写形式--&gt;
+     &lt;button @click=&quot;btnClicked&quot;&gt;&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+//        这样写可以接收到事件,但是不推荐这样写
+//        function btnClicked() {
+//            alert(1)
+//        }
+     var vm = new Vue({
+         el:&#39;#app&#39;,
+         data:{
+             title:&#39;我很高兴来到这里&#39;
+         },
+         methods:{
+             btnClicked(){
+                 alert(2)
+             }
+         }
+     })
+ &lt;/script&gt;
+</code></pre>
+</li>
+<li>v-if隐藏后连代码都没有了，只留下一个注释占位符;v-show 隐藏后代码还在，只是设置display:none<pre><code class="lang-js"> &lt;div id=&quot;app&quot;&gt;
+     &lt;span v-if=&quot;isTrue&quot; v-text=&quot;msg&quot;&gt;&lt;/span&gt;
+      &lt;!-- &lt;span v-show=&quot;isTrue&quot; v-text=&quot;msg&quot;&gt;&lt;/span&gt; --&gt;
+     &lt;button v-on:click=&quot;click&quot;&gt;按钮&lt;/button&gt;
+ &lt;/div&gt;
+&lt;script&gt;
+ var vm = new Vue({
+     el:&#39;#app&#39;,
+     data:{
+         msg:&#39;天气不错&#39;,
+         isTrue:true
+     },
+     methods:{
+         click(){
+             this.isTrue = !this.isTrue
+         }
+     }
+ })
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>v-for三种用法<pre><code class="lang-js"> &lt;div id=&quot;app&quot;&gt;
+     &lt;!--v-for的第一种用法--&gt;
+     &lt;ul&gt;
+         &lt;li v-for=&quot;item in names&quot;&gt;
+             {{item}}
+         &lt;/li&gt;
+     &lt;/ul&gt;
+     &lt;!--v-for的第二种用法--&gt;
+     &lt;ul&gt;
+         &lt;li v-for=&quot;(item,index) in names&quot;&gt;
+             {{item}}------{{index}}
+         &lt;/li&gt;
+     &lt;/ul&gt;
+     &lt;!--v-for的第三种用法--&gt;
+     &lt;ul&gt;
+         &lt;li v-for=&quot;(value,key,index) in user&quot;&gt;
+            {{value}}---{{key}}-=---{{index}}
+         &lt;/li&gt;
+     &lt;/ul&gt;
+ &lt;/div&gt;
+ &lt;script&gt;
+     var vm = new Vue({
+         el:&#39;#app&#39;,
+         data:{
+             names:[&#39;狼厂&#39;,&#39;鹅厂&#39;,&#39;鸟厂&#39;,&#39;马厂&#39;,&#39;数字工厂&#39;],
+             user:{name:&#39;老梅&#39;,age:&#39;17.5&#39;}
+         }
+     })
+ &lt;/script&gt;
+</code></pre>
+</li>
+<li><p>私有组件和全局组件</p>
+<ul>
+<li>写在Vue对象中为components私有组件时，组件名称不能大写，名称中可以有-。</li>
+<li>组件标签在使用时内部不能带有内容，内容会被定义组件时模块中的内容替换。</li>
+<li><p>注意：template属性必须给根元素,创建全局组件必须在Vue对象实例化前进行</p>
+<pre><code class="lang-js">//私有组件
+&lt;div id=&quot;app&quot;&gt;
+   &lt;privatecomponent&gt;&lt;/privatecomponent&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var vm = new Vue({
+       el:&#39;#app&#39;,
+       components:{
+           &#39;privatecomponent&#39;:{
+               template:&#39;&lt;h1&gt;这是第一个私有组件&lt;/h1&gt;&#39;
+           }
+       }
+   })
+&lt;/script&gt;
+
+//全局组件的定义
+&lt;div id=&quot;app&quot;&gt;
+   &lt;my-component/&gt;
+&lt;/div&gt;
+&lt;div id=&quot;app1&quot;&gt;
+   &lt;my-component&gt;&lt;/my-component&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   Vue.component(&#39;my-component&#39;,{
+       template:&#39;&lt;my-haha&lt;/my-haha&gt;&#39;
+   })
+
+   Vue.component(&#39;my-haha&#39;,{
+       template:&#39;&lt;h1&gt;my-haha的使用&lt;/h1&gt;&#39;
+   })
+   var vm = new Vue({
+       el:&#39;#app&#39;,
+   })
+   var vm1 = new Vue({
+       el:&#39;#app1&#39;
+   })
+&lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>私有过滤器和全局过滤器</p>
+<ul>
+<li><p>管道前面的输出等于后面的输入，管道符前面的变量输出成为管道符后面函数的输入</p>
+<pre><code class="lang-js">//私有过滤器
+&lt;div id=&quot;app&quot;&gt;
+   {{ msg | toLower }}
+&lt;/div&gt;
+&lt;script&gt;
+   var vm = new Vue({
+       el:&#39;#app&#39;,
+       data:{
+           msg:&#39;MSDJFSOIFDWOEIF&#39;
+       },
+       filters:{
+           // 实现一个小写转化的过滤器
+           toLower(input){
+               return input.toLowerCase()
+           }
+       }
+   })
+&lt;/script&gt;
+
+//全局过滤器
+&lt;div id=&quot;app&quot;&gt;
+   {{title | toUpper}}
+&lt;/div&gt;
+&lt;script&gt;
+   Vue.filter(&#39;toUpper&#39;,function (input) {
+       return input.toUpperCase()
+   })
+
+   var vm = new Vue({
+       el:&#39;#app&#39;,
+       data:{
+           title:&#39;sdojfiodifosdfs&#39;
+       }
+   })
+&lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="router-vue-router-min-js">router模块和传值：vue-router.min.js</h4>
+<pre><code class="lang-js">
+ &lt;script src=&quot;vue.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;vue-router.min.js&quot;&gt;&lt;/script&gt;
+ &lt;div id=&quot;app&quot;&gt;
+    &lt;!--路由传值的方式--&gt;
+    &lt;a href=&quot;#/share/2&quot;&gt;go&lt;/a&gt;
+    &lt;!--router-link是对a标签的封装，推荐使用--&gt;
+   &lt;router-link to=&quot;/share/1&quot;&gt;go&lt;/router-link&gt;
+    &lt;!--router-view路由内容专用填坑--&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+
+ &lt;/div&gt;
+ &lt;script&gt;
+
+    //全局组件
+  var share= Vue.component(&#39;share&#39;,{
+      data(){   //添加全局临时变量
+        return {
+            number:&#39;&#39;
+        }
+      },
+      //这个方法是在当前组件全部加载完成以后调用的方法
+      created(){      //调用外面传递的值
+          this.number=this.$route.params.id
+        },
+      props:[&#39;id&#39;],  //接收外面传递的值
+      template:&#39;&lt;h1&gt;我的天啊{{number}}&lt;/h1&gt;&#39; //template必须给根元素
+  });
+  var rt=new VueRouter({
+      routes:[         //存放路由信息的数组
+          {name:&#39;share&#39;,path:&#39;/share/:id&#39;,component:share}
+      ]
+  });
+  var vm =new Vue({
+        el:&#39;#app&#39;,
+        router:rt,   //关联路由
+        data:{
+            title:&#39;静态网站&#39;
+        }
+    })
+ &lt;/script&gt;
+</code></pre>
+<h4 id="-http-vue-resource-min-js">$http异步模块：vue-resource.min.js</h4>
+<pre><code class="lang-js"> //get
+ &lt;script src=vue.min.js&gt;&lt;/script&gt;
+ &lt;script src=vue-resource.min.js&gt;&lt;/script&gt;
+ &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        {{title}}
+        &lt;br&gt;
+        &lt;button v-on:click=&quot;btnBeClicked&quot;&gt;发送get请求&lt;/button&gt;
+        &lt;br&gt;
+        {{message}}
+    &lt;/div&gt;
+    &lt;script&gt;
+        var vm = new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                title:&#39;get方法的介绍&#39;,
+                message:[]
+            },
+            methods:{
+                btnBeClicked(){
+                    // 发送请求
+                    var url = &#39;http://182.254.146.100:8899/api/getlunbo&#39;
+                    this.$http.get(url).then(
+                            function (data) {
+                                this.message = data.body.message
+                            },
+                            function (err) {
+
+                            }
+                    )
+                }
+            }
+        })
+    &lt;/script&gt;
+
+    // post 
+
+        var url = &#39;http://182.254.146.100:8899/api/getlunbo&#39;
+        this.$http.post(url,{content:&#39;xxxxxxxx&#39;},{emulateJSON:true}).then(
+                function (response) {
+
+                    },
+                    function (err) {
+                            console.log(err)
+                        }
+                    )
+    // JSONP
+         this.$http.jsonp(url).then(
+                        function (response) {
+
+                        },
+                        function (err) {
+                            console.log(err)
+                        }
+                )
+</code></pre>
+<h3 id="webpack">webpack</h3>
+<ol>
+<li>插件  Plugins</li>
+<li>出口和入口的设置</li>
+<li>加载器 Loaders</li>
+<li>安装(先npm init初始化环境)<ul>
+<li>第一步 npm i webpack -g （只要安装一次）</li>
+<li>第二步 npm install webpack --save-dev （创建一个新项目就安装一次）<ul>
+<li>-dev 开发依赖，打包就不会带这个包</li>
+</ul>
+</li>
+<li>第三步<ul>
+<li>在实际开发环境中，存在多个配置，发布和开发以及其它运行不同的配置</li>
+<li>webpack.develop.config.js //开发时候的配置</li>
+<li>webpack.publish.config.js //发布时候的配置</li>
+<li>webpack --config webpack.develop.config.js //运行打包 </li>
+<li>webpack.config.js 只有一个配置 cmd中执行webpack就可以了  </li>
+</ul>
+</li>
+<li>第四部<ul>
+<li>加载器：去git上查找下载安装babel-loader的方法</li>
+<li>看README.md或者git中查看配置方法。</li>
+</ul>
+</li>
+<li>第五步配置config(webpack.develop.config.js)</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-js">
+ // webpack开发时候的配置文件
+  const path=require(&#39;path&#39;)
+
+  module.exports={
+    //webpack中的三大亮点之一：入口出口设置
+    entry:path.resolve(__dirname,&#39;./src/app.js&#39;),//入口
+    //出口设置，把项目打包的位置
+    output:{
+        path:path.resolve(__dirname,&#39;dist&#39;), //导出到指定的文件夹
+        filename:&#39;tt.js&#39;         //导出的文件名
+    },
+     //webpack中的第二个亮点：加载器loader
+     module:{
+        rules:[
+             // babel-loader的加载器信息
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: &#39;babel-loader&#39;,
+                    options: {
+                        presets: [&#39;env&#39;]
+                    }
+                }
+            }
+        ]
+    }
+  }
+</code></pre>
+<h4 id="-">知识点</h4>
+<ol>
+<li>vetur给vscode使用的vue语法提示高亮的插件</li>
+<li>Moment.js 日期过滤器</li>
+<li>npm run 名称 --可以直接使用package.json中scripts配置的快捷命令</li>
+<li>nrm test 测试镜像反应速度</li>
+<li>安装webpack的文件夹名字不能叫webpack，程序会认为在webpack中安装webpack会报错</li>
+</ol>
+<h2 id="-8-5-">加载器和插件(8.5)</h2>
+<h3 id="vue-">vue基本的三个组成部分：组件模板，项目入口，承载单页面</h3>
+<ol>
+<li>引入vue模块前要先下载<ul>
+<li>npm i vue --save</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-js">    // 一个拥有独立html，css，js的组件模板app.vue
+    &lt;template&gt;
+     &lt;section&gt;
+       &lt;h1&gt;苍茫的天涯是你的哎&lt;/h1&gt;
+       &lt;img src=&quot;./images/img1.gif&quot; alt=&quot;&quot;&gt;
+     &lt;/section&gt;
+    &lt;/template&gt;
+    &lt;script&gt;&lt;/script&gt;
+    &lt;style&gt;
+      h1{
+          background-color: hotpink;
+       }
+    &lt;/style&gt;
+</code></pre>
+<pre><code class="lang-js">    //项目入口main.js文件
+    import Vue from &#39;vue&#39;         //导入vue.js
+    import app from &#39;./app.vue&#39;  //导入vue模板
+    const vm=new Vue({
+    el:&#39;#app&#39;,
+    //必须使用箭头函数
+    render:create=&gt;create(app)     //渲染到index.html留的坑里
+  });
+</code></pre>
+<pre><code class="lang-html">&lt;!--进行展示的index.html页面--&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;app&gt;&lt;/app&gt;
+&lt;/div&gt;
+&lt;script src=&quot;./tt.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="-">加载器（本质上就是通过一些优化把开发代码转化为发布的代码）</h3>
+<ol>
+<li>vue-loader  1.0配置中可以不写-loader，2.0必须写</li>
+<li>加载器在使用前要先进行下载</li>
+<li>三种加载器：ES6加载器，css加载器，图片加载器</li>
+<li>先执行加载器，然后导入src中的文件，生成后在导出</li>
+<li>加载器的两种配置方式，参考图片加载器</li>
+</ol>
+<pre><code class="lang-js">   const path=require(&#39;path&#39;);
+   const webpack=require(&#39;webpack&#39;);
+   module.exports={
+       //webpack中的三大亮点之一：入口出口设置
+       entry:path.resolve(__dirname,&#39;./src/main.js&#39;),
+       //出口设置，把项目打包的位置
+       output:{
+           path:path.resolve(__dirname,&#39;dist&#39;), //导出到指定的文件夹
+           filename:&#39;tt.js&#39;         //导出的文件名
+       },
+       //webpack中的第二个亮点：加载器loader
+       // 加载器解析.vue等格式的文件
+       module:{
+          rules:[
+                 {  //把ES6解析到ES5的加载器 jsx（使代码混编，一个文件中写css，html，js）转化js，
+                     test: /\.js$/,
+                     exclude: /(node_modules|bower_components)/,
+                     use: {
+                         loader: &#39;babel-loader&#39;,
+                         options: {
+                             presets: [&#39;env&#39;]
+                         }
+                     }
+                 }, {  //解析vue的加载器
+                     test: /\.vue$/,
+                     use: {
+                         loader: &#39;vue-loader&#39;
+                     }
+                 }, {  //解析css的加载器
+                     test: /\.css$/,
+                     use: [ &#39;style-loader&#39;, &#39;css-loader&#39; ]
+                 }//解析图片加载器 url-loader
+                 ,
+                 // {
+                 //     test: /\.(png|jpg|gif)$/,
+                 //     use: [
+                 //         {
+                 //             loader: &#39;url-loader&#39;,
+                 //             options: {
+                 //                 limit: 8192
+                 //             }
+                 //         }
+                 //     ]
+                 // }
+                 {
+                     test: /\.(png|jpg|gif)$/,
+                     use:&#39;url-loader?limit=25000&amp;name=images/[name].[ext]&#39; 
+                     //1byte=8bit(位) bit 小于这个限制则     
+                     //把图片转为base64字符串，这个时候可以base64字符串通过css设置背景图片减少图片http请求
+                 }
+
+        ]
+    }
+
+}
+</code></pre>
+<h3 id="-webpack-">插件(webpack第三个亮点：插件的使用)</h3>
+<p>插件分为两种：webpack自带的不需要安装，第三方的需要安装</p>
+<h4 id="webpack-dev-server-">webpack-dev-server（修改项目，打包文件自动更新服务）配置三部曲</h4>
+<p>本质上通过webpack内置的热更新插件实现</p>
+<pre><code class="lang-js">        //1.下载 npm install webpack-dev-server --save-dev
+
+       //2.webpack.develop.config.js 配置
+       const webpack=require(&#39;webpack&#39;);
+       module.exports={
+               //...省略若干配置
+              devtool: &#39;eval&#39;,
+              devServer: {
+                 contentBase: path.resolve(__dirname, &#39;./src&#39;), // 当前服务器监听的路径
+                 hot: true,  // 热更新
+                 port:8080,  // 定义端口号
+                 host: &#39;localhost&#39;,
+                 open:true    // 是否自动打开浏览器
+                 openPage:&quot;&quot;   //配置open:true时，必须给一个openPage:&quot;&quot;默认配置
+              },
+             plugins: [
+             //  html-webpack-plugin
+              new webpack.HotModuleReplacementPlugin(), //热更新插件
+             ]
+
+        }
+        // 3.package.json配置  
+        //&quot;server&quot;:&quot;webpack-dev-server --config webpack.develop.config.js --content-base src&quot;
+
+        //npm run server
+</code></pre>
+<h4 id="-html-">压缩插件（一般不用，效果不好），分离第三方包的插件，自动生成html的插件</h4>
+<ol>
+<li>压缩文件一般使用在命令中加-p,压缩比内置压缩插件效果更好（更小）<ul>
+<li>&quot;pb&quot;: &quot;webpack --config webpack.publish.config.js -p&quot;,</li>
+</ul>
+</li>
+<li>自动生成html的插件是第三方插件<ul>
+<li>html-webpack-plugin</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-js"> const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;);
+ plugins:[
+        // 压缩插件(一般不用)
+        // new webpack.optimize.UglifyJsPlugin({
+        //     beautify: false,
+        //     mangle: {
+        //         screw_ie8: true,
+        //         keep_fnames: true
+        //     },
+        //     compress: {
+        //         warnings: false,
+        //         screw_ie8: true
+        //     },
+        //     comments: false
+        // }),
+
+        // 分离第三方的插件，不是我们自己写的模块
+        // 抽取第三方的插件（如vue.js）                             所有第三方文件打包的文件
+        new webpack.optimize.CommonsChunkPlugin({name:&#39;vendors&#39;,filename:&#39;vendors.js&#39;}),
+
+        // 自动生成html的插件
+        // new HtmlWebpackPlugin({
+        //     title: &#39;My App&#39;,
+        //     filename: &#39;index.html&#39;,
+        //     template: &#39;src/index.html&#39;,
+        //
+        // })
+        new HtmlWebpackPlugin({
+            template: &#39;./src/index.html&#39;,
+            htmlWebpackPlugin: {
+                &quot;files&quot;: {
+                    &quot;js&quot;: [&quot;bundle.js&quot;,&quot;vendors.js&quot;] //设置引用的文件，自动生成标签插入html中
+                }
+            },
+            // 进行压缩,情怀至上
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+            }
+        }),
+    ]
+</code></pre>
+<h3 id="eslint-">ESLint配置（编码规范）</h3>
+<ol>
+<li>npm install  eslint -g （可能需要配置本地 npm install  eslint --save-dev）</li>
+<li>npm install babel-eslint -g（可能需要配置本地 npm install babel-eslint --save-dev）</li>
+<li>package.json的scripts中配置快捷命令 <ul>
+<li>&quot;lint&quot;: &quot;eslint --ext .js .vue src&quot;</li>
+</ul>
+</li>
+<li>添加自定义代码规范，在全局根目录下添加文件.eslintrc.js<ul>
+<li>运行后eslint --init，根目录中将有一个.eslintrc文件</li>
+</ul>
+</li>
+<li>在webpack.develop.config.js开发配置文件中配置  </li>
+</ol>
+<pre><code class="lang-js">  //.eslintrc.js
+  // eslint的语法规则
+
+    module.exports = {
+        // 开启推荐配置信息
+        // &quot;extends&quot;: &quot;eslint:recommended&quot;,
+        // 默认情况下，ESLint 会在所有父级目录里寻找配置文件，一直到根目录。如果你想要你所有项目都遵循一个特定的约定时，这将会很有用，但有时候会导致意想不到的结果。为了将 ESLint 限制到一个特定的项目，在你项目根目录下的  package.json 文件或者 .eslintrc.* 文件里的 eslintConfig 字段下设置 &quot;root&quot;: true。ESLint 一旦发现配置文件中有 &quot;root&quot;: true，它就会停止在父级目录中寻找。
+        &quot;root&quot;: true,
+        // 脚本在执行期间访问的额外的全局变量
+        // 当访问未定义的变量时，no-undef 规则将发出警告。如果你想在一个文件里使用全局变量，推荐你定义这些全局变量，这样 ESLint 就不会发出警告了。你可以使用注释或在配置文件中定义全局变量。
+        &quot;globals&quot; : {
+            &quot;window&quot;:true,
+            &quot;document&quot;:true,
+            &quot;$&quot;:true
+        },
+        // 设置插件
+        // &quot;plugins&quot;: [
+        //     &#39;html&#39;
+        // ],
+        // 设置解析器选项（必须设置这个属性）
+        &quot;parserOptions&quot;: {
+            &quot;ecmaVersion&quot;: 7,
+            &quot;sourceType&quot;: &quot;module&quot;,
+            &quot;ecmaFeatures&quot;: {
+                &quot;jsx&quot;: true,
+                // &quot;arrowFunctions&quot;: true,
+                // &quot;experimentalObjectRestSpread&quot;: true,
+                // &quot;classes&quot;: true,
+                // &quot;modules&quot;: true,
+                // &quot;defaultParams&quot;: true
+            }
+        },
+        // 启用的规则及各自的错误级别
+        &quot;rules&quot; : {
+            // 禁止用console
+            &quot;no-console&quot;:2,
+            // 禁止用分号
+            &quot;semi&quot;:[1,&#39;never&#39;],
+            // 在同一个作用域中禁止多次重复定义
+            //&quot;no-redeclare&quot;:1
+        },
+        // 指定你想启用的环境
+        &quot;env&quot;: {
+            &quot;browser&quot;: true,
+            &quot;node&quot;: true
+        },
+        &quot;parser&quot;: &quot;babel-eslint&quot;
+    };
+</code></pre>
+<pre><code class="lang-js"> //配置文件（config）配置信息
+  module.exports={
+    //。。。。其它各种配置
+    module:{
+        rules:[
+            // eslint-loader的配置信息
+            // exlint-loader的加载器配置信息
+            // 配置编码规范的时候需要ES6解析到ES5的加载器配置到其中
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    &#39;babel-loader&#39;,
+                    &#39;eslint-loader&#39;
+                ],
+                //webpack配置改了，要修改配置方法
+                // query: {
+                   // cacheDirectory: true
+               // } 
+            },
+            { //只是检查的时候用，调试时候注释
+                test: /\.vue$/,
+                enforce: &#39;pre&#39;,  
+                include: /src/, 
+                use: [{
+                    loader: &#39;eslint-loader&#39;,
+                    options: {
+                        formatter: require(&#39;eslint-friendly-formatter&#39;)   // 
+                    }
+                }]
+            },
+            // {  //把ES6解析到ES5的加载器
+            //     test: /\.js$/,
+            //     exclude: /(node_modules|bower_components)/,
+            //     use: {
+            //         loader: &#39;babel-loader&#39;,
+            //         options: {
+            //             presets: [&#39;env&#39;]
+            //         }
+            //     }
+            // },
+
+
+
+              //其它配置，各种加载器
+
+        ]
+    },
+  }
+</code></pre>
+<ul>
+<li>MUI-最接近原生APP体验的高性能前端框架</li>
+</ul>
+<h2 id="mui-mint-ui-8-7-">mui和mint-ui（8.7）</h2>
+<ul>
+<li>mui和mint-ui先git把两个项目从githab上克隆下来（根据线上的demo到两个克隆的包里找代码）</li>
+<li>然后npm把两个包下载到项目中。</li>
+</ul>
+<h4 id="vue-">vue模板</h4>
+<pre><code class="lang-js">    &lt;template&gt;
+
+    &lt;/template&gt;
+    &lt;!--scoped：保证样式只在组件内部使用--&gt;
+    &lt;style scoped&gt;
+
+    &lt;/style&gt;
+    &lt;!--让编辑器识别ES6，不报错--&gt;
+    &lt;script type=&quot;text/ecmascript-6&quot;&gt;
+
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="lang-js">  //一个页面级组件script标签中内容
+  import banner from &#39;./Tools/banner.vue&#39;
+  import url from &#39;./Tools/Url.js&#39;
+
+    export default{
+       data(){
+           return {
+               banners:[]
+           }
+       },
+        created(){
+            this.getBanner()
+        },
+        methods:{
+
+           getBanner(){
+               this.$http.get(`${url.HTTP}${url.SERVER_PATH}:${url.PORT}/api/getlunbo`).then(rel=&gt;{
+                  console.log(rel)
+                   this.banners=rel.body.message
+               },rej=&gt;{})
+           }
+        },
+        components: {
+            banner
+        }
+
+
+    }
+</code></pre>
+<pre><code class="lang-js">       //url-loader配置图片和字体解析
+       { test: /\.(gif|jpg|png|woff|svg|eot|ttf)$/,
+        use: &#39;url-loader?limit=50000&amp;name=[path][name].[ext]&#39;}
+</code></pre>
+<pre><code class="lang-js">  //webpack入口js引入模块方式
+  import  vueResource from &#39;vue-resource&#39;
+  Vue.use(vueResource)
+</code></pre>
+<ul>
+<li>linkActiveClass:&#39;mui-active&#39;路由模块的该属性可以配置选中a标签的类名。</li>
+<li>打包代码执行顺序：先执行加载器，把内容导入到webpack,执行插件然后导出</li>
+<li>mui代理官网<blockquote>
+<p><a href="http://www.dcloud.io/mui.html">http://www.dcloud.io/mui.html</a> </p>
+</blockquote>
+</li>
+<li>badge 徽标，类似于购物车上的红色小圆（显示数字）</li>
+<li>图片设置环绕，图片过大（不用缩小图片）：background-repeat: round;</li>
+<li>Mockplus原型设计工具</li>
+</ul>
+<h2 id="-8-8-">组件传值，路由传值(8.8)</h2>
+<ul>
+<li><p>组件传值，路由传值</p>
+<pre><code class="lang-js">  //组件调用传值
+ &lt;banner :bannerdt=&quot;banners&quot;&gt;&lt;/banner&gt;
+
+ //组件内部获取值
+ &lt;script type=&quot;text/ecmascript-6&quot;&gt;
+     export default{
+         //如果是路由传值要使用这种方式获取值使用,如果是组件传值，直接在模板里使用
+          methods:{
+               get(){
+                   this.$route.params.id
+               }
+          }
+          //组件传值，路由传值都要通过这种方式接收
+         props:[&#39;bannerdt&#39;]
+     }
+&lt;/script&gt;
+</code></pre>
+</li>
+<li>动态生成router-link标签的两种方法<pre><code class="lang-html"> &lt;router-link :to=&quot;{name:&#39;newsinfo&#39;,params:{id:item.id}}&quot;&gt;
+  &lt;router-link v-bind=&#39;{to:&quot;/newsDetail/&quot;+item.id}&#39;&gt;
+</code></pre>
+</li>
+<li>好用的日期过滤器：momentjs</li>
+<li>IM即时通讯(网易云)</li>
+<li>face++人脸识别服务</li>
+<li>ping++可以简便使用多种支付方式的开发者平台</li>
+<li>white-space: nowrap;文字不换行</li>
+</ul>
+<h2 id="-8-10-">图片详情页，商品列表页（8.10）</h2>
+<ul>
+<li>ref:获取修改表单原生的值<pre><code class="lang-js">&lt;textarea placeholder=&quot;请输入评论内容&quot;&gt;&lt;/textarea&gt;
+//this.$refs.textArea1.value
+</code></pre>
+</li>
+<li><p>假请求：当配合安卓或ios开发的时候，需要调用底层（如拍照），这个时候可以发送一个请求，让安卓的同事去实现功能。</p>
+</li>
+<li><p>vue-picture-preview 图片预览组件，组件标签要放在图片的上方。</p>
+</li>
+</ul>
+<pre><code class="lang-js"> export default{
+        data(){
+            return{
+                isBack:true
+            }
+        },
+
+        methods:{
+            back(){
+                 //路由对象，回撤
+                this.$router.go(-1);
+            }
+        },
+        //监控一个对象
+        watch:{
+            //url对象
+            &#39;$route&#39;:function (newValue,oldValue) {
+                if(this.$route.path===&quot;/home&quot;){
+                    this.isBack=false;
+                }else {
+                    this.isBack=true;
+                }
+            }
+        }，
+        //注册页面所要用到的组件
+         components:{
+            banner
+        },
+    }
+</code></pre>
+<ul>
+<li>style的scoped独立样式作用域<ul>
+<li>添加scoped之后，实际上vue在背后做的工作是将当前组件的节点添加一个像data-v-1233这样唯一属性的标识。</li>
+<li>当然也会给当前style的所有样式添加[data-v-1233]这样的话，就可以使得当前样式只作用于当前组件的节点。</li>
+<li>所以如果在父组件中修改子组件的样式不能加scoped属性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="-8-11-">动画实现，组件向父组件传值（8.11）</h2>
+<h3 id="-">传值的两种方式</h3>
+<ul>
+<li><p>父子组件之间的传值</p>
+<pre><code class="lang-js">   //子组件
+  export default{
+      data(){
+          return {
+              number:1
+          }
+      },
+      methods:{
+          add(){
+              this.number++
+              document.querySelector(&quot;#numb&quot;).innerText=this.number
+              this.submitCount()
+          },
+          jian(){
+              if(this.number&gt;1){
+                  this.number--
+                  document.querySelector(&quot;#numb&quot;).innerText=this.number
+                  this.submitCount()
+              }
+          },
+          submitCount(){
+              this.$emit(&#39;count&#39;,this.number)//count：父组件接收值的标记
+          }
+      }
+  }
+
+  //父组件
+
+  //父组件调用是监控count标记把值传入getCount方法中。
+  &lt;number v-on:count=&quot;getCount&quot;&gt;&lt;/number&gt;
+
+  methods:{
+      //通过方法的形式获取子组件传递的值
+      getCount(num){
+              this.count=num
+          }
+  }
+</code></pre>
+</li>
+<li><p>没有直接关联的组件传值</p>
+</li>
+</ul>
+<pre><code class="lang-js">   //在一个js文件中定义一个独立的vue对象保存值（中转站）
+   import Vue from &#39;vue&#39;
+   export var mddata=new Vue()  //导出一个vue
+
+   //传值的组件
+   //使用这个值的地方进行引用
+   import {mddata} from &#39;./Tools/middledata&#39;
+   //传递值组件调用的方法
+    mddata.$emit(&#39;shopcar&#39;,this.count)
+
+   //获取值的组件，值传递的约定标识shopcar
+   import {mddata}from &#39;./components/Tools/middledata&#39;
+   mddata.$on(&#39;shopcar&#39;,function (number) {
+
+    })
+</code></pre>
+<h3 id="-">动画实现</h3>
+<ul>
+<li>贝塞尔曲线：可以设置动画运动轨迹速度的快慢</li>
+<li><p>js钩子hook》中间件，动画经过的事件就是一系列的中间件</p>
+<pre><code class="lang-js"> //对要进行运动的元素设置css
+ transition: all 1s cubic-bezier(.56,-0.42,.36,.59);
+
+//设置元素在运动时经过的方法
+              &lt;transition
+                      v-on:before-enter=&quot;beforeEnter&quot;
+                      v-on:enter=&quot;enter&quot;
+                      v-on:after-enter=&quot;afterEnter&quot;
+              &gt;
+              &lt;div v-show=&quot;isshow&quot; class=&quot;bill&quot;&gt;&lt;/div&gt;
+               &lt;/transition&gt;
+
+  //  在methods中设置动画要调用的方法      
+         // 进入之前调用的一个方法
+          beforeEnter: function (el) {
+              el.style.transform = &quot;translate3d(0,0,0)&quot;
+          },
+          // 进入时候调用的方法
+          enter: function (el, done) {
+              var offset = el.offsetWidth  //设置这个使元素感觉到属性在发生变化
+              el.style.transform = &quot;translate3d(60px,303px,0)&quot;
+              done()
+          },
+          // 进入完成以后调用的方法
+          afterEnter: function (el) {
+              this.isshow = !this.isshow
+          },
+</code></pre>
+</li>
+</ul>
+<h2 id="vue-indexdb-app-8-13-">vue生命周期，indexdb数据库，两种手机端app打包方式（8.13）</h2>
+<ol>
+<li>关于Vue实例的生命周期</li>
+</ol>
+<p><img src="./img/3504099265-580628fd03258_articlex.png" alt="">
+<img src="./img/3346068135-580822cd52898_articlex.png" alt=""></p>
+<ol>
+<li>两种手机端app打包方式</li>
+<li>dcloud：源码会泄露给第三方<ul>
+<li>HTML5+ 》 HBuilder  </li>
+</ul>
+</li>
+<li>本地环境：布置环境麻烦<ul>
+<li>生成手机app的环境配置： java jdk和安卓（2.2.2.0）sdk及其环境变量；全局安装ionic(开发工具)  cordova（打包工具）包<ul>
+<li>java jdk安装成功：cmd运行java -version和javac成功</li>
+<li>安卓（2.2.2.0）sdk：可以安装配置不够，还要通过SDK Manager.exe继续安装</li>
+<li>npm i -g ionic cordova</li>
+<li>生成一个app项目：ionic start ioicApp（项目名称）</li>
+<li>cordova run android 打安装包</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="./img/snipaste_20170813_165955.png" alt=""><br><img src="./img/snipaste_20170813_093921.png" alt=""> </p>
+<p><img src="./imgsnipaste_20170813_103728.png" alt=""><br><img src="./img/snipaste_20170813_102712.png" alt="">  </p>
+<h4 id="can-i-use-">can i use：可以查看属性兼容性</h4>
+
+ </section>
+</body>
+</html>

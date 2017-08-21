@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <section ng-controller="oneCon">
+        <p>{{parson.name}}</p>
+        <button ng-click="some()">some</button>
+        <div ng-controller="towCon">  
+            <button ng-click="child()">child</button>
+             <p>{{parson.name}}</p> </div>
+        <p>{{parson.name}}</p>
+    </section>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp",[]).controller("oneCon",["$scope",function($scope){
+           $scope.parson={
+                  name:"zsn"
+              };
+          $scope.some=function(){
+              $scope.parson.name="zsn"
+          }
+    }]).controller('towCon',["$scope",function($scope){
+         
+         $scope.child=function(){
+             $scope.parson.name="clj"
+         }
+    }])
+</script>
+</body>
+</html>

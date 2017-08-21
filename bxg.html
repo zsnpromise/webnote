@@ -437,9 +437,21 @@
         </li>
         <li>jquery.uploadify.js</li>
         <li>依赖jquery,uploadify.swf</li>
-        <li>$("#upfile").uploadify({fileObjName: 'tc_avatar',height: '120px',width: '120px',buttonText: '',swf: '/public/assets/uploadify/uploadify.swf',    //指定上传控件的主体文件
-                    uploader: '/api/uploader/avatar',  //指定服务器端上传处理文件
-                    onUploadSuccess: function (a, b, c) {$(".settings img").attr("src", b.result.path);} });</li>
+        <li>$("#upfile").uploadify({}})
+            
+                     
+                    <ul>
+                        <li>buttonClass: 'btn btn-success btn-sm',//样式</li>
+                        <li>width: 80, height : 'auto',</li>
+                        <li>itemTemplate: '&lt;span&gt;&lt;/span&gt;',//自定义进度条</li>
+                        <li>fileObjName: 'tc_avatar'//文件名称</li>
+                        <li>buttonText: '上传图片',//提示</li>
+                        <li>swf: '/public/assets/uploadify/uploadify.swf',    //指定上传控件的主体文件</li>
+                        <li>uploader: '/api/uploader/avatar',  //指定服务器端上传处理文件</li>
+                        <li>formData : {cs_id : para.csId},//参数</li>
+                        <li>onUploadSuccess: function (a, b, c) {$(".settings img").attr("src", b.result.path);} });//成功回掉</li>
+                    </ul>
+                    </li>
         <li>出现curl报错：在wampservers管理器中php下的php.ini文件中curl那一行的;去掉。</li>
     </ul>
     <h4>富文本：ckeditor.js</h4>
@@ -457,6 +469,29 @@
         
      </ul>
     <h5>省市联动插件:jquery.region.js,依赖jquery和数据源，主要提供一个数据绑定的功能</h5>
+    </div>
+
+    <div>
+      <h2>图片裁切插件,进度条插件，jquery的ajax事件(7.16)</h2>
+      <h4>图片裁切插件</h4>
+      <ul>
+          <li>本质上就是把图片左上角作为原点，用户确认x,y,width,height这四个值传递给后台进行裁切</li>
+          <li>Jcrop.js</li>
+          <li>底层是用canvas实现，如果图片跨域给img标签加上crossOrigin="anonymous"属性</li>
+       </ul>
+       <h4>进度条插件</h4>
+       <ul>
+           <li>nprogress.js</li>
+           <li>NProgress.start();NProgress.done();</li>
+     </ul>
+     <h4>jquery的ajax事件</h4>
+     <ul>
+         <li>$(document).ajaxStart(function(){ });</li>
+         <li>$(document).ajaxStop(function(){});</li>
+         <li>这两个事件都只会执行一次，第二个事件是等所有ajax都执行完才执行</li>
+        
+     </ul>
+
     </div>
 </body>
 

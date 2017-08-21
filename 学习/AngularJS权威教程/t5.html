@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-controller="TestController">
+        <form name="testForm">
+            <input type="text" name="inputs" ng-test ng-model="obj.number">
+            <span ng-show="testForm.inputs.$error.test">good</span>
+            <span ng-hide="testForm.inputs.$error.test">bad</span>
+            <div>{{ testForm.inputs.$valid }}</div>
+            <div>{{ testForm.inputs.$invalid }}</div>
+
+            <div>{{ obj.number }}</div>
+        </form>
+    </div>
+    <script src="js/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('myApp', [])
+            .controller('TestController', function ($scope) {
+                $scope.obj = {
+                    number: 34
+                };
+            })
+            .directive('ngTest', function () {
+                return {
+                    require: '?ngModel',
+                    restrict: 'AE',
+                    link: function ($scope, iElm, iAttrs, ngModel) {
+                        if (!ngModel) return;
+                        ngModel.$parsers.push(function (viewValue) {
+                            var num = parseInt(viewValue);
+                            if (num >= 0 && num < 99) {
+                                ngModel.$setValidity('test', true);
+                                return viewValue;
+                            } else {
+                                ngModel.$setValidity('test', false);
+                                return undefined;
+                            }
+                        });
+                    }
+                };
+            });
+    </script>
+</body>
+
+</html>

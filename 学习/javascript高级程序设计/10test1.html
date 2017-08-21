@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function loadScriptString(code) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            try {
+                script.appendChild(document.createTextNode(code));
+                //IE中会报错，IE将<script>视为一个特殊的元素，不允许DOM访问其子节点
+            } catch (ex) {
+                //Safari 3.0之前的版本虽然不能正确的支持text代码，但却允许使用文本节点技术来指定代码
+                script.text = code;
+            }
+            document.body.appendChild(script);
+        }
+        loadScriptString("alert('cjp')")
+
+        function saveTask(arr) {
+            var newArr = arr.concat();
+            setTimeout(function () {
+
+                var fn= newArr.shift();
+                fn();
+                if (newArr.length > 0) {
+                    setTimeout(arguments.callee, 25);
+
+                }
+            }, 25)
+        }
+    </script>
+</body>
+
+</html>

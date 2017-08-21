@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+  <ul >
+     <li><a href="http://baidu.com">百度</a></li>
+  </ul>
+    <script>
+        // function loadScript(url, callBack) {
+        //     var script = document.createElement("script");
+        //     script.type = "text/javascript";
+        //     if (script.readyState) { //IE
+        //         script.onreadystatechange = function () {
+        //             if (script.readyState == "loaded" || script.readyState == "complete") {
+        //                 //    释放监听script脚本加载状态改变的事件
+        //                 script.onreadystatechange = null;
+        //                 callBack();
+        //             }
+        //         }
+        //     } else {
+        //         script.onload = function () {
+        //             callBack();
+        //         }
+        //     }
+        // }
+
+        // var data=[
+        //     {
+        //         name:"学科网",
+        //         url:"http://www.zxxk.com",
+        //     },
+        //     {
+        //         name:"学科网",
+        //         url:"http://www.zxxk.com",
+        //     }
+        // ];
+        // function appendDataToElement(appendToElement,data){
+        //     var a,li;
+        //     for(var i=0,max=data.length;i<max;i++){
+        //         a=document.createElement('a');
+        //         a.href=data[i].url;
+        //         a.appendChild(document.createTextNode(data[i].name));
+        //         li=document.createElement("li");
+        //         li.appendChild(a);
+        //         appendToElement.appendChild(li);
+        //     }
+        // }
+        // var ul=document.querySelector("ul");
+        // ul.style.display="none";
+        // appendDataToElement(ul,data);
+        // ul.style.display="block";
+        // document.firstElementChild
+
+
+        var worker=new Worker("./worker.js");
+        worker.onmessage=function(event){
+            console.log(event.data);
+        }
+        worker.postMessage("clj");
+    </script>
+</body>
+
+</html>

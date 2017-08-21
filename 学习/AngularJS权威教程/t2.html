@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <section ng-controller="oneCon">
+              <input type="email" ng-model="to" >
+              <textarea ng-model="emailBody"></textarea>
+              <pre>__previewText__</pre>
+              <p>__to__</p>
+    </section>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("emaliParser",[])
+    .config(['$interpolateProvider',function($interpolateProvider){
+        $interpolateProvider.startSymbol('__');
+        $interpolateProvider.endSymbol('__');
+    }])
+    .factory('EmailParser',['$interpolate',function($interpolate){
+        //处理解析的服务
+           return {
+               parse:function(txt,content){
+                   var template=$interpolate(txt);
+                   return template(content);
+               }
+           }
+    }])
+
+
+     angular.module("myApp",['emaliParser'])
+    .controller("oneCon",["$scope","EmailParser",'$filter',function($scope,EmailParser,$filter){
+             $scope.$watch('emailBody',function(body){
+                if(body){
+                   
+                    // $scope.previewText=;
+                    $scope.previewText= $filter('uppercase')(EmailParser.parse(body,{to:$scope.to}));
+                }
+             })
+    }])
+</script>
+</body>
+</html>

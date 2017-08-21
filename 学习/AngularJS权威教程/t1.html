@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myCon">
+         <div ng-controller="myChild">
+            <button ng-click="fn.hello()">点击</button>
+        </div>
+    </div>
+
+     <script src="js/angular.js"></script>
+    <script>
+        var app = angular.module("myApp", []).run(function ($rootScope) {
+            $rootScope.name = "tt";
+        });
+        app.controller("myCon", function ($scope) {
+            $scope.person={
+                name:"zzz"
+            }
+        })
+        app.controller("myChild",function($scope){
+            $scope.fn={
+                hello:function(){
+                    alert($scope.person.name);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

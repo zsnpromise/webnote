@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var req=new XHRHttpRequest();
+        var getLatestPacketInterval,lastLengh=0;
+        req.open('GET','');
+        req.onreadystatechange=readyStateHandler;
+        function readyStateHandler(){
+            if(req.readyState===3&&getLatestPacketInterval==null){
+                getLatestPacketInterval=setInterval(function(){
+                    getLatestPacket();
+                },25)
+            }
+            if(req.readyState===4){
+                clearInterval(getLatestPacketInterval);
+                etLatestPacket();
+            }
+        }
+
+        function getLatestPacket(){
+            var length=req.responseText.length;
+            var packet=req.reaponseText.substring(lastLengh,length);
+            processPacket(packet);
+            lastLengh=length;
+        }
+
+
+        var Timer={
+            _data:{},
+            start:function(key){
+                Timer._data[key]=new Data();
+            },
+            stop:function(key){
+                var time=Timer._data[key];
+                if(time){
+                    Timer._data[key]=new Data()-time;
+                }
+            },
+            getTime:function(key){
+                return Timer._data[key];
+            }
+        }
+    </script>
+</body>
+</html>

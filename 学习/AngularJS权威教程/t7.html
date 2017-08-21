@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.js"></script>
+</head>
+
+
+<body ng-app="myApp">
+    <input type="text" ng-model="myUrl">
+<div my-directivesome-attr="{{myUrl}}" my-link-text="baidu"></div>
+    <div my-directive></div>
+    <script>
+        angular.module("myApp", []).directive('myDirective', function () {
+            return {
+                restrict: 'A',
+                replace: true,
+                template: '<div><input type="text" ng-model="myUrl"/><a href="{{myUrl}}">tt</a></div>'
+            }
+            // return {
+            //     restrict: 'A',
+            //     template: '<a href="{{myUrl}}">{{myLinkText}}</a>',
+            //     replace:true,
+            //     scope:{
+            //         myUrl:'@',
+            //         myLinkText:'@',
+            //     }
+            // }
+        })
+    </script>
+</body>
+
+</html>

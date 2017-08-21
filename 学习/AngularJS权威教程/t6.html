@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <section ng-controller="oneCon">
+         <form name="signup_form" novalidateng-submit="signupForm()">
+             <fieldset>
+                 <legend>Sigunp</legend>
+                 <div class="row">
+                     <label >Your name</label>
+                     <input type="text" name="name" ng-model="sigunp.name" ng-minlength="3" ng-maxlength="20"  required>
+                 </div>
+                 <button type="submit" class="button radius">Submit</button>
+             </fieldset>
+         </form>
+    </section>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp",[]).controller("oneCon",["$scope",function($scope){
+
+    }])
+</script>
+</body>
+</html>

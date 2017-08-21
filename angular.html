@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angular+vue+react</title>
+</head>
+
+<body>
+    <div>
+        <h2>angular基础(7.17)</h2>
+        <h4>angular概念</h4>
+        <ul>
+            <li>为什么要学习Angular?
+                <ul>
+                    <li>使我们做单页面应用更加容易</li>
+                    <li>Angular自身有很多颠覆性的特性 改变了前端的编码方式 简化了我们的操作</li>
+                </ul>
+            </li>
+            <li>
+                Angular是什么?
+                <ul>
+                    <li> 一款非常优秀的前端高级JS框架</li>
+                    <li>由谷歌团队负责开发维护</li>
+                </ul>
+            </li>
+            <li>无论是angular还是jQuery都是用原生JS封装的,库和框架区别:
+                <ul>
+                    <li>
+                        库-对代码进行封装 调用封装的方法 简化操作:jquery 针对DOM操作;requirejs js模块化
+                    </li>
+                    <li>
+                        框架：虽然也是调用封装的方法,但是更多的框架会提供代码书写的规则,按照规则去写代码 框架会帮我们实现相应的功能
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                Angular核心思想
+                <ul>
+                    <li>write less do more</li>
+                    <li>其核心是通过指令扩展了HTML，通过表达式绑定数据到HTML。</li>
+                    <li>Angular不推崇DOM操作，也就是说在NG中几乎找不到任何的DOM操作</li>
+                    <li>一切操作以数据为中心，用数据驱动DOM</li>
+                </ul>
+            </li>
+            <li>获取angular的方式
+                <ul>
+                    <li>[在官网上下载](http://angularjs.org)</li>
+                    <li>[通过CDN的方式引入到页面中](https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js)</li>
+                </ul>
+            </li>
+            <li>Angular模块化开发
+                <ul>
+                    <li>模块化开发带来的好处:方便管理, 复用,后期维护方便; 解决代码冲突,方便多人协作开发</li>
+                    <li>定义模块时第二个参数加与不加的区别:加第二个参数是创建模块;不加第二个参数是获取模块</li>
+                    <li>模块依赖:主模块依赖了其他模块 就相当于拥有了其他模块的功能</li>
+                    <li> 一般来说，一个应用只会由一个主模块</li>
+
+                </ul>
+            </li>
+            <li>Angular中控制器的作用:向页面中赋初始值,向页面中展示数据,代码分类</li>
+            <li>
+                单页面应用程序介绍 (simple page application)
+                <ul>
+                    <li>整个网站由一个页面构成</li>
+                    <li>公共部分只加载一次</li>
+                    <li>利用Ajax局部刷新达到页面切换的目的</li>
+                    <li> 不会发生页面跳转白屏的现象</li>
+                    <li>锚点与页面对应</li>
+                </ul>
+            </li>
+            <li>Angular中的路由
+                <ul>
+                    <li>Angular中的路由使用方法:[官方说明文档](https://docs.angularjs.org/api/ngRoute)</li>
+                    <li>[通过CDN的方式引入到页面中](https://cdn.bootcss.com/angular.js/1.6.4/angular-route.min.js)</li>
+                    <li>在应用主模块中依赖路由模块ngRoute</li>
+                    <li>配置路由:通过config方法注入$routeProvider</li>
+                    <li> 使用templateUrl方式载入模板需要在http环境下(本地file协议下不支持)</li>
+                </ul>
+            </li>
+            <li>
+                Angular相关网站
+                <ul>
+                    <li>[官方文档](https://code.angularjs.org/1.6.4/docs/api)</li>
+                    <li>[学习网站]
+                        <ul>
+                            <li>http://www.angularjs.net.cn</li>
+                            <li>http://www.apjs.net</li>
+                            <li>http://www.runoob.com/angularjs/angularjs-tutorial.html</li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </li>
+            <li> #和锚点间要加！。意味搜索引擎抓取页面是，遇到#后面就忽略了，但发现有！就知道后面跟着是一个新页面。 但百度没有实现，谷歌实现了。
+            </li>
+        </ul>
+        <h4>angular基础指令</h4>
+        <ul>
+            <li>在使用了angular的页面，以ng-开头的属性，都可以称之为指令</li>
+            <li> angular中的指令都是用来做dom操作的,在angular中 只要做dom操作 第一个要想到的就应该是指令</li>
+            <li>ng-app
+                <ul>
+                    <li>告诉angular它在页面中所要控制的范围</li>
+                    <li>页面加载完成angular会自动在页面中查找这个指令</li>
+                    <li>如果元素上有ng-app，则执行内部包裹的代码，如果没有找到，不执行 一个页面只能有一个ng-app
+
+                    </li>
+                    <li>如果找到ng-app，会在内存中产生一个对象，用来保存页面中的数据</li>
+                </ul>
+            </li>
+            <li>ng-model:实现双向数据绑定（变量）,只能给表单元素使用</li>
+            <li>ng-click:点击事件(和原生JS中的onclick事件作用一样)</li>
+            <li>ng-init:初始化数据,给变量赋初始值</li>
+            <li>表达式介绍
+                <ul>
+                    <li>{{}} 这种双大括号的形式称之为插值表达式</li>
+                    <li>在表达式中可以写ng中的变量</li>
+                    <li>可以显示字符串</li>
+                    <li>在表达式中可以进行计算</li>
+                    <li>可以在表达式中写三目运算符</li>
+                    <li>执行angular函数</li>
+
+                </ul>
+            </li>
+            <li>ng-view 告诉angular 获取的数据要放在页面中有ng-view的标签内</li>
+        </ul>
+        <h4>anguler模块，控制器，路由</h4>
+        <ul>
+            <li>模块
+                <ul>
+                    <li>ng-app="模块名称" 返回一个模块对象 ，没有给名称则由angular的默认模块进行管理</li>
+                    <li>var myApp = angular.module('模块名称',['依赖模块']);用来创建模块</li>
+
+                </ul>
+            </li>
+            <li>控制器创建三法
+                <ul>
+                    <li>1.模块对象.controller('控制器的名字',控制器的回掉函数 function($scope){})用来创建控制器</li>
+                    <li>$scope专门向页面中暴露数据的 是对象类型; ng-controller="控制器名称"
+                        <ul>
+                            <li>压缩代码工具不会压缩字符串</li>
+                            <li>带引号的$scope不会被压缩;带引号的$scope和形参要一一对应。</li>
+                            <li>为什么$scope的名字不能改:是因为angular是根据形参的名字去传递参数的 如果名字变了 angular就不认识了</li>
+                        </ul>
+                    </li>
+                    <li>2.创建安全的控制器：模块对象.controller('控制器名称',['$scope',function($scope){}]);</li>
+                    <li>3.面向对象的方式创建控制器
+                        <ul>
+                            <li>ng-controller="demoCtrl as obj"</li>
+                            <li>angular.module('myApp', []).controller('demoCtrl', ['$scope', function($scope) {this.name = '我是孙悟空';}])</li>
+                            <li>1.angular内部会帮我们new控制器处理函数</li>
+                            <li>2.demoCtrl as obj 这个obj就是new出来的对象</li>
+                            <li>3.在视图中我们就可以使用obj.属性的方式取到obj对象中的值</li>
+                            <li>4.面向对象的方式和$scope可以同时使用</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>前端路由：锚点和页面的对应关系
+                <ul>
+                    <li>onhashchange锚点改变事件</li>
+                    <li> 模块对象.config(function($routeProvider){ //$routeProvider 路由配置对象 $routeProvider.when('锚点值',{ template:"可以加{{变量}}",
+                        templateUrl:"模板地址" controller:"控制器名称" }).otherwise('list')//没有匹配上默认路由 }).controller("name",function(){});
+
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div>
+        <h2>常用指令 (7.18)</h2>
+        <h4>angular是根据形参($scope)的名字去传递实参原理</h4>
+        <ul>
+            <li>获取形参名字(回调函数先转换成字符串fn.toString()，正则split(/\(|\)/)提取参数)</li>
+            <li>将形参替换成真正的实参(循环+switch)</li>
+            <li>用真正的实参组成的数组调用函数(apply)</li>
+
+        </ul>
+        <h4>Angular常用指令</h4>
+        <ul>
+            <li>指令分类:内置指令(普通指令、事件指令) 自定义指令</li>
+            <li>普通指令
+                <ul>
+                    <li>ng-repeat="item in data" 遍历数据,这个指令加在要遍历的标签上
+                        <ul>
+                            <li>遍历对象,key代表对象的键值,val代表对象键值对应的值:ng-repeat="(key,val) in obj"</li>
+                            <li>在遍历的过程中
+                                <ul>
+                                    <li>$index : 遍历过程中的索引,从0开始。</li>
+                                    <li>$first : 布尔类型的值 当前是否是第一项 是返回true 不是返回false</li>
+                                    <li>$last : 布尔类型的值 当前是否是最后一项 是返回true 不是返回false</li>
+                                    <li>$middle : 布尔类型的值 第一项和最后一项返回false 其余返回true</li>
+                                    <li>$even : 偶数项返回true 否则返回false</li>
+                                    <li>$odd : 奇数项返回true 否则返回false</li>
+                                </ul>
+                            </li>
+                            <li>默认情况下遍历的数组中不能有重复类型的值(基本数据类型) 否则会报错
+                                <ul>
+                                    <li>[ngRepeat:dupes] ng-repeat指令被愚弄(调戏)了</li>
+                                    <li>解决: 在遍历的数据后面写上track by 一个唯一(不重复)的值 一般会写$index</li>
+                                    <li>ng-repeat="item in data track by $index"</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>ng-class指令：专门用来操作类名的
+                        <ul>
+                            <li>1.指令的值以对象的形式存在</li>
+                            <li>2.对象的属性值转化为布尔值是true时,将当前的属性名作为类名添加到class属性中</li>
+                            <li>3.对象的属性值转化为布尔值是false时,将当前的属性名从class属性中删除掉</li>
+                            <li>4.属性值可以是数据模型,也可以是JS表达式</li>
+                            <li>ng-class="{'green':isGreen,'red':!isGreen}"</li>
+                        </ul>
+                    </li>
+                    <li>ng-bind ng-bind-template ng-cloak 数据绑定 解决表达式闪烁问题
+                        <ul>
+                            <li>在angular没有被加载进页面之前,浏览器会将下面的 表达式当作普通字符串显示在页面中,angular在被加载进页面之后,才会将下面的表达式替换成了对应的数据,这样就会存在闪烁问题
+                            </li>
+                            <li>ng-bind-template是ng-bind的升级版,可以一次绑定多个变量ng-bind-template="{{a}}{{b}}"</li>
+                            <li>ng-cloak可以是类名也可以是指令
+                                <li>用指令ng-bind绑定数据解决这个问题 ng-bind指定是专门用来做数据绑定的:ng-bind="msg1"
+                                </li>
+                                <li> 除此之外,还有一个指令ng-cloak,也可以解决表达式闪烁的问题 angular会隐藏有ng-cloak指令或样式的元素,在做完解析之后又会移除元素身上的ng-cloak样式和指令,从而解决表达式闪烁的问题
+                                </li>
+                                <li>但是！angular在页面的最后才被引用进来,所以不能很好的解决这 个问题需要我们手动在页面顶部加上隐藏元素的样式
+                                </li>
+                                <li>.ng-cloak,[ng-cloak]{display:none;}</li>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>ng-non-bindable 不解析表达式，如插值表达式</li>
+                    <li> ng-show、ng-hide 通过样式的方式控制元素显示隐藏
+                        <ul>
+                            <li>ng-show ：控制元素显示隐藏(通样式的方式);当值为true时 元素显示; 当值为false时 元素隐藏</li>
+
+                        </ul>
+                    </li>
+                    <li>ng-if 控制元素显示隐藏:和ng-show用法相同,区别是ng-if是通过DOM节点的添加和删除使得元素显示和隐藏</li>
+                    <li>ng-switch（加在父元素上）、ng-switch-when（加在子元素上）；匹配到哪项 哪项就显示 其他项就隐藏，常用于做多个选项卡的显示和隐藏</li>
+                    <li>ng-options生成select下拉列表 需要配合ng-model指令使用 否则报错
+                        <ul>
+                            <li>ball.name for 要显示在option标签内的值</li>
+                            <li>ball.value as 将要显示在option标签value属性中的值</li>
+                            <li>ng-options="item.value as item.name for item in balls"</li>
+                            <li>ng-model指令绑定的是下拉框选中的值</li>
+                        </ul>
+                    </li>
+                    <li>ng-style=$scope下对象 接受一个对象</li>
+                </ul>
+            </li>
+            <li>事件指令：ng-dblclick</li>
+            <li>其他指令
+                <ul>
+                    <li>ng-href：用于生成href属性，防止用户点击空链接 在异步访问延迟的情况下数据没有及时加载变量的处理</li>
+                    <li>ng-src：用于生成src属性，防止404请求</li>
+                    <li>ng-value</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>mvc MVVM介绍</h4>
+        <ul>
+            <li>【MVC】思想源于后端
+                <ul>
+                    <li>M model 模型 数据和数据相关的方法(直接操作数据库的方法)</li>
+                    <li>V view 视图 用户界面</li>
+                    <li>C controller 控制器 网站的业务逻辑都写在控制器里面</li>
+                    <li>对代码进行分类,便于管理;MVC思想并不完全适用于前端;MVC里面的控制器做的事情太多了 代码又变得冗余</li>
+                </ul>
+            </li>
+            <li>
+                【MVVM】思想
+                <ul>
+                    <li>它并不是一个全新的思想 是对MVC思想的改进 升级</li>
+                    <li> model 模型 数据和数据相关的方法 ajax请求</li>
+                    <li>V view 视图 用户界面</li>
+                    <li>VM 它都是跟数据双向绑定有关系 $scope</li>
+                    <li>angular就是基于MVVM这样的一个前端框架</li>
+                </ul>
+            </li>
+        </ul>
+        <h5>Angular jqLite</h5>
+        <ul>
+            <li>angular.element(原生js对象)将原生js对象转换成JQLite对象。本质上就是把jquery的选择器功能都移除了，留下了大部分方法。</li>
+            <li>(https://code.angularjs.org/1.6.4/docs/api/ng/function/angular.element)</li>
+
+        </ul>
+        <h5>[AngularJS Batarang Chrome开发调试工具](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)</h5>
+        <h5>子元素内边距和外边距的百分比都是相对于父盒子的宽度，只有高度才是相对于父盒子的高度</h5>
+        <h5>解决行内块元素出现空隙的问题，本质上是标签回车后空字符占位置了(不用浮动和定位) </h5>
+        <ul>
+            <li>letter-spacing为负值，兼容苹果浏览器，只有苹果浏览器识别letter-spacing为负值</li>
+            <li>font-size=0，给元素的父元素设置</li>
+            <li>div放在同一行</li>
+            <li>换行加注释也可以解决</li>
+        </ul>
+        <h5>谷歌浏览器默认最小字体为12px，可以给字体父盒子(必须是块级元素或行内块，本质上是改变元素的大小)设置transform:scale(.5)，为兼容IE7，8font-size:8px;</h5>
+    </div>
+    <div>
+        <div>
+            <h2>自定义指令，筛选器，服务(7.20)</h2>
+            <h4>自定义指令</h4>
+            <ul>
+                <li>指令概念：DOM操作和模板复用，angular提供给我们的操作DOM的方式，本质上就是对DOM功能的提升</li>
+                <li>
+                    <pre>
+                      模块对象.directive('指令名称',[function(){
+                        return {
+                                 // 指令的具体配置
+                               }
+                      }])
+                </pre>
+                </li>
+                <li>只写DOM操作,其他参数不要，用默认值即可匿名函数即link，简写形式。模块对象.directive('指令名称',[function(){return function(scope,element,attribute){}}])</li>
+                <li>
+                    指令的配置参数介绍
+                    <ul>
+                        <li>restrict 自定义指令分类
+                            <ul>
+                                <li>属性指令 A attribute</li>
+                                <li>元素指令 E element</li>
+                                <li>样式指令 C class</li>
+                                <li>注释指令 M comment</li>
+                                <li>默认值是:'AE'</li>
+                                <li>注释指令需要配合 replace使用，注释指令调用方法： &lt;!-- directive:my-dir --&gt;</li>
+                            </ul>
+                        </li>
+                        <li>
+                            template和templateUrl使用方法
+                            <ul>
+                                <li>template模板必须有一个根元素</li>
+                                <li>template 模板字符串</li>
+                                <li>templateUrl 路径或当前页面模板ID type="text/ng-template"</li>
+
+                            </ul>
+                        </li>
+                        <li>link函数的作用及参数说明
+                            <ul>
+                                <li>作用：写DOM操作的地方</li>
+                                <li>有三个参数 scope element attributes</li>
+                                <li>scope:类似于$scope 作用范围不同 只针对当前指令生效</li>
+                                <li>element: 指令所在元素的jqLite对象</li>
+                                <li>attributes:当前指令所在标签的属性结合 对象类型</li>
+                                <li>指令默认没有单独的作用域 默认和指令所在的控制器共享作用域 也就是说 指令里面的scope 和 控制器里面的$scope 是一个对象</li>
+                                <li>由于控制器要比指令先执行 那么 在指令scope里面定义的属性会覆盖 控制器$scope下面的属性</li>
+                            </ul>
+                        </li>
+                        <li>replace的作用
+                            <ul>
+                                <li>将当前指令所在的标签替换掉</li>
+                                <li>布尔类型的值 默认是是false 不替换</li>
+                            </ul>
+                        </li>
+                        <li>
+                            transclude的作用
+                            <ul>
+                                <li>如果指令所在标签内部有内容 会将内容保存到ng-transclude中</li>
+                                <li>然后在模板内将ng-transclude保存的内容写在想要显示的位置即可</li>
+                                <li>默认值是false 不保存原有内容 也就是直接用模板内容替换原有内容</li>
+                            </ul>
+                        </li>
+                        <li>scope:true或者{}给自定义指令开启一个独立作用域，默认为false</li>
+                    </ul>
+                </li>
+                <li>指令名字显式方式：js myDir；html my-dir</li>
+
+            </ul>
+            <h4>Angular中请求数据的方式</h4>
+            <ul>
+                <li>标准的请求方式:
+                    <pre>
+                    $http({
+						// 请求的方式 // 请求的地址
+						method:'', url:'',
+				    	// Get方式的传参 // POST方式的传参
+						params:{},    data:{}
+							
+					}).then(function(){// 成功回调},function(){// 失败的回调})
+                </pre>
+                </li>
+                <li>简化的请求方式:
+                    <ul>
+                        <li>$http.get('url', { params:{ } } ).then()</li>
+                        <li>$http.post('url',{ a:1,b:2 }).then()</li>
+                    </ul>
+                </li>
+                <li>angular中不能将请求设置为同步</li>
+            </ul>
+            <h4>Angular中的过滤器</h4>
+            <ul>
+                <li>过滤器的概念：angular为我们提供的处理数据格式的方式</li>
+                <li>过滤器的作用：将数据格式化我们想要的格式</li>
+                <li>过滤器的分类：内置过滤器 自定义过滤器</li>
+                <li>使用过滤器的语法： {{ 数据模型 | 过滤器的名字:过滤器的参数:多个参数以冒号隔开 }}</li>
+                <li>内置过滤器介绍
+                    <ul>
+                        <li>currency 货币过滤器</li>
+                        <li>date 日期过滤器 MM和HH大写才是当前的月和小时</li>
+                        <li>filter 将数据按照某种规则进行过滤
+                            <ul>
+                                <li>模糊过滤:angular 会在数据中的[每一个字段中]去寻找 过滤条件 如果当前字段的值[包含]过滤条件 那么当前这条数据会被留下;如filter:'张三'</li>
+                                <li>精确过滤:angular 会在数据中的[特定的字段中]去寻找 过滤条件 如果当前字段的值[包含]过滤条件 那么当前这条数据会被留下;如filter:{ 'name' : '李四'
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            limitTo 限制
+                            <ul>
+                                <li>第一个参数:limit 限制的数量,可以为负数,从后往前开始限制 </li>
+                                <li>第二个参数:begin 从第几个开始限制</li>
+                                <li>可以限制字符长度，也可以限制循环次数</li>
+                            </ul>
+                        </li>
+                        <li>orderBy 排序过滤器
+                            <ul>
+                                <li>orderBy:'字段名称' 升序</li>
+                                <li>orderBy:'-字段名称' 降序</li>
+                            </ul>
+                        </li>
+                        <li>number 数字格式化;number:2 保留2位小数</li>
+                        <li>uppercase lowercase转大小写过滤器</li>
+                        <li>给开发者使用：json配合pre标签 原格式标签</li>
+                    </ul>
+                </li>
+                <li>自定义过滤器
+                    <pre>
+        模块对象.filter('自定义过滤器名字',[function(){
+        
+            return function(要处理的数据,滤过器参数1,滤过器参数2,...){
+    
+              // 具体处理数据的代码
+              return 处理后的数据;
+           }
+
+         }])
+                </pre>
+                </li>
+            </ul>
+            <h4>创建服务</h4>
+            <ul>
+                <li>服务的作用:可以在相关控制器中共享数据;可以在服务中写一些公用的代码</li>
+                <li>服务也是模块下的方法,要创建服务,先创建模块</li>
+                <li>多个控制器使用服务，这个服务只创建一个对象，实现共享</li>
+                <li>第一个参数是服务名称;第二参数以数组的形式存在,和控制器的使用方法一样</li>
+                <li>angular会帮我们new 这个匿名函数:angular.module('myService',[]).service('serviceName',[function(){this.name = '服务里面的数据';}])</li>
+                <li>在两个控制器中依赖的serviceName服务 是同一个对象所以在A控制器中修改了服务的值 在控制器B中也会得到体现</li>
+            </ul>
+        </div>
+        <h4>知识点补充</h4>
+        <ul>
+            <li>$scope.$watch
+                <ul>
+                    <li>$scope.$watch('要监控的数据',function(newValue,oldValue){})</li>
+                    <li>newValue 当前的最新值; oldValue 上一次输入的值 </li>
+                    <li>可以监控一个值的变化 当监控的值发生变化的时候就会执行这个处理函数;页面一上来会执行一次</li>
+                </ul>
+            </li>
+            <li>$scope.$apply();类似promise的决议
+                <ul>
+                    <li>告诉angular数据做了改变，要更新视图 原生ajax，原生事件，原生定时器中回调函数中最后调用一下</li>
+                    <li>js原生的方法中的回调函数数据变动angular没法知道，通过这个通知angular使数据双向绑定，及时更新</li>
+
+                </ul>
+            </li>
+        </ul>
+        <h5>把变量的内容当html输出: ng-bind-html //augular-sanitize.js 依赖模块</h5>
+    </div>
+    <div>
+        <h2>记事本demo,ngRoute和uiRoute（7.21）</h2>
+        <h5>记事本demo:当$scope下面的属性的值改变时 angular会重新渲染模板，实现模板双向绑定</h5>
+        <h4>ngRoute路由：angular-route.js</h4>
+        <ul>
+            <li>$routeProvider 注册路由对象</li>
+            <li>$routeParas 路由参数，对象类型</li>
+            <li>otherwise:默认配置地址</li>
+            <li>路由传递参数：配置路由 在路由的后面加上 /:参数占位符 "/info/:id"</li>
+            <li>锚点路由：href="#!/index"</li>
+            <li>只能有一个ng-view作为模板填充的地方</li>
+            <li>
+                <pre>
+        angular.module("myApp",["ngRoute"]).config(["$routeProvider",function($routeProvider){
+             $routeProvider
+             .when("/index",{
+                 templateUrl:"./ngRoute/index.html",
+                 controller:"",
+             })
+            .when('/list',{
+                 templateUrl:"./ngRoute/list.html",
+                 controller:"list",
+            })
+            .when('/info/:id/:name',{
+                    templateUrl:"./ngRoute/info.html",
+                    controller:"info",
+            })
+            .otherwise('/index')
+        }])
+        .controller("info",["$scope","$routeParams",function($scope,$routeParams){
+                    $scope.id=$routeParams.id;
+                    $scope.name=$routeParams.name;
+        }])
+        .controller("list",["$scope",function($scope){
+            $scope.list=[
+               {id:1,name:"kk"},
+               {id:2,name:"mm"},
+           ]
+       }])
+         </pre>
+            </li>
+        </ul>
+        <h4>ui-route路由：angular-ui-router.min.js</h4>
+        <ul>
+            <li>ui-view:模板替换区域，支持多个区域</li>
+            <li>ui-sref="index"
+                <ul>
+                    <li>页面a标签链接，和路由配置锚点名称对应，优势在于修改锚点链接不用修改页面</li>
+                    <li>ui-sref="article({id:item.id})参数使用对象传递</li>
+                </ul>
+            </li>
+            <li>使用路由模块依赖名称：ui.router </li>
+            <li>参数服务：$stateParams</li>
+            <li>注册路由对象：$stateProvider </li>
+            <li>配置默认路径： $urlRouterProvider.otherwise('/index');</li>
+            <li>
+                ui-router路由配置
+                <ul>
+                    <li> onEnter: function () {alert('进入') }</li>
+                    <li>onExit: function () {alert('退出') }</li>
+                </ul>
+            </li>
+            <li>
+                基础配置：
+                <pre>
+        angular.module("myApp",["ui.router"])
+            .config(["$stateProvider",'$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+                $stateProvider
+                        .state({
+                           url:"/index",  //锚点
+                           name:'index',  //锚点名称，必填项
+                           templateUrl:"./uiRoute/index.html",
+                           controller:"",
+                           onEnter : function(){alert('进入列表页')},
+						   onExit : function(){alert('离开列表页')}
+                         })
+                        .state({
+                            url:"/list",
+                            name:'list',
+                            templateUrl:"./uiRoute/list.html",
+                            controller:"list",
+                        })
+                        .state({
+                            url:"/info/:id",
+                            name:'info',
+                            templateUrl:"./uiRoute/info.html",
+                            controller:"info",
+                        })
+                $urlRouterProvider.otherwise('/index');
+            }])
+            .controller("list",["$scope",function($scope){
+                $scope.list=[
+                    {id:1,name:"kk"},
+                    {id:2,name:"mm"},
+                ]
+            }])
+            .controller("info",["$scope","$stateParams",function($scope,$stateParams){
+                $scope.id=$stateParams.id;
+
+            }])
+
+               </pre>
+            </li>
+            <li>
+                多视图配置
+                <ul>
+                    <li>多视图每个视图必须有属性值 ui-view="viewA"</li>
+                    <li>views属性管理多个视图，每个视图管理自己的模板和控制器</li>
+                    <li>多视图适合处理复杂的页面，且整个站点的模板复用性高</li>
+                    <li>
+                        <pre>
+        angular.module("myApp",["ui.router"])
+            .config(["$stateProvider",'$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+                $stateProvider
+                        .state({
+                            url:"/index",
+                            name:'index',
+                            views:{
+                                "viewA":{
+                                    controller:"conA",
+                                    template:"&lt;div>{{name}}&lt;/div>"
+                                },
+                                "viewB":{
+                                    controller:"conB",
+                                    template:"&lt;div>{{name}}&lt;/div>"
+                                },
+                            }
+
+                        })
+
+                $urlRouterProvider.otherwise('/index');
+            }])
+            .controller("conA",["$scope",function($scope){
+                $scope.name="我是视图aaaa"
+            }])
+            .controller("conB",["$scope",function($scope){
+                $scope.name="我是视图BBBBBB"
+
+            }])
+                </pre>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                视图嵌套配置
+                <ul>
+                    <li>在子视图中配置name属性，父视图锚点名.子视图锚点名：name:'nav.index'</li>
+                    <li>在父视图模板中写一个子模板，确定子模板渲染的问题</li>
+                    <li>生成url的锚点名和设置的保存一致 ui-sref="tab.index"</li>
+                    <li>此参数代表当前路由需要和其他路由配合使用（只能在成为父容器的时候访问）：abstract:true,</li>
+                    <li>
+                        <pre>
+     angular.module("myApp",["ui.router"])
+            .config(["$stateProvider",'$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+                $stateProvider
+                        .state({
+                            url:"/nav",
+                            name:'nav',
+                            abstract:true,
+                            template:'&lt;a ui-sref="nav.index">首页&lt;/a>' +
+                            '&lt;a ui-sref="nav.list">列表页&lt;/a>' +
+                            '&lt;section ui-view> &lt;/section>'    //确认子视图显式位置
+                        })
+                        .state({
+                            url:"/index",
+                            name:'nav.index',   //通过.的方式标识和父视图的关系
+                            controller:"",
+                            templateUrl:"./uiRoute/index.html"
+
+                        })
+                        .state({
+                            url:"/list",
+                            name:'nav.list',
+                            controller:"list",
+                            templateUrl:"./uiRoute/list.html"
+
+                        })
+                        .state({
+                            url:"/info/:id",
+                            name:'info',
+                            controller:"info",
+                            templateUrl:"./uiRoute/info.html"
+
+                        })
+
+                $urlRouterProvider.otherwise('/nav/index');  //生成后的锚链接
+            }])
+            .controller("list",["$scope",function($scope){
+                $scope.list=[
+                    {id:1,name:"kk"},
+                    {id:2,name:"mm"},
+                ]
+            }])
+            .controller("info",["$scope","$stateParams",function($scope,$stateParams){
+                $scope.id=$stateParams.id;
+
+            }])         
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <h4>run方法</h4>
+        <ul>
+            <li>页面一上来只执行一次 可以做一些初始化的工作</li>
+            <li>只能依赖 $rootScope 不能依赖$scope,</li>
+            <li>$rootScope 全局作用域 在全局作用域下挂载的任何数据 在任何的控制器中都是能够访问到的 能够向页面中暴露数据</li>
+            <li>模块对象.run(['$rootScope',function($rootScope){}])</li>
+            <li>当视图加载完毕之后执行对应的处理函数:$scope.$on("$viewContentLoaded",function(){});</li>
+        </ul>
+    </div>
+    <div>
+        <h2>多视图嵌套，豆瓣小练习，inline-block布局（7.23）</h2>
+        <h4>多视图嵌套实例</h4>
+        <ul>
+            <li>angular内部瞄点跳转服务：$location.path("锚点")</li>
+            <li></li>
+        </ul>
+        <pre>
+        angular.module('myApp',['ui.router'])
+
+			.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+
+				$stateProvider
+					.state({
+						name : 'nav',
+						url:'/nav',
+						abstract:true,
+						templateUrl:'./tpl-2/nav.html'
+					})
+					.state({
+						name : 'nav.index',
+						url : '/index',
+						abstract:true,   //虚拟路由，禁止访问
+						templateUrl : './tpl-2/index.html'
+					})
+					.state({
+						name : 'nav.index.content', //两层嵌套
+						url:'/content',  //这个中有两个视图
+						views : {
+							'view-a':{
+								templateUrl : './tpl-2/index-view-a.html'
+							},
+							'view-b':{
+								templateUrl : './tpl-2/index-view-b.html'
+							}
+						}
+					})
+					.state({
+						name : 'nav.list',
+						url: '/list',
+						templateUrl:'./tpl-2/list.html'
+					})
+					.state({
+						name : 'article',
+						url: '/article',
+						templateUrl:'./tpl-2/article.html'
+					})
+
+				$urlRouterProvider.otherwise('/index/content')
+
+			}])
+        </pre>
+        <h4>ng-repeat处理数据说明</h4>
+        <ul>
+            <li>angular在ng-repeat的时候默认会将数据打上一个标记 $$hashkey 我们在存储数据的时候将一个带标记的数据 存储到了localStroage中</li>
+            <li>那么页面一上来的时候，我们将一个带着标记的数据，又重新赋值给了$scope angular重新循环数据 又要给数据打标记，结果就冲突了</li>
+            <li>angular.toJson()将js对象转化为json字符串</li>
+            <li>angular.fromJson()将json字符串转化为js对象</li>
+        </ul>
+        
+        <h4>inline-block布局</h4>
+        <ul>
+            <li>
+                float的问题
+                <ul>
+                    <li>当第一排元素高度参差不齐的时候 第二排的第一个浮动元素会卡在第一排元素最高的后面</li>
+                    <li>浮动只能左右浮动</li>
+                    <li>不能调节浮动元素的垂直对齐方式</li>
+                    <li>在IE低版本中 兼容性问题比较多</li>
+                </ul>
+            </li>
+            <li>inline-block 在html中 回车 和 空格 也是特殊的字符 也占位置</li>
+            <li>
+                父盒子
+                <pre>
+        .cleargap{
+			font-size:0; //去除元素空白字符距离
+			letter-spacing:-8px; //去空白字符兼容苹果
+			text-align:left;
+		 }
+                </pre>
+            </li>
+            <li>
+                子盒子
+                <pre>
+        .ibox{
+			display:inline-block;
+			*display:inline; //兼容IE
+			*zoom:1; //兼容IE
+			letter-spacing:normal;
+			font-size:12px;
+			vertical-align:top;
+		}
+                </pre>
+            </li>
+        </ul>
+        <h4>$http.jsonp</h4>
+        <ul>
+            <li>在使用angular进行跨域请求时 需要设置url访问白名单</li>
+            <li>在使用$http.jsonp()方法的时候angular默认生成的回调函数名字是带命名空间的angular.callbacks._0</li>
+            <li>
+                <pre>
+        设置当前网站访问url的白名单
+		$sceDelegateProvider.resourceUrlWhitelist([
+		   'self', // 当前网站
+		   'https://api.douban.com/v2/movie/in_theaters'
+		 ]);
+                </pre>
+            </li>
+            
+            
+        </ul>
+        <h5>angular老师邮箱：345628401@qq.com</h5>
+        <h5>ng-annotate</h5>
+        <ul>
+             <li>推断注入压缩会出问题，使用数组依赖就没有问题，ng-annotate包可以省略数组依赖</li>
+          <li>
+            angular.bootstrap(document , [appModule.name], {strictDi: true});
+        </li>
+        <li>strictDi: true必须使用数组依赖，或者ng-annotate包</li>
+         <li>
+            https://zhuanlan.zhihu.com/p/28454185
+         </li>
+        </ul>
+       
+    </div>
+</body>
+
+
+
+</html>
